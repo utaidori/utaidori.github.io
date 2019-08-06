@@ -56,6 +56,7 @@ height: 140px;
 }
 .boku {
 margin: 1rem 0;
+font-size: 1rem;
 }
 nav {
 text-align: center;
@@ -105,3 +106,28 @@ nav a:link, nav a:visited,
 a:link {color:#0022cc}
 a:visited {color:#cc5522}
 .maldense {color:#84bacf}
+
+/* por posxtelefono */
+@media (max-width:640px) {
+
+.svg-mma {
+width: 224px;
+height: 70px;
+background-color: #cbe8ef;
+}
+.svg-plus {
+width: 70px;
+height: 70px;
+}
+body {
+padding: .5rem;
+}
+h2 {
+font-size: 1.5rem;
+}
+.hr-hr {
+max-width: 80%;
+}
+
+}
+
