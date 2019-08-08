@@ -27,6 +27,7 @@ font-weight: normal;
 letter-spacing: .2rem;
 }
 h3 {
+line-height: 1.0;
 /*font-size: 1.5rem;*/
 font-size: 1.3rem;
 font-weight: normal;
@@ -78,13 +79,14 @@ background-image: url(svg/hr.svg);
 background-repeat: repeat-x;
 }
 article {
-/*padding: 1rem 0;*/
+margin: 1.5rem 0;
 }
 .flexbox {
 display: flex;
 align-self: flex-start;
 }
 .thumbnail {
+margin-bottom: 1rem;
 flex-basis: 180px;
 text-align: center;
 }
@@ -97,7 +99,7 @@ font-size: 1rem;
 }
 .description {
 flex: 1;
-padding: .5rem 1rem;
+padding: 0rem 1rem;
 }
 
 
