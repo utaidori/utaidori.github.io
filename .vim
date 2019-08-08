@@ -5,3 +5,9 @@ if v:servername == 'GVIM1'
 	call remote_foreground('GVIM')
 	q
 endif
+
+function! LasiAfisxon(elm)
+	call append(a:elm, ['<article>', '<h3></h3>', '<div class="parenthesis">' .strftime('%Y/%m/%d') .'</div>', '<p>', '</article>', ''])
+endfunction
+
+noremap <f2> :call LasiAfisxon(35)<CR>
