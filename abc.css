@@ -11,6 +11,7 @@ width: 95%;
 background-color:#f0f6fb;
 font-size: .95rem;
 }
+.defs{display:none}
 p {
 margin-bottom: 1.7rem;
 line-height: 1.7;
@@ -68,10 +69,7 @@ padding-left: 1rem;
 list-style-type: circle;
 list-style-position: inside;
 }
-.pict1rem {
-width: 1rem;
-height: 1rem;
-}
+.koverto{display:inline;max-width:60px;max-height:60px;fill:#005f87;vertical-align:middle}
 .hr-hr {
 /*height: 13px;*/
 height: 1rem;
