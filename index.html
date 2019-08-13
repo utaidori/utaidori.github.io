@@ -12,16 +12,24 @@
 /*	p{background-color:#fffff8;
 	display: inline-block;
 	}*/
+	.defs{display:none}
+	.koverto{width:1rem;height:1rem;fill:#005f87;vertical-align:middle;}
 	</style>
 </head>
 
 <body>
 
+<svg class="defs" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<symbol id="koverto" viewBox="0 0 16 16"><path d="M1,3h14v10h-14zM1,3v1l7,6l7,-6v-1l-7,6z"/></symbol>
+</svg>
+
 <h1><a href="index.html"><img class="svg-mma" src="mma.svg" alt="牢獄機械文書群"><img class="svg-plus" src="plus.svg"></a></h1>
 
 <p class="boku">
 	間宮 緑 -- 小説家。たまに農家。エスペラント語翻訳も。<br>
-	<img src="svg/koverto.svg" alt="" class="pict1rem"> <a href="mailto:ararezake@gmail.com">ararezake@gmail.com</a>
+	<!-- <img src="svg/koverto.svg" alt="" class="pict1rem"> <a href="mailto:ararezake@gmail.com">ararezake@gmail.com</a> -->
+	<svg class="koverto"><use xlink:href="#koverto"/></svg>
+	<a href="mailto:ararezake@gmail.com">ararezake@gmail.com</a>
 </p>
 
 <nav>
