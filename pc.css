@@ -1,0 +1,58 @@
+@charset "UTF-8";
+body {
+padding: 2.5rem;
+}
+.svg-mma {
+width: 448px;
+height: 140px;
+}
+.svg-plus {
+width: 140px;
+height: 140px;
+}
+nav {
+text-align: center;
+}
+nav li {
+display: inline-block;
+margin-right: 1rem;
+	padding: .2rem;
+list-style-type: none;
+}
+h1 {
+font-size: 2.5rem;
+}
+h2 {
+/*font-size: 1.5rem;*/
+font-size: 1.2rem;
+}
+h3 {
+/*font-size: 1.5rem;*/
+font-size: 1.3rem;
+}
+p {
+/*font-size: .9rem;*/
+font-size: 1rem;
+}
+.boku {
+font-size: 1rem;
+}
+.parenthesis {
+font-size: 1rem;
+}
+.hr-hr {
+max-width: 60%;
+}
+.flexbox {
+display: flex;
+align-self: flex-start;
+}
+.thumbnail {
+margin-bottom: 1rem;
+flex-basis: 180px;
+text-align: center;
+}
+.description {
+flex: 1;
+padding: 0rem 1rem;
+}
