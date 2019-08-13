@@ -5,12 +5,13 @@ img, hr
 {border:none;}
 
 body {
-margin: .7rem .7rem;
+/*margin: .7rem .7rem;*/
+margin: 1rem auto;
+width: 95%;
 background-color:#f0f6fb;
-/*font-size: .9rem;*/
 }
 p {
-margin-bottom: 1rem;
+margin-bottom: 1.7rem;
 line-height: 1.7;
 }
 .indent-minus {
@@ -49,13 +50,11 @@ width: 70px;
 height: 70px;
 }*/
 .svg-mma {
-/*width: 80%;*/
-height: 10%;
+width: 336px;
 background-color: #cbe8ef;
 }
 .svg-plus {
-/*width: 20%;*/
-height: 10%;
+width: 105px;
 }
 .boku {
 margin: 1rem 0;
