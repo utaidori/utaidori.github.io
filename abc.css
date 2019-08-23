@@ -65,7 +65,8 @@ line-height: 1.7;
 }
 nav li {
 padding-left: 1rem;
-list-style-type: circle;
+/*list-style-type: circle;*/
+list-style-type: disc;
 list-style-position: inside;
 }
 .hr-hr {
