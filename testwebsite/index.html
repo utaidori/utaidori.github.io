@@ -20,6 +20,9 @@
 			.nodisplay {
 				display: block;
 			}
+			.scriptonly {
+				display: none;
+			}
 		</style>
 	</noscript>
 	<script type="text/javascript">
@@ -37,6 +40,7 @@
 	function switchFold(aID, listnum) {
 		var option = document.getElementById(aID + "-option");
 		var content = document.getElementById(aID + "-content");
+		var historyContent = document.getElementById('history-content')
 		resetFold(aID, listnum);
 		if (content.style.display == "block") {
 			// コンテンツが表示されているとき、それを隠す
@@ -47,7 +51,8 @@
 				// 何も表示されていない状態になるので、ニュース（ページをロードした直後に表示されているコンテンツ）を表示する
 				document.getElementById('news').style.display = "block";
 			} else if (listnum == 1) {
-				document.getElementById('history-content').style.borderRadius = "5px";
+				historyContent.style.borderRadius = "5px";
+				historyContent.style.paddingBottom= "1em";
 			}
 		} else {
 			// コンテンツが隠れているとき、それを表示する
@@ -59,16 +64,19 @@
 		}
 	}
 	function resetFold(aID, listnum) {
+		var historyContent = document.getElementById('history-content')
 		// すべてのコンテンツを隠す。リンクのハイライトを元の色に戻す
 		if (listnum == 0) {
 			// （firstlist と secondlist を合成して）すべてのコンテンツを隠す
 			var listOptions = firstlist.concat(secondlist);
 			// history-content の下枠の角に丸みをつける
-			document.getElementById('history-content').style.borderRadius = "5px";
+			historyContent.style.borderRadius = "5px";
+			historyContent.style.paddingBottom= "1em";
 		} else if (listnum == 1) {
 			var listOptions = secondlist;
 			// history-content の下枠の角の丸みをなくす
-			document.getElementById('history-content').style.borderRadius = "5px 5px 0 0";
+			historyContent.style.borderRadius = "5px 5px 0 0";
+			historyContent.style.paddingBottom= "0";
 		} else {
 		}
 		for (var i = 0; i < listOptions.length; i++) {
@@ -230,22 +238,22 @@
 	</p>
 </article>
 
-<section class="round-edge frame hi-normal nodisplay" id="history-content">
-	<noscript><h2>今までの作品</h2></noscript>
+<section class="round-edge frame hi-normal nodisplay scriptonly" id="history-content">
 	<div class="options">
 		<a href="hibi.html">書籍</a>
 		<!-- 単行本、収録本（本迷宮） -->
 		<a href="hibi.html">小説</a>
 		<a href="hibi.html">翻訳</a>
-		<a href="hibi.html">エッセー</a>
-		<a href="hibi.html">書評</a>
+<!-- 		<a href="hibi.html">エッセー</a>
+		<a href="hibi.html">書評</a> -->
 		<a href="hibi.html">即興制作・朗読</a>
 		<a id="list-option" href="JavaScript:switchFold('list',1);">全部をリスト表示</a>
 	</div>
 </section>
-<!--  -->
-<!-- <article class="round-edge frame hi-normal nodisplay" id="list-content" style="border-top:none"> -->
+
 <article class="secondary-content nodisplay" id="list-content"><!-- {{{ -->
+	<noscript><h2>今までの作品</h2></noscript>
+
 	<h3 class="category">本</h3>
 	<ul>
 		<li>塔の中の女 / 講談社 / 2011年</li>

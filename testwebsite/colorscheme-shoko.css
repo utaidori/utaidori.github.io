@@ -53,35 +53,27 @@ color: #dd0077;
 .options a:link, .options a:visited {
 color: #114466;
 }
-.options a:hover {
-background-color: #99d6ea !important;
+/* :hover は携帯端末（iPad含む）には合っていない。
+onclick イベント開始から次の onclick イベント開始まで持続する? */
+@media screen and (min-width:1024px) {
+	.options a:hover {
+	background-color: #99d6ea !important;
+	}
 }
 .short-hr {
 border-color: #99d6ea;
 }
 .category {
-/*background-color: #99d6ea;*/
-background-color:
-/*#f2f6fb;*/
-#c5d9f1;
+background-color: #c5d9f1;
 }
 /* -------- fini */
 
 /* Individual TAGs & CLASSes */
-html {
-/*background-image: url(dot.svg);*/
-}
 .sakanadake {
-/*background-color: #f2f6fb;*/
 background-color: #99d6ea;
 }
-.sakanadake:hover {
-background-color: #f2f6fb;
-}
 .mojidake {
-fill:
-/*#f2f6fb;*/
- #99d6ea;
+fill: #99d6ea;
 }
 .ribbon {
 background-color: #f2f6fb;
