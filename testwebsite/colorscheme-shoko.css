@@ -1,0 +1,106 @@
+@charset "UTF-8";
+/*
+2020/03/11 AOI SHOKO
+
+Background :  #f2f6fb
+Foreground:   #114466
+Light color:  #99d6ea
+Dark color:   #5588aa
+Pale color:   #c5d9f1
+Anchor(l):    #0066dd
+Anchor(v):    #dd0077
+*/
+/* Combinations */
+
+html {
+background-color: #f2f6fb;
+}
+.hi-normal {
+background-color: #f2f6fb;
+color: #114466;
+}
+.hi-dark {
+background-color: #5588aa;
+border-color: #aaddff;
+color: #f2f6fb;
+}
+.hi-light {
+background-color: #99d6ea;
+border-color: #aeebff;
+color: #114466;
+}
+.frame {
+border-color: #5588aa;
+}
+.border-dashed {
+border-color: #99d6ea;
+}
+.secondary-content {
+border-color: #5588aa;
+}
+/* -------- fini */
+
+/* General Classes */
+a:link {
+/*color: #2222aa;*/
+color: #0066dd;
+}
+a:visited {
+color: #dd0077;
+}
+.options a {
+}
+.options a:link, .options a:visited {
+color: #114466;
+}
+.options a:hover {
+background-color: #99d6ea !important;
+}
+.short-hr {
+border-color: #99d6ea;
+}
+.category {
+/*background-color: #99d6ea;*/
+background-color:
+/*#f2f6fb;*/
+#c5d9f1;
+}
+/* -------- fini */
+
+/* Individual TAGs & CLASSes */
+html {
+/*background-image: url(dot.svg);*/
+}
+.sakanadake {
+/*background-color: #f2f6fb;*/
+background-color: #99d6ea;
+}
+.sakanadake:hover {
+background-color: #f2f6fb;
+}
+.mojidake {
+fill:
+/*#f2f6fb;*/
+ #99d6ea;
+}
+.ribbon {
+background-color: #f2f6fb;
+color: #114466;
+}
+footer a:link, footer a:visited {
+color: #fafaf7;
+}
+.email-icon-class {
+stroke: #99d6ea;
+}
+.email-icon-bottom {
+fill: #f2f6fb;
+}
+.email-icon-top {
+stroke: #5588aa;
+fill: #f2f6fb;
+}
+.twitter-icon-class {
+fill: #99d6ea;
+}
+/* -------- fini */

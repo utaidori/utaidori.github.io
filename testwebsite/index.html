@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ja" class="hi-normal">
+<head>
+	<meta charset="UTF-8">
+	<title>牢獄機械文書群 | 間宮緑のホームページ</title>
+	<link rel="icon" type="image/x-icon" href="./favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="./favicon/android-chrome-192x192.png">
+	<style>
+	.defs{display:none}
+	.nodisplay {
+	display: none;
+	}
+	</style>
+	<link rel="stylesheet" href="./layout.css">
+	<link rel="stylesheet" href="./colorscheme-shoko.css">
+	<!-- script & noscript {{{ -->
+	<noscript>
+		<style>
+			.nodisplay {
+				display: block;
+			}
+		</style>
+	</noscript>
+	<script type="text/javascript">
+	// .options a #id のリスト
+	const firstlist  = ['recentworks','history','profile'];
+	const secondlist = ['list'];
+	var listOptions = ['recentworks','history','profile'];
+
+	// .options a のハイライト
+	const hiNormalFg = "#114466";
+	const hiNormalBg = "transparent";
+	const hiVisualFg = "#f2f6fb";
+	const hiVisualBg = "#5588aa";
+
+	function switchFold(aID, listnum) {
+		var option = document.getElementById(aID + "-option");
+		var content = document.getElementById(aID + "-content");
+		resetFold(aID, listnum);
+		if (content.style.display == "block") {
+			// コンテンツが表示されているとき、それを隠す
+			option.style.color = hiNormalFg;
+			option.style.backgroundColor = hiNormalBg;
+			content.style.display = "none";
+			if (listnum == 0) {
+				// 何も表示されていない状態になるので、ニュース（ページをロードした直後に表示されているコンテンツ）を表示する
+				document.getElementById('news').style.display = "block";
+			} else if (listnum == 1) {
+				document.getElementById('history-content').style.borderRadius = "5px";
+			}
+		} else {
+			// コンテンツが隠れているとき、それを表示する
+			option.style.color = hiVisualFg;
+			option.style.backgroundColor = hiVisualBg;
+			content.style.display = "block";
+			// ニュースを隠す
+			document.getElementById('news').style.display = "none";
+		}
+	}
+	function resetFold(aID, listnum) {
+		// すべてのコンテンツを隠す。リンクのハイライトを元の色に戻す
+		if (listnum == 0) {
+			// （firstlist と secondlist を合成して）すべてのコンテンツを隠す
+			var listOptions = firstlist.concat(secondlist);
+			// history-content の下枠の角に丸みをつける
+			document.getElementById('history-content').style.borderRadius = "5px";
+		} else if (listnum == 1) {
+			var listOptions = secondlist;
+			// history-content の下枠の角の丸みをなくす
+			document.getElementById('history-content').style.borderRadius = "5px 5px 0 0";
+		} else {
+		}
+		for (var i = 0; i < listOptions.length; i++) {
+			if (aID != listOptions[i]) {
+				var elseoption = document.getElementById(listOptions[i] + "-option");
+				var elsecontent = document.getElementById(listOptions[i] + "-content");
+				elseoption.style.color = hiNormalFg;
+				elseoption.style.backgroundColor = hiNormalBg;
+				elsecontent.style.display = "none";
+			}
+		}
+	}
+	</script>
+	<!-- }}} -->
+</head>
+
+<body>
+
+<!-- SVG 読込 {{{ -->
+<svg class="defs" version="1.1" xmlns="http://www.w3.org/2000/svg">
+	<symbol id="sakanadake" viewBox="0 0 80 80">
+		<path fill="#59a5f4" d="M33,60.5c-0.736-0.886-2.934-1.504-5.372-1.51-2.271-0-6.49-1.109-9.378-2.454-4.255-1.981-5.25-2.912-5.25-4.912,0-3.058,6.728-9.089,11.895-10.661,1.982-0.603,5.278-1.987,7.323-3.076,3.235-1.722,4.276-1.831,8-0.84,2.354,0.626,4.955,1.718,5.78,2.426,0.825,0.707,3,2.051,4.852,2.985,3.231,1.637,3.431,1.624,5.564-0.379,1.217-1.144,2.694-2.079,3.282-2.079,1.97,0,2.092,3.814,0.221,6.891-1.642,2.701-1.677,3.144-0.31,3.909,1.037,0.58,1.435,1.978,1.216,4.272-0.466,4.877-3.097,4.976-6.465,0.242l-2.715-3.817-5.548,5.25c-5.891,5.574-10.491,6.891-13.098,3.75zm-23.479-19.434c-0.836-2.636,0.079-4.066,2.604-4.066,1.598,0,1.943,0.558,1.691,2.741-0.385,3.341-3.363,4.259-4.295,1.324zm3.054-11.984c-0.954-1.054-1.586-2.967-1.405-4.25,0.283-2,0.901-2.332,4.33-2.332,3.358,0,4.05,0.352,4.312,2.198,0.763,5.365-3.831,8.148-7.238,4.384zm4.841-2.725c0.346-0.903,0.414-1.859,0.15-2.123-0.93-0.929-3.567,0.724-3.567,2.237,0,2.047,2.62,1.961,3.416-0.111zm-0.3-14c-1.1-1.1-2-2.9-2-4,0-2.729,3.481-6,6.385-6,2.789,0,5.615,3.739,5.615,7.43,0,4.486-6.431,6.139-1,2.57zm6.803-3.880c-0.237-2.041-0.852-2.619-2.79-2.619-1.598,0-2.61,0.642-2.832,1.798-0.489,2.541,1.529,4.59,3.909,3.968,1.488-0.389,1.937-1.213,1.713-3.146z" transform="scale(1.05 1) translate(-2 0)"/>
+		<path fill="#3b444d" stroke="#6b747d" stroke-width="0.5" d="M34,60.124 c0-0.482-2.387-1.074-5.304-1.316-7.331-0.608-14.696-4.263-14.696-7.294,0-3.087,5.848-8.105,11.233-9.639,2.346-0.6,5-2,6-3,3-3,8-2,15.664,2.307 l6.848,4.138,2.275-2.138c4.378-4.113,6.241-1.645,2.955,3.917-1.597,2.703-1.592,2.973,0.1,4.832,1.974,2.18,1.4,6.112-0.893,6.112-1.346,0-5.505-4.559-5.505-6.035,0-0.421,1.635-2.4,3.633-4.398,2-2,3.351-3.916,3-4.261-0.911-0.912-4.639,2.733-4.639,4.536,0,1.126-0.729,0.852-2.75-1.033-4.458-4.158-6.638-4.809-16.101-4.809-10.022,0-16.704,2.1-19.532,6.137-2.472,3.529-2,4.792,2.633,6.89,4.238,1.924,18.435,2.798,22.168,1.366,2-0.77,2.062-2.393,0.082-2.393-0.825,0-1.5-0.45-1.5-1s0.675-1,1.5-1,1.5-0.45,1.5-1c0-2.215-3.802-0.921-4.41,1.5-0.948,3.777-2.345,3-2.235-1.25l0.097-3.75,4.371,0.358c4.189,0.343,4.354,0.479,3.947,3.25-0.547,3.731,1.386,3.797,4.114,0.141,1.128-1.512,2.066-2.166,2.083-1.452,0.017,0.713-2.196,3.526-4.92,6.25-4.074,4.075-5.579,4.952-8.498,4.952-1.952,0-3.548-0.394-3.548-0.876zm25-5.507c0-1.542-0.705-2.567-2-2.906-2.429-0.635-2.59,0.979-0.345,3.461,2.135,2.358,2.345,2.309,2.345-0.555zm-20-15.617c-1.956-1.264-4-1.264-4,0,0,0.55,1.237,1,2.75,0.984,2.143-0.012,2.419-0.23,1.25-0.985zm-17.128,10.313c-1.208-1.485-1.153-1.605,0.459-1,1,0.378,3.146,0.687,4.751,0.687s2.918,0.45,2.918,1c0,1.693-6.648,1.131-8.127-0.687z M13 29 c-2.201-2.201-1.427-5.526,1.456-6.249,3.866-0.97,5.841,1.262,4.235,4.787-1.287,2.824-3.708,3.446-5.692,1.462zm4.857-1.907c0.745-1.393,0.791-2.443,0.135-3.1-1.459-1.459-5.194,0.056-5.194,2.107,0,3.63,3.298,4.277,5.057,1zm0.116-13.207c-2.572-2.738-2.76-4.956-0.602-7.114,3.447-3.447,8.331-0.819,8.396,4.518,0.022,1.821-0.723,2.933-2.515,3.75-3.196,1.456-2.73,1.558-5.278-1.153zm5.789-0.641c1.945-1.231,0.232-6.382-2.283-6.866-3.709-0.714-6.158,3.945-3.481,6.622,1.425,1.425,3.739,1.523,5.763,0.243z" transform="scale(1.05 1.05) translate(-2 -3)"/>
+		<path d="M10 40 a 1 1.4 15 1 1 3 0 a 1 1.2 15 1 1 -3 0" stroke="#41403e" fill="none"/>
+	</symbol>
+	<symbol id="mojidake" viewBox="0 0 152 22">
+		<path id="moji" d="M4,0h1v1h4v2h-1v-1h-7v1h-1v-2h4zM12,0h1v2h3v1h1v-3h1v3h1v1h-1v3h1v1h1v2h-1v-2h-1v2h-1v-6h-1v-1h-3v7h-1v-1h-1v-1h1v-2h-1v-1h1v-1h-1v-1h1zM14,0h1v1h-1zM23,0h1v2h1v-1h1v-1h1v1h-1v1h2v-1h1v-1h1v1h-1v1h1v2h1v2h-2v2h1v-1h1v1h-1v1h1v1h-1v-1h-1v1h-1v-1h-1v-1h-1v1h-1v1h-2v-3h-1v-2h1v-2h-1v-1h1zM34,0h1v2h1v1h3v-3h1v3h2v1h-1v2h1v1h-1v1h1v2h-1v-2h-1v1h-1v1h-1v-1h1v-1h-1v-1h-1v2h-1v-2h-1v3h-1v-3h-1v-2h1v-2h-1v-1h1zM48,0h1v2h4v1h-2v2h-1v1h-1v1h1v1h1v1h1v1h-1v-1h-1v-1h-1v-1h-1v1h-1v1h-1v1h-1v-1h1v-1h1v-1h1v-1h-1v-1h-1v-2h-2v-1h4zM59,0h1v1h2v2h1v1h-1v1h-1v1h3v1h-2v3h-5v-3h-2v-1h3v-1h-1v-1h-1v-1h3v-1h-2v-1h2zM19,1h1v1h-1zM26,2h-1v1h1zM29,2h-1v1h1zM41,1h1v1h-1zM61,2h-1v1h1zM67,1h3v1h1v-1h1v1h1v-1h1v1h1v1h-2v1h1v1h-1v1h2v1h-2v3h-1v-3h-2v2h-3v-1h-1v-1h1v-1h1v-1h-1v-1h-1v-1h2v-1h-1zM25,3h-1v1h1zM36,3h-1v1h1zM48,3h-1v2h1v1h1v-1h1v-2zM71,3h-1v2h-1v1h3v-1h-1v-1h1v-1zM2,3h1v1h1v-1h1v1h2v1h-2v2h3v1h-3v2h-1v-2h-3v-1h3v-2h-2v1h-1v-2h1zM26,4h-1v1h-1v4h1v-3h1v-1h1v-1zM29,4h-1v1h2v-1zM37,4h-1v1h1v1h1v-1h1v3h1v-4zM14,4h1v1h-1zM36,5h-1v1h1zM27,6h-1v1h1v1h1v-2zM14,6h1v1h-1zM69,7h-1v1h1zM29,8h-1v1h1zM59,8h-1v1h3v-1zM14,8h2v2h-2v-2z" shape-rendering="crispEdges" transform="scale(2 2)"/>
+	</symbol>
+	<symbol id="email-icon-id" viewBox="0 0 48 48">
+		<path class="email-icon-bottom" d="M2,12h43v30h-43z" stroke-width="3" stroke-linejoin="round"/>
+		<path class="email-icon-top" d="M2,12l21 21l21 -21" stroke-width="3" stroke-linejoin="round"/>
+	</symbol>
+	<symbol id="twitter-icon-id" viewBox="0 0 350 300">
+		<path d="M350.001,35.509 C346.026,42.167 340.649,49.197 333.870,56.595 C328.493,62.513 321.944,68.556 314.231,74.720 C314.231,74.720 314.231,76.940 314.231,76.940 C314.231,76.940 314.231,79.530 314.231,79.530 C314.231,80.762 314.346,81.626 314.579,82.119 C314.579,82.119 314.579,84.708 314.579,84.708 C314.579,110.109 310.022,135.572 300.903,161.097 C291.785,186.620 278.809,209.494 261.975,229.715 C243.971,251.417 222.113,268.556 196.394,281.134 C170.674,293.711 141.917,299.999 110.122,299.999 C89.546,299.999 70.142,297.041 51.904,291.122 C33.201,285.202 15.899,276.818 -0.001,265.967 C0.936,266.214 2.337,266.338 4.208,266.338 C7.948,266.831 10.755,267.077 12.626,267.077 C12.626,267.077 17.183,267.077 17.183,267.077 C33.550,267.077 49.567,264.242 65.231,258.569 C79.727,253.144 93.403,245.253 106.263,234.895 C91.300,234.649 77.387,229.469 64.531,219.357 C51.904,209.494 43.486,197.040 39.279,181.997 C42.786,182.737 45.007,183.105 45.943,183.105 C45.943,183.105 49.447,183.105 49.447,183.105 C50.151,183.352 51.202,183.476 52.605,183.476 C54.708,183.476 56.346,183.352 57.516,183.105 C59.853,183.105 63.128,182.612 67.335,181.626 C67.801,181.626 68.505,181.502 69.439,181.256 C70.376,181.009 71.075,180.887 71.542,180.887 C54.941,177.434 41.265,168.679 30.509,154.622 C19.520,140.565 14.029,124.536 14.029,106.534 C14.029,106.534 14.029,106.163 14.029,106.163 C14.029,106.163 14.029,105.794 14.029,105.794 C14.029,105.794 14.029,105.424 14.029,105.424 C18.471,108.383 23.615,110.603 29.460,112.082 C35.538,114.054 41.265,115.042 46.644,115.042 C36.354,107.644 28.640,98.642 23.497,88.038 C17.651,77.187 14.729,65.102 14.729,51.786 C14.729,44.388 15.546,37.729 17.183,31.810 C18.120,27.617 20.457,21.576 24.198,13.685 C42.435,37.358 64.177,55.854 89.429,69.172 C115.382,83.475 142.969,91.366 172.195,92.847 C171.494,87.667 171.145,84.832 171.145,84.339 C170.674,80.886 170.441,78.051 170.441,75.830 C170.441,54.868 177.456,36.989 191.483,22.193 C205.512,7.396 222.462,-0.002 242.337,-0.002 C252.623,-0.002 262.325,2.094 271.444,6.286 C280.562,10.971 288.394,16.891 294.942,24.042 C302.423,22.315 310.372,19.850 318.788,16.644 C325.803,13.931 333.051,10.232 340.532,5.547 C337.729,14.424 333.634,22.439 328.260,29.591 C322.179,36.989 315.751,42.907 308.969,47.347 C315.984,46.113 322.999,44.634 330.010,42.907 C335.388,41.428 342.052,38.961 350.001,35.509 Z"/>
+	</symbol>
+</svg>
+<!-- ここまで }}} -->
+
+<header class="round-edge hi-dark noradius-bottom">
+	<h1>
+		<a href="index.html" class="transparent">
+			<svg class="sakanadake"><use x="6" y="10" xlink:href="#sakanadake"/></svg>
+			<svg class="mojidake"><use x="1" y="1" xlink:href="#mojidake"></svg>
+		</a>
+	</h1>
+</header>
+
+<section class="round-edge hi-light noradius-top noborder-top">
+	<p><span class="ribbon">間宮 緑 -- 小説家。たまに農家。</span></p>
+</section>
+
+<div class="options">
+	<a id="recentworks-option" href="JavaScript:switchFold('recentworks',0);">最近の作品</a>
+	<a id="history-option" href="JavaScript:switchFold('history',0);">今までの作品</a>
+	<a id="profile-option" href="JavaScript:switchFold('profile',0);">プロフィール</a>
+	<a href="hibi.html">催し物</a>
+	<a href="mailto:ararezake@gmail.com">メールを送る</a>
+</div>
+
+<article class="hi-normal border-dashed" id="news">
+	<h2>ニュース</h2>
+	<ul>
+		<li>ウェブページデザイン更新 (2020/03/12 21:20:36)</li>
+	</ul>
+</article>
+
+<article class="round-edge frame hi-normal nodisplay" id="recentworks-content">
+	<noscript><h2>最近の作品</h2></noscript>
+
+	<div class="flexbox">
+		<div class="thumbnail"><a href="http://gunzo.kodansha.co.jp/52563/54446.html" target="_blank"><img src="./jpeg/gunzo201909s.jpg" width=140 alt=""></a></div>
+		<div class="description">
+			<h3>
+				<a href="http://gunzo.kodansha.co.jp/52563/54446.html">[小説] 語り手たち -- 群像9月号</a>
+				<div class="parenthesis">（講談社 2019年8月7日）</div>
+			</h3>
+			<p>物語ることをやめてしまった語り手。その語り手について話す老人と、その話を知りたい人たち。</p>
+		</div>
+	</div>
+
+	<div class="flexbox">
+		<div class="thumbnail"><a href="jpeg/ba34.jpg" target="_blank"><img src="./jpeg/ba34s.jpg" alt=""></a></div>
+		<div class="description">
+			<h3>
+				<a href="http://www.beletraalmanako.com/boao/ba34/index.html">[小説] <span class="latin">Korespondado -- Beletra Almanako n-ro 34</span></a>
+				<div class="parenthesis">（<span class="latin">Mondial</span> 2019年7月）</div>
+			</h3>
+			<p>エスペラントで書いた短篇小説です。<br>
+			国際的なエスペラント文芸誌
+			Beletra Almanako 34号に掲載されました。<br>
+			僕にとって初めての国際誌掲載です。<br>
+			日本でも書店などで手に入ります。<br>
+			<p><a href="https://www.amazon.co.jp/Beletra-Almanako-BA34-Literaturo-Esperanto/dp/1595693890">Amazon</a> / <a href="https://www.kinokuniya.co.jp/f/dsg-02-9781595693891">紀伊国屋</a></p>
+		</div>
+	</div>
+
+	<div class="flexbox">
+		<div class="thumbnail"><a href="http://www.at-s.com/book/article/tabitabi/546353.html" target="_blank"><img src="./jpeg/libro_tabitabi4.jpg" alt="thumbnail"></a></div>
+		<div class="description">
+			<h3>
+				<a href="http://www.at-s.com/book/article/tabitabi/546353.html">[エッセー] ちょっとそこまで(4) -- タビタビ 04号</a>
+				<div class="parenthesis">（静岡新聞社・2018年9月21日）</div>
+			</h3>
+			<p>扉エッセー「ちょっとそこまで 4」の文章を書いています。<br>
+			絵は靭矢裕斉さんです。</p>
+			<p>04号のテーマは「しずおか温泉三昧」。<br>
+			文庫本をたずさえて温泉に行きたくなる一冊です。</p>
+		</div>
+	</div>
+
+	<div class="flexbox">
+		<div class="thumbnail"><a href="https://www.amazon.co.jp/dp/490723936X"><img src="./jpeg/libro_septembre.jpg" alt="thumbnail"></a></div>
+		<div class="description">
+			<h3>
+				<a href="https://www.amazon.co.jp/dp/490723936X">[翻訳] <span class="latin">Septembre, surstrate en Tokio</span>（原著『九月、東京の路上で』）</a>
+				<div class="parenthesis">（ころから・2018年9月1日）</div>
+			</h3>
+			<p>『九月、東京の路上で』（加藤直樹・著、<a href="http://korocolor.com/">ころから</a>）のエスペラント翻訳です。<br>
+			1923年 関東大震災直後に起きた朝鮮人虐殺。<br>
+			虐殺はなぜ・どのようにして起きたのかを振り返り、現代のヘイトスピーチや民族差別に抗する本です。</p>
+			<p>静岡の古書店<a href="http://miteco.jp/culture/7183/">「水曜文庫」</a>さんでも新刊で入手できます。</p>
+			<p>エスペラント詩人の Jorge Camacho さんが<a href="https://www.goodreads.com/book/show/45025664-septembre-surstrate-en-tokio">書評を書いてくださいました。</a><br>
+	書評はエスペラント文芸誌 Beletra Almanako と台湾のエスペラント誌 Formoza Folio にも掲載予定です。</p>
+		</div>
+	</div>
+
+</article>
+
+<!-- <article class="nodisplay">
+<h2>動画</h2>
+	<div class="flexbox">
+		<div class="thumbnail"><a href="https://www.youtube.com/watch?v=zFrRwwEZtNs"><img src="./jpeg/taizai-katsudo-izu.jpg" alt="youtube" width=128></a></div>
+		<div class="description">
+			<h3>
+				<a href="https://www.youtube.com/watch?v=zFrRwwEZtNs">滞在 - 活動 - イズ</a>
+			<div class="parenthesis">(2015年夏)</div>
+			</h3>
+			<p>滞在制作企画の動画です。<br>
+			３日間の滞在中に短い小説を書き、朗読を収録しました。<br>
+			<p class="linespace">制作の過程と作品の朗読がそれぞれ動画になっています。</p>
+			<p>動画 (YouTube)：
+			<a href="https://www.youtube.com/watch?v=zFrRwwEZtNs">→ 滞在中の制作風景</a>
+			/ <a href="https://www.youtube.com/watch?v=BIpzirQTXnQ">→ 報告展での作品紹介</a>
+			/ <a href="https://www.youtube.com/watch?v=fadbtMJ8NuM">→ イベントの様子</a></p>
+		</div>
+	</div>
+</article> -->
+
+
+<article class="round-edge frame hi-normal nodisplay" id="profile-content">
+	<noscript><h2>プロフィール</h2></noscript>
+	<p><span class="myname">間宮 緑</span> （まみや みどり）</p>
+	<p>1985年生れ。静岡県三島市在住。小説を書きながら、たまに農家の仕事をしたり、エスペラント語の翻訳をしています。</p>
+	<hr class="short-hr left">
+	<p>
+	 　2008年「牢獄詩人」 / 早稲田文学復刊１号 -- 第22回早稲田文学新人賞受賞（中原昌也氏選考）<br>
+	 　2011年『塔の中の女』/ 講談社<br>
+	 　2018年 <span class="latin">“Septembre, surstrate en Tokio”</span>(翻訳) / ころから -- 原著『九月、東京の路上で』(加藤直樹)
+	</p>
+</article>
+
+<section class="round-edge frame hi-normal nodisplay" id="history-content">
+	<noscript><h2>今までの作品</h2></noscript>
+	<div class="options">
+		<a href="hibi.html">書籍</a>
+		<!-- 単行本、収録本（本迷宮） -->
+		<a href="hibi.html">小説</a>
+		<a href="hibi.html">翻訳</a>
+		<a href="hibi.html">エッセー</a>
+		<a href="hibi.html">書評</a>
+		<a href="hibi.html">即興制作・朗読</a>
+		<a id="list-option" href="JavaScript:switchFold('list',1);">全部をリスト表示</a>
+	</div>
+</section>
+<!--  -->
+<!-- <article class="round-edge frame hi-normal nodisplay" id="list-content" style="border-top:none"> -->
+<article class="secondary-content nodisplay" id="list-content"><!-- {{{ -->
+	<h3 class="category">本</h3>
+	<ul>
+		<li>塔の中の女 / 講談社 / 2011年</li>
+		<li>Septembre, surstrate en Tokio / ころから / 2018年 / 加藤直樹『九月、東京の路上で』エスペラント訳</li></li>
+	</ul>
+
+	<h3 class="category">小説</h3>
+	<ul>
+		<li>牢獄詩人 / 早稲田文学 1 / 2008年</li>
+		<li>実験動物 / 新潮 8月号 / 2008年</li>
+		<li>猛獣使いと僧侶 / 早稲田文学 2 / 2008年</li>
+		<li>日曜の事件 / WB vol.15 / 2008年</li>
+		<li>信号 / 新潮 5月号 / 2009年</li>
+		<li>電気室のフラマリオン / 群像 5月号 / 2009年</li>
+		<li>禿頭姫 / wasebun U-30 / 2010年</li>
+		<li>Re-play:「博士と怪人」 / Black Past 1号 / 2011年</li>
+		<li>ツェラ高原の月 / ユリイカ 7月号 特集＊宮沢賢治 / 2011年</li>
+		<li>塔の中の女 / 群像 8月号 / 2011年</li>
+		<li>物語をしらない小鳥たち / DARA DA MONDE 1号 / 2012年</li>
+		<li>ハツカネズミのティータイム / Black Past 2号 / 2012年</li>
+		<li>チャカ / 早稲田文学 6 / 2013年</li>
+		<li>別れ / 早稲田文学2015年春号 / 2015年</li>
+		<li>私小説（わたくし-しょうせつ） / 滞在 - 活動 - イズ / 2015年 / 朗読作品</li>
+		<li>Korespondado / Beletra Almanako n-ro 34 / 2019年</li>
+		<li>語り手たち / 群像9月号 / 2019年</li>
+	</ul>
+
+<!-- 	<h3 class="category">翻訳</h3>
+	<ul>
+	</ul> -->
+	
+	<h3 class="category">散文</h3>
+	<ul>
+		<li>ひとりになる / 図書設計 / 2013年 / 『本迷宮』所収</li>
+		<li>ちょっとそこまで 1 / タビタビ 創刊号 / 2017年</li>
+		<li>ちょっとそこまで 2 / タビタビ 02号 / 2017年</li>
+		<li>ちょっとそこまで 3 / タビタビ 03号 / 2018年</li>
+		<li>ちょっとそこまで 4 / タビタビ 04号 / 2018年</li>
+	</ul>
+
+	<h3 class="category">エッセー</h3>
+	<ul>
+		<li>銀河鉄道の夜 / 産経新聞 この本に出会った / 2008年</li>
+		<li>形態 (フォルム) / 文學界2月号 / 2009年</li>
+		<li>興津 / 文學界 3月号 / 2010年</li>
+		<li>ラプンツェルの塔 / 新潮 5月号 / 2010年</li>
+		<li>infantia / 真夜中 No.9 / 2010年</li>
+		<li>小鳥 / すばる 6月号 / 2010年</li>
+		<li>電子化された「読む」のために / ユリイカ 8月号 特集＊電子書籍 / 2010年</li>
+		<li>Ｔのこと / 文學界 2011年新年号 / 2010年</li>
+		<li>紙魚＋Dialogue / 早稲田文学π / 2010年</li>
+		<li>長い記憶とこれからの対話 / 新潮 5月号 / 2011年</li>
+		<li>6コマから180 /000字へ / 本 10月号 / 2011年</li>
+		<li>読書日録(1) / すばる 4月号 / 2012年</li>
+		<li>読書日録(2) / すばる 5月号 / 2012年</li>
+		<li>読書日録(3) / すばる 6月号 / 2012年</li>
+		<li>町から「町」をつくる / DARA DA MONDE 2号 / 2013年</li>
+		<li>エスペラントを通じて世界の文学を考える / La Revuo Orienta 5月号 / 2013年</li>
+		<li>語り手が見ている景色 / ユリイカ 10月号 特集＊武田百合子 / 2013年</li>
+		<li>対談：《宅野》という記憶 （森山大道「宅野」展での鼎談）/ 現代詩手帖 11月号 / 2013年</li>
+		<li>二つの言葉、二つの声 / ことばのしごと 第15号 / 2014年</li>
+		<li>一と多が織りなす語りと、その向こうにあるもの （ガルシア＝マルケス『族長の秋』に寄せて） / 早稲田文学2014年秋号 / 2014年</li>
+		<li>素足に感じる水の冷たさ / ユリイカ 7月臨時増刊号 大岡信の世界 / 2017年</li>
+		<li>エスペラントという言語 / 群像3月号 / 2018年</li>
+	</ul>
+
+	<h3 class="category">書評</h3>
+	<ul>
+		<li>書評：角田光代『かなたの子』（文藝春秋） / 新潮 4月号 / 2012年</li>
+		<li>書評：小川洋子『最果てアーケード』（講談社） / 群像 8月号 / 2012年</li>
+		<li>書評：渡部直己『日本小説技術史』（新潮社） / ゲンロンサマリーズ vol.059 / 2012年</li>
+		<li>書評：斎藤美奈子『名作うしろ読み』（中央公論新社） / 文藝 夏季号 / 2013年</li>
+		<li>書評：ジュノ・ディアス『こうしてお前は彼女にフラれる』（新潮社） / 文學界 11月号 / 2013年</li>
+	</ul>
+</article>
+<!-- }}} -->
+
+<footer class="round-edge hi-dark">
+	<a href="mailto:ararezake@gmail.com">
+		<svg class="email-icon-class"><use xlink:href="#email-icon-id"/></svg>
+		<span class="text latin">ararezake@gmail.com</span></a>
+
+	<span class="transparent">/</span>
+	
+	<a href="https://www.twitter.com/utaidori/">
+		<svg class="twitter-icon-class"><use xlink:href="#twitter-icon-id"/></svg>
+		<span class="text latin">@utaidori</span>
+	</a>
+</footer>
+
+</body>
+</html>

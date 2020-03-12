@@ -1,0 +1,154 @@
+@charset "UTF-8";
+
+/* 初期化 */
+body, h1, h2, h3, p, ul, li, article, nav, footer
+{margin: 0; padding: 0}
+h1, h2, h3
+{font-weight: normal; font-size: 100%;}
+img, hr
+{border: none}
+/* -------- fini */
+
+/* 共通した Padding, Border など*/
+h1, section, article, footer
+{padding: 1em}
+/* -------- fini */
+
+/* 汎用クラス */
+.latin {
+font-family: 'Helvetica','Arial',sans-serif;
+font-size: 1.1em;
+}
+.left {
+text-align: left;
+}
+.transparent, .transparent:link, .transparent:visited {
+color: transparent;
+text-decoration: none;
+}
+.round-edge {
+border-radius: 5px;
+}
+.noradius-bottom {
+border-radius: 5px 5px 0 0;
+}
+.noradius-top {
+border-radius: 0 0 5px 5px;
+}
+.noborder-top {
+border-top: none;
+}
+.frame {
+border: 2px solid;
+}
+.border-dashed {
+border-width: 1px 0;
+border-style: dashed;
+}
+.secondary-content {
+border-radius: 0 0 5px 5px;
+border-style: solid;
+border-width: 0 2px 2px 2px;
+}
+/* -------- fini */
+
+/* 基本タグ */
+html {
+overflow-y: scroll;
+padding: .5em;
+font-family: 'IPAexゴシック','IPAゴシック','新ゴ R','ヒラギノ角ゴ','メイリオ',sans-serif;
+}
+body {
+max-width: 72em;
+margin: 0 auto;
+}
+header {
+padding: 1em;
+}
+article {
+line-height: 1.7;
+}
+footer {
+margin-top: 1em;
+}
+footer a:link, footer a:visited {
+text-decoration: none;
+}
+footer a:hover .text {
+text-decoration: underline;
+}
+/* -------- fini */
+
+
+/* その他 独立したクラス */
+.options {
+font-size: 1.1em;
+}
+.options a {
+display: inline-block;
+margin-top: .5em;
+padding: 1em;
+border-radius: .3em .3em 0 0;
+text-decoration: none;
+}
+.short-hr {
+width: 30%;
+margin: 1em 0 1em 0;
+border: 1px solid;
+}
+.category {
+display: inline-block;
+padding: 0 .5em;
+/*border-radius: 5px;
+border: 12px solid #99d6ea;
+border-width: 3px 12px;*/
+}
+/* -------- fini */
+
+/* ページ内で1回しか使わないクラス */
+.mojidake {
+width: 228px;
+height: 33px;
+}
+.sakanadake {
+width: 80px;
+height: 80px;
+/*margin-right: .5em;*/
+border-radius: 3em;
+vertical-align: text-bottom;
+}
+.ribbon {
+padding: .3em;
+}
+.myname {
+font-size: 1.2em;
+letter-spacing: 2px;
+}
+.email-icon-class {
+display: inline;
+width: 1.2em;
+height: 1.2em;
+vertical-align: middle;
+}
+.twitter-icon-class {
+display: inline;
+width: 1.2em;
+height: 1.5em;
+vertical-align: middle;
+}
+/* ID */
+#news ul {
+padding-left: .5em;
+list-style-position: inside;
+list-style-type: square;
+}
+#history-content {
+padding: 0;
+}
+#list-content ul {
+margin-bottom: 1em;
+padding-left: .5em;
+list-style-position: inside;
+list-style-type: none;
+}
+/* -------- fini */
