@@ -5,27 +5,41 @@ img, hr
 {border:none;}
 
 body {
-/*margin: .7rem .7rem;*/
-margin: 1rem auto;
+margin: 1em auto;
 width: 95%;
 background-color:#f0f6fb;
 font-size: .95rem;
 }
+@media screen and (min-width: 1280px) {
+	body {
+		font-size: 1.2rem;
+		max-width: 1024px;
+	}
+}
+
 p {
-margin-bottom: 1.7rem;
+margin-bottom: 1.7em;
 line-height: 1.7;
+}
+main p {
+margin-bottom: 1em;
 }
 .indent-minus {
 text-indent: -0.5rem;
 }
 
+h1 {
+}
 h2 {
-margin: 0 0 2rem 0;
 font-weight: normal;
 letter-spacing: .2rem;
 }
 h3 {
 margin-top: .7rem;
+line-height: 1.0;
+}
+h3 p {
+margin: 0;
 line-height: 1.0;
 }
 h3 a {
@@ -41,15 +55,6 @@ color: #3e3e3e;
 img {
 vertical-align: middle;
 }
-/*.svg-mma {
-width: 224px;
-height: 70px;
-background-color: #cbe8ef;
-}
-.svg-plus {
-width: 70px;
-height: 70px;
-}*/
 .svg-mma {
 width: 336px;
 background-color: #cbe8ef;
@@ -70,23 +75,20 @@ list-style-type: disc;
 list-style-position: inside;
 }
 .hr-hr {
-/*height: 13px;*/
 height: 40px;
-/*max-width: 360px;*/
 max-width: 80%;
-margin: 2rem auto;
+margin: 2em auto;
 background-image: url(svg/hr.svg);
 background-repeat: repeat-x;
 background-size: 40px 26px;
 }
 article {
-margin: 1.5rem 0;
+margin: 1.5em 0 3em 0;
 }
 .thumbnail img {
 border: 3px solid #cbe8ef;
 }
 .parenthesis {
-/*margin: .5rem 0 1rem 0;*/
 margin: 1rem 0;
 font-weight: normal;
 font-size: 1rem;
@@ -105,8 +107,10 @@ h2,
 h3 {color:#005f87}
 
 nav a:link, nav a:visited,
-a:link {color:#0022cc}
-a:visited {color:#cc5522}
+/*a:link {color:#0022cc}*/
+a:link {color:#3355cc}
+/*a:visited {color:#cc5522}*/
+a:visited {color:#bb66cc}
 .maldense {color:#84bacf}
 /*nav li, .description {
 background-color:#fffff8;

@@ -1,11 +1,8 @@
 @charset "UTF-8";
 body {
-/*margin: 0;*/
 margin: 0 auto;
 padding: 2.5rem;
-/*width: 100%;*/
 max-width: 1024px;
-font-size: 1rem;
 }
 .svg-mma {
 width: 448px;
@@ -28,7 +25,6 @@ h1 {
 font-size: 2.5rem;
 }
 h2 {
-/*font-size: 1.5rem;*/
 font-size: 1.2rem;
 }
 h3 {
@@ -36,12 +32,6 @@ margin-top: 0;
 font-weight: normal;
 /*font-size: 1.5rem;*/
 font-size: 1.3rem;
-}
-p {
-/*font-size: .9rem;*/
-/*font-size: 1rem;*/
-/*margin-bottom: 1rem;
-line-height: 1.5;*/
 }
 .boku {
 font-size: 1rem;
