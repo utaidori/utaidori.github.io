@@ -1,0 +1,41 @@
+h2, p, .others {
+	margin-left: 32px;
+	margin-right: 96px;
+}
+h2 {
+	background-image: url(files/h-linemod_l.png);
+	background-repeat: repeat-x;
+	background-position: center;
+	color: #ff8400;
+} h2.roman {
+	font-size: 150%;
+} .japane {
+	font-size: 120%;
+	font-weight: normal;
+} h2 span {
+	background-color: #fffaf0;
+	vertical-align: middle;
+	padding-right: 12px;
+}
+
+.roman {
+	font-family: 'Traveling Typewriter', sans-serif;
+}
+
+.others {
+	margin-bottom: 3em;
+	line-height: 2.0;
+} .others a {
+	color: #ea7400;
+} .others img {
+	vertical-align: middle;
+} 
+
+#profile {
+	float: left;
+	margin-top: 0;
+	margin-right: 2em;
+/*	margin-bottom: 2em;*/
+} #profile img {
+	border-radius: 6px;
+}

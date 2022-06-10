@@ -1,0 +1,58 @@
+.calendar {
+/*	font-size: 90%;*/
+	font-size: 80%;
+	color: #664422;
+	padding-right: 0.5em;
+	float: left;
+	max-width: 220px;
+} .calendar * {
+	margin: 0; padding: 0;
+} .calendar div.month {
+/*	font-size: 110%;*/
+} .calendar div.month span {
+	font-size: 180%;
+} .calendar div.days, .calendar div.month span {
+	font-family: 'Trebuchet MS', Helvetica, Arial;
+} .calendar ol {
+	list-style: none;
+/*	width: 220px;*/
+	width: 192px;
+} .calendar li {
+	float: left;
+	border: 1px solid #dc9200;
+	border-radius: 4px;
+/*	width: 18px;
+	height: 18px;*/
+	width: 14px;
+	height: 14px;
+	margin: 2px;
+	padding: 3px;
+	text-align: center;
+/*	line-height: 18px;*/
+	line-height: 12px;
+} .calendar li.ferio {
+	color: red;
+} .calendar li.arangxo {
+	background-color: #fc0;
+} .calendar ol.wheader li {
+	background-color: #dc9200;
+	color: #fffaf0;
+} .days li:nth-child(1) {
+	color: red;
+} .days li:nth-child(7) {
+	color: blue;
+}
+li.blank { border: solid 1px #ddd !important; background: #f5f5f9; }
+.clear {
+	clear: both;
+	margin-bottom: 2em;
+}
+
+ul.menu + div.calendar + div.enhavo {
+	margin-right: 1.5em;
+} .enhavo {
+	float: left;
+	font-size: 90%;
+	min-width: 200px;
+	max-width: 241px;
+}

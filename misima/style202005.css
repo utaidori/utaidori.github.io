@@ -1,0 +1,380 @@
+@charset "UTF-8";
+/* {{{ ウェブフォント */
+@font-face {
+font-family:'Traveling Typewriter';
+src: url('files/TravelingTypewriter.otf') format('opentype');
+font-weight: normal;
+font-style: normal;
+}
+/* }}} */
+/* {{{ HTML, BODY */
+html {
+overflow-y: scroll;
+position: relative;
+min-height: 100%;
+min-width: 100%;
+}
+body {
+max-width: 980px;
+margin: 0.5em auto 0 auto;
+padding: 0 2em 0 2em;
+color: #3b221a;
+background-color: #fffaf0;
+background-image:  url(files/horizontalline.svg), url(files/verticalline1.png);
+background-position: center bottom, left top;
+background-repeat: repeat-x, repeat-y;
+line-height: 1.5;
+font-family: 'Hiragino Kaku Gothic ProN','Shin Go Medium','IPAexGothic',sans-serif;
+}
+/* }}} */
+/* {{{ SECTION */
+section {
+display: flex;
+margin: 0.5em 0 2em 0;
+}
+/* }}} */
+/* {{{ Class: .thumbnail < SECTION */
+.thumbnail { /* class of SECTION */
+margin: 1em 0;
+display: block;
+} .thumbnail img {
+height: 120px;
+margin-right: 3px;
+border-radius: 3px;
+}
+/* }}} */
+/* {{{ UL */
+ul li {
+font-size: 100%;
+}
+/* }}} */
+/* {{{ H1, H2, A, IMG */
+h1 {
+margin:0;padding:0;
+} .blogtitle {
+font-family: 'Traveling Typewriter', sans-serif;
+color: #ffa400;
+margin-left: 0.5em;
+} .blogtitle span {
+color: #ff8400;
+} h1 img {
+border: none;
+} h1 a:hover {
+text-decoration: none;
+}
+
+h2 {
+font-size: 120%;
+margin-top: 0;
+}
+
+a {
+} a:link {
+text-decoration: none;
+color: #ea7400;
+} a:visited {
+text-decoration: none;
+color: #60aa00;
+} a:hover {
+text-decoration: underline;
+}
+/*a[href^="http"] {
+margin: 0 0.2em;
+}*/
+
+img { border: 0; }
+/* }}} */
+/* {{{ BLOCKQUOTE */
+blockquote {
+position: relative;
+margin: .5rem .5rem .5rem 1.5rem;
+padding: 1em;
+border: 1px dotted #fc0;
+border-left: .8rem solid #fc0;
+}
+/*blockquote:before {
+content: '“';
+position: absolute;
+left: 0;
+top: 0;
+line-height: 1;
+color: #feac0b;
+font-family: Helvetica, Arial, sans-serif;
+font-size: 8rem;
+}*/
+blockquote p {
+margin: 0;
+}
+/* }}} */
+/* {{{ Class: .subtitle, .logo */
+.subtitle {
+margin-right: 1.5em;
+line-height: 1;
+color: #664422;
+font-size: 90%;
+text-align: right;
+}
+
+.logo {
+width: 129px;
+height: 96px;
+vertical-align: middle;
+}
+/* }}} */
+/* {{{ Class: .menu, .ib */
+.menu {
+max-width: 95%;
+margin: 0.2em 0 1em 0;
+padding: 1em;
+border-top: 2px solid #fa0;
+border-bottom: 2px solid #fc0;
+line-height: 2;
+color: #664422;
+vertical-align: top;
+} .menu li {
+display: inline-block;
+margin-right: 1em;
+font-weight: bold;
+} .menu li a {
+color: #ea7400;
+text-decoration: none;
+} .menu li a:hover {
+text-decoration: underline;
+} .menu img {
+margin-right: 0.2em;
+vertical-align: middle;
+} .ib {
+display: inline-block;
+float: left;
+padding-right: 1em;
+line-height: 0.8;
+}
+/* }}} */
+/* {{{ Class: .bar, .interbar-text, .aboutme */
+.bar {
+max-width: 800px;
+background-image: url(files/h-linemod_l.png);
+background-repeat: repeat-x;
+background-position: center;
+text-align: center;
+}
+.interbar-text {
+background-color: #fffaf0;
+vertical-align: middle;
+padding: 0 6px;
+}
+.aboutme {
+text-align: center;
+}
+/* }}} */
+/* {{{ Class: .update */
+.update {
+float: right;
+max-width: 120px;
+width: 100%;
+margin: .5rem 0;
+padding-left: .5rem;
+background-color: #fffaf0;
+}
+.update .detail {
+}
+.update .detail div {
+margin-top: 0.5em;
+font-size: .75rem;
+} .update ul {
+margin: 0.5em 0;
+padding-left: 1em;
+font-size: .8rem;
+list-style-type: circle;
+}
+/* }}} */
+/* {{{ Class: .leftside, .rightside, .date, .quote */
+.leftside {
+height: 240px;
+width: 160px;
+margin-bottom: 1rem;
+padding-right: 1rem;
+} .leftside img {
+width: 144px;
+height: 240px;
+border-radius: 6px;
+} .leftside img.noimage {
+width: 32px;
+height: 32px;
+padding: 104px 56px;
+background-color: snow;
+border: 1px solid #ffa400
+}
+.rightside {
+width: 640px;
+vertical-align: top;
+}
+.date {
+font-size: 1rem;
+font-weight: bold;
+}
+.quote {
+margin: 0.5em;
+padding: 1em;
+border: 4px double #ffa400;
+border-radius: 12px;
+list-style-type: none;
+} .quote dt {
+display: inline-block;
+vertical-align: top;
+} .quote dd {
+display: inline-block;
+margin-left: 0;
+}
+/* }}} */
+/* {{{ 定型文 */
+.salutation {
+white-space: pre;
+}
+.salutation.happiness::before {
+content: "カフェの一室での読書会です。\Aあらかじめ課題図書を読み、当日は感想を話し合います。\A読書会に参加するのは初めてというかたもお気軽にご参加ください。";
+}
+.attention.happiness {
+font-size: 90%;
+} .attention.happiness:before {
+content: "※「ハピネス」さんの一室をお借りしていますが 主催は個人です。";
+}
+.salutation.zidou::before {
+content: "児童文学作家・小出正吾さんが始めた読書の会です。\Aみんなで作品を輪読し、感想を交わします。";
+}
+.salutation.bunsyokoza::before {
+content: "元国語教師の望月秋男先生による作文講座。\A文学作品を読み合い、毎回異なるテーマで作文を書きます。\A鉛筆や作文用紙は会場に用意があります。持ち物なしで参加できます。";
+}
+.salutation.rekisikoza::after {
+content: "による歴史講座。\A歴史や文化の移り変わり、今に残る史跡などを、わかりやすい解説で見ていきます。";
+}
+/* }}} */
+/* {{{ FOOTER, .copyright */
+footer {
+position: absolute;
+/*bottom: 0;*/
+left: 0;
+width: 100%;
+background-color: #ffa400;
+background-repeat: repeat-x;
+text-align: center;
+} footer ul {
+margin: 0;
+padding: 0;
+background-color: #ffa400;
+} footer li {
+display: inline-block;
+font-size: .8rem;
+margin: 0 0.5em;
+} footer a:link,
+footer a:visited {
+color: #3b221a;
+}
+.pre-footer {
+margin: -1em 0 2em 0;
+font-size: .9rem;
+}
+.copyright {
+background-color: #ffa400;
+margin: 0;
+padding: .5em 0 .2em 0;
+}
+/* }}} */
+/* {{{ Class: .readmore, .noscript */
+.readmore {
+margin-top: 2rem;
+padding: 0.5em 1em;
+border-radius: 6px;
+background-color: #fa0;
+color: #ffffff !important;
+} .readmore:after {
+content: '続きを表示';
+} .readmore:link {
+} .readmore:hover {
+cursor: pointer;
+}
+
+.noscript {
+background-color: #fc0;
+padding: 0.5em 1em;
+font-size: 90%;
+border-radius: 6px;
+}
+/* }}} */
+/* {{{ I */
+i {
+}
+/* }}} */
+
+.small {
+font-size: 0.9rem;
+} .large {
+font-size: 1.2rem;
+} .normal {
+font-size: 1rem;
+} .roman {
+font-family: 'Traveling Typewriter', sans-serif;
+}
+.not-link {
+color: #442200;
+}
+.komento {
+color: #5a5a5a;
+}
+.nomargin {
+padding: 0;
+}
+.vertical-space {
+margin: 0.5em 0;
+}
+.narrow {
+line-height: 1.0;
+}
+.ls {
+margin-top: 0.5em;
+}
+
+s{
+color:gray;
+}
+
+*:lang(en) {
+	font-family: 'Museo Sans 500', 'Helvetica', 'Arial', sans-serif;
+}
+
+/* スクリーンリーダー用 */
+.aural {
+display: block;
+overflow: hidden;
+height: 0;
+line-height: 0;
+font-size: 0;
+}
+/* 320px以下の画面 */
+@media screen and (max-width: 720px) {
+	.update { display: none; }
+	.salutation {white-space: normal;}
+	section p {
+	font-size: 90%;
+	}
+	.menu li {
+	display: block;
+/*	font-size: 2.5rem;*/
+	}
+	.ib {
+	display: none;
+	}
+	.interbar-text.normal {
+/*	font-size: 300%;*/
+	}
+	.rightside {
+	width: 100%;
+	}
+	.pre-footer {
+	margin: auto;
+	font-size: medium;
+	}
+	footer li {
+/*	font-size: 2rem;*/
+	}
+}

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# blog: http://ogp.me/ns/blog#">
+	<meta charset="UTF-8">
+	<meta name="description" content="三島の気になるワークショップや展示、読書会を紹介します。">
+	<meta property="og:title" content="Misima Hyakka">
+	<meta property="og:site_name" content="Misima Hyakka">
+	<meta property="og:description" content="三島の気になるワークショップや展示、読書会を紹介します。">
+	<meta property="og:type" content="blog">
+	<meta property="og:url" content="http://misima.html.xdomain.jp/">
+	<meta property="og:image" content="http://misima.html.xdomain.jp/files/m-logo.jpg">
+	<!-- <meta name="viewport" content="width=980, user-scalable=yes," /> -->
+	<title>Misima Hyakka | 三島の読書会、展示、ワークショップを紹介するブログ</title>
+
+	<link rel="icon" type="image/x-icon" href="./favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="./android-chrome-192x192.png">
+	<link rel="stylesheet" href="style201412.css" media="print, screen">
+	<link href="mailto:ararezake@gmail.com" title="Mamija Midori" rev="made">
+	<style>
+/* {{{ */
+	#none {
+	color: #442200;
+	}
+	.note {
+	padding: 0 0 3em 0;
+	}
+	</style>
+	<script>
+
+function filter(elm){
+	var tagval = document.getElementsByTagName("section");
+	var footer = document.getElementsByTagName("footer");
+	var options = document.getElementsByClassName("options");
+	var category = document.getElementsByClassName(elm);
+
+	for (var i = 0; i < options.length; i++) {
+		if (options[i].getAttribute("id") === elm) {
+			options[i].style.color = "#442200";
+		}
+		else {
+			options[i].style.color = "#ea7400";
+		}
+	}
+
+	for (var i = 0; i < tagval.length; i++) {
+
+		var classval = tagval[i].getAttribute("class")
+
+		if (elm === "none") {
+			if (classval === "thumbnail") {
+				tagval[i].style.display = "block";
+			}
+			else {
+			tagval[i].style.display = "flex";
+			}
+		}
+		else {
+			if (classval === elm) {
+				tagval[i].style.display = "flex";
+			}
+			else {
+				tagval[i].style.display = "none";
+			}
+		}
+	}
+
+	if (elm === "none") {
+	footer[0].style.display = "block";
+	}
+	else {
+	footer[0].style.display = "none";
+	}
+}
+	</script>
+
+<!-- }}} -->
+</head>
+<body>
+
+<!-- {{{ header -->
+<h1>
+	<a href="index.html" title="ホーム">
+	<img class="logo" src="files/sakana.svgz" alt="">
+	<span class="blogtitle"><span>Misima</span> Hyakka</span>
+	</a>
+</h1>
+<div class="subtitle">
+三島の気になるワークショップや展示を紹介します。
+</div>
+
+<ul class="menu">
+	<div class="ib small">表示<br>カテゴリ</div>
+	<div class="listo">
+		<li><a class="options" id="none" onclick="filter('none')"><img src="files/home1.png" width="32px">すべて表示</a></li>
+		<li><a class="options" id="ws" onclick="filter('ws')"><img src="files/pencil.png" width="32px">講座 / WS</a></li>
+		<li><a class="options" id="bc" onclick="filter('bc')"><img src="files/book_off.png" width="32px">読書会</a></li>
+		<li><a href="art.html"><img src="files/art_off.png" width="32px">展示</a></li>
+		<!-- <li><a href="regular.html"><img src="files/regular_off.png" width="32px">定期開催</a></li> -->
+		<li><a href="archive.html"><img src="files/archive3.png" width="32px">ログ</a></li>
+		<li><a href="notes.html"><img src="files/notes_off.png" width="32px">ノート</a></li>
+	</div>
+</ul>
+<!-- }}} -->
+<div class="update">
+	<div class="bar"><span class="interbar-text small">更新情報</span></div>
+	<div class="aural"><a href="#main">更新情報をスキップして本文に移る</a></div>
+	<div class="detail">
+		<div>2020-03-12:</div><ul>
+		<li>川合朋郎展(4月)</li>
+		</ul>
+		<div>2020-03-07:</div><ul>
+		<li>歴史発見講座(4月)</li>
+		</ul>
+		<div>2020-02-19:</div><ul>
+		<li>ニッポン美術史(3月)</li>
+		</ul>
+		<div>2020-02-16:</div><ul>
+		<li>歴史発見講座(3月)</li>
+		<li>三島落語会(4月)</li>
+		</ul>
+		<div>2020-02-09:</div><ul>
+		<li>ハピネス読書会(4月)</li>
+		</ul>
+		<div>2020-02-03:</div><ul>
+		<li>※2月の三島落語会の紹介の日付に誤りがありました。申し訳ありません。</li>
+		</ul>
+		<div>2020-01-28:</div><ul>
+		<li>情報更新</li>
+		</ul>
+		<small><a href="history.html">更新履歴</a></small>
+	</div>
+	<div class="bar">&nbsp;</div>
+	<div class="aboutme"><small><a href="aboutme.html" class="aboutme">このサイトについて</a></small></div>
+	<div class="bar">&nbsp;</div>
+</div>
+<div id="main">＊ すべて静岡県三島市のイベントです。(2020年)</div>
+
+<section class="thumbnail">
+<div class="bar"><span class="interbar-text normal">展示</span></div>
+<a href="art.html" style="text-decoration:none;">
+<img src="images/sansin202004.jpg" alt="川合朋郎展" style="width:88px">
+</a>
+</section>
+
+<div class="bar"><span class="interbar-text normal">4月</span></div>
+
+<section class="ws">
+	<div class="leftside"><img src="images/rekisikoza.jpg" alt=""></div>
+	<div class="rightside">
+		<div class="date">4月6日（月曜）19時〜21時30分</div>
+		<h2>歴史発見講座</h2>
+		<p><span class="salutation rekisikoza">世間士・<a href="http://fuji3do.i-ra.jp/">かるのさん</a></span>
+		<p>テーマは「ムラからクニへ　倭国誕生」です。</p>
+		<blockquote class="small">
+<p>「空白の４世紀」日本史でも文字史料がほとんど無い謎な時代だが、日本列島各地に古墳と呼ばれる大規模な墳墓が権力者によって造られていた時代。弥生時代のムラが如何にして、クニと呼ばれる政治権力を構築して行ったのか。クニとしての体を為したばかりのいわゆるヤマト政権がどのように造られて行ったのか。ヤマト政権の版図が拡がる過程を、日本書紀の中下巻を基にしてお話しします。</p>
+		</blockquote>
+		<ul class="quote">
+			<li>【日時】 4月6日（月曜）19時〜21時30分</li>
+			<li>【場所】 <a href="http://ooloo.simdif.com/page-7785641_2.html">カフェ・うーるー</a><span class="small">（バス停「一本松」すぐ）</span><a href="images/map_ooloo.png">&rarr; 地図</a></li>
+			<li>【参加費】 500円＋１オーダー（予約不要）</li>
+		</ul>
+	</div>
+</section>
+
+<section class="bc">
+	<div class="leftside"><img src="images/happiness_n.jpg" alt=""></div>
+	<div class="rightside">
+		<div class="date">4月11日（土曜）13時〜17時</div>
+		<h2>ハピネス読書会</h2>
+<!-- <p class="salutation happiness"></p> -->
+<!-- <p>今回の本は、『フォークナー短篇集』（新潮文庫）です。</p> -->
+<p> ※4月の読書会は中止しました。</p>
+<!-- <p class="attention happiness"></p>
+		<ul class="quote">
+			<li>【日時】 4月11日（土曜）13時〜17時</li>
+			<li>【場所】 カフェ・ハピネス <a href="images/map_happiness.png">&rarr; 地図</a></li>
+			<li>【定員】 10名</li>
+			<li>【参加費】 ワンオーダー<span class="small">（ランチは950円）</span></li>
+			<li>【申し込み】 <span class="small"><a href="mailto:ararezake@gmail.com">ararezake&#064;gmail.com</a> まで</span></li>
+			<li>【課題図書】 『フォークナー短篇集』
+			<a href="https://www.amazon.co.jp/dp/4102102035/">（新潮文庫）</a>
+			</li>
+		</ul> -->
+	</div>
+</section>
+
+<section class="ent">
+	<div class="leftside"><img src="images/rakugokai37.jpg" alt="" ></div>
+	<div class="rightside">
+		<div class="date">4月19日（日曜）18時30分開場、19時開演</div>
+		<h2>三島落語会 第37回</h2>
+		<p>※中止になりました。<a href="http://rakugokai.org/">三島落語会</a></p>
+		<!-- <p>
+		二人の落語家による落語会。<br>
+		初めての方でも気軽に楽しめる落語会です。</p>
+		<ul class="quote">
+			<li>【日時】 4月19日（日曜）18時30分開場、19時開演</li>
+			<li>【場所】 <a href="http://kuretake.biz/">割烹呉竹</a>（三島広小路駅すぐ）</li>
+			<li>【出演者】 三笑亭可風、笑福亭羽光</li>
+			<li>【入場料】 1,000円（予約不要）</li>
+			<li>【備考】 会場・受付は３階。エレベーターあり。椅子席あり。</li>
+			<li>【ホームページ】 <a href="http://rakugokai.org/">三島落語会</a></li>
+		</ul> -->
+	</div>
+</section>
+
+<div style="padding-bottom:4em;"><small># Misima Hyakka からの外部サイトへのリンクはすべて、新規タブやウインドウを開きません。</small></div>
+
+<footer>
+	<ul>
+		<li><a href="index.html">ホーム</a></li>
+		<li><a href="aboutme.html">このサイトについて</a></li>
+		<li><a href="mailto:ararezake@gmail.com">メールを送る</a></li>
+	</ul>
+	<p class="copyright"><small>&copy; <span class="small">2014-2020</span> Misima Hyakka</small>
+</footer>
+
+</body>
+</html>

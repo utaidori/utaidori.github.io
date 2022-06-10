@@ -1,0 +1,49 @@
+@charset "UTF-8";
+.year {
+padding: 0 0 0 42px;
+background-image: url(files/archive2.png);
+background-repeat: no-repeat;
+line-height: 32px;
+font-size: 100%;
+}
+.separator {
+margin: 0 .5em;
+}
+ul.menu + div {
+	margin-bottom: 1em;
+}
+ul.menu + div > img {
+	vertical-align: middle;
+}
+div[id] {
+	margin: 1em auto 0 auto;
+	text-align: center;
+}
+div[id] * {
+	margin-top: 0em;
+	text-align: left;
+}
+div.memo {
+	background-image: url('files/memo.png');
+	background-repeat: no-repeat;
+	padding: 16px;
+	display: inline-block;
+	vertical-align: text-bottom;
+}
+div.memo + small {
+	display: none;
+	padding: 1em;
+	border: 4px double #00aaff;
+	border-radius: 6px;
+	font-weight: normal;
+	font-size: 0.9rem;
+}
+div.memo:hover + small::before {
+	content: "感想メモ：";
+}
+div.memo:hover + small {
+	display: block;
+}
+.fold{
+	display:none;
+}
