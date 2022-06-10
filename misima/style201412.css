@@ -119,6 +119,12 @@ text-decoration: none;
 h2 {
 font-size: 120%;
 margin-top: 0;
+font-weight: 700;
+	transform: rotate(0.03deg);
+	-moz-transform: rotate(0.03deg);
+	-ms-transform: rotate(0.03deg);
+	-o-transform: rotate(0.03deg);
+	-webkit-transform: rotate(0.03deg);
 }
 
 a {
