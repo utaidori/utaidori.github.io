@@ -5,12 +5,12 @@ padding: 2.5rem;
 max-width: 1024px;
 }
 .svg-mma {
-width: 448px;
-height: 140px;
+/*width: 448px;
+height: 140px;*/
 }
 .svg-plus {
-width: 140px;
-height: 140px;
+/*width: 140px;
+height: 140px;*/
 }
 nav {
 text-align: center;
@@ -56,5 +56,5 @@ text-align: center;
 }
 .description {
 flex: 1;
-padding: 0rem 1rem;
+padding: .2rem 2rem;
 }
