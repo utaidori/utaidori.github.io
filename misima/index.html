@@ -26,18 +26,14 @@
 		display: none;
 		margin: 2em 0;
 	}
-/*  .note {
-	padding: 0 0 3em 0;
-	}*/
 	</style>
 	<script>
 
 function filter(elm){
 	var tagval = document.getElementsByTagName("section");
-	var footer = document.getElementsByTagName("footer");
 	var options = document.getElementsByClassName("options");
 	var category = document.getElementsByClassName(elm);
-	var catName = ''
+	var catName = '';
 
 	if (category.length == 0 && elm != 'none') {
 		if (elm == 'ws') {
@@ -47,7 +43,7 @@ function filter(elm){
 		} else if (elm == 'ex') {
 			catName = '展示';
 		} else {
-			catName = '項目'
+			catName = '項目';
 		}
 		document.getElementById("messageArea").textContent = '＃紹介する' + catName + 'はまだありません。';
 		document.getElementById("messageArea").style.display = 'block';
@@ -67,7 +63,7 @@ function filter(elm){
 
 	for (var i = 0; i < tagval.length; i++) {
 
-		var classval = tagval[i].getAttribute("class")
+		var classval = tagval[i].getAttribute("class");
 
 		if (elm === "none") {
 			if (classval === "thumbnail") {
@@ -86,13 +82,6 @@ function filter(elm){
 			}
 		}
 	}
-
-//  if (elm === "none") {
-//  footer[0].style.display = "block";
-//  }
-//  else {
-//  footer[0].style.display = "none";
-//  }
 }
 	</script>
 
@@ -131,67 +120,9 @@ function filter(elm){
 		<div class="bar"><span class="interbar-text small">更新履歴</span></div>
 		<div class="aural"><a href="#main">更新履歴をスキップして本文に移る</a></div>
 		<ul class="detail">
-			<li>2022-11-07
+			<li>2022-12-08
 				<ul>
-					<li>歴史発見講座(11月)</li>
-				</ul>
-			</li>	
-			<li>2022-10-17
-				<ul>
-					<li>歴史発見講座(11月)</li>
-				</ul>
-			</li>	
-			<li>2022-09-15
-				<ul>
-					<li>佐野美術館(9-10月)</li>
-				</ul>
-			</li>
-			<li>2022-09-05
-				<ul>
-					<li>歴史発見講座(10月)</li>
-				</ul>
-			</li>
-			<li>2022/08/10
-				<ul>
-					<li>三島落語会第50回記念公演(9月)</li>
-					<li>歴史発見講座(9月)</li>
-				</ul>
-			</li>
-			<li>2022-07-07
-				<ul>
-					<li>歴史発見講座(8月)</li>
-				</ul>
-			</li>
-			<li>2022-06-09
-				<ul>
-					<li>歴史発見講座(7月)</li>
-				</ul>
-			</li>
-			<li>2022-05-22
-				<ul>
-					<li>歴史発見講座(6月)</li>
-					<li>三島落語会(7月)</li>
-				</ul>
-			</li>
-			<li>2022-04-28
-				<ul>
-					<li>三島落語会(5月)</li>
-				</ul>
-			</li>
-			<li>2022-04-05
-				<ul>
-					<li>歴史発見講座(5月)</li>
-				</ul>
-			</li>
-			<li>2022-03-16
-				<ul>
-					<li>歴史発見講座(4月)</li>
-				</ul>
-			</li>
-			<li>2022-01-31
-				<ul>
-					<li>歴史発見講座(3月)</li>
-					<li>歴史発見講座(2月延期のお知らせ)</li>
+					<li>歴史発見講座(2023年1月)</li>
 				</ul>
 			</li>
 		</ul>
@@ -206,24 +137,27 @@ function filter(elm){
 
 		<div class="year">＊ すべて静岡県三島市のイベントです。(2022年)</div>
 
-		<div class="bar"><span class="interbar-text normal">12月</span></div>
+		<div class="bar"><span class="interbar-text normal">2023年1月</span></div>
 
 		<section class="ws">
-			<div class="leftside"><img src="images/rekisikoza.jpg" alt=""></div>
+			<div class="leftside"><img src="images/happiness_n.jpg" alt=""></div>
 			<div class="rightside">
-				<div class="date">12月5日（月曜）19時〜21時30分</div>
+				<div class="date">1月21日（土曜）10時〜</div>
 				<h2>歴史発見講座</h2>
-				<p><span class="salutation rekisikoza">世間士・<a href="https://info25612.wixsite.com/karunozousen">かるのさん</a></span>
-				<p>テーマは「督乗丸漂流　国境なき海の男たち」です。</p>
+				<p><span class="salutation rekisikoza">世間士・<a href="https://info25612.wixsite.com/karunozousen">かるのさん</a></span></p>
+				<p>※今回から会場が「カフェ・ハピネス」さんに変わりました。<br>
+				　曜日・時間帯が土曜日の午前に変わりました。</p>
+				<p>テーマは「大洋を越える運命　～音吉・ラナルド・栄之助～」です。</p>
 				<blockquote class="small">
-<p>江戸時代、尾張と伊豆の船乗りたちを乗せた督乗丸。彼らは冬の暴風に巻き込まれ、太平洋を漂い、遂にはアメリカ大陸にまで到達した。</p>
-<p>彼らの一年半にも及んだ漂流の苦闘と、帰国に便宜を図ったイギリス人・ロシア人船乗りたちの人道精神の道のりを語ります。</p>
+<p>江戸時代末期、北米大陸に漂着した音吉は、アメリカ先住民と英国人のラナルド・マクドナルドと出会う。ラナルドは日本への憧れを抱き日本へ密入国。そこで幕府のオランダ通詞らに英語を教える事になる。ラナルドに英語を学んだ森山栄之助は日本が諸外国と国交を結ぶにあたって尽力。その後、栄之助はシンガポールに住む音吉と出会う。</p>
+<p>幕末の国際人として生きた、太平洋を越えた三人の運命の交錯についてお話しします。</p>
 				</blockquote>
 				<ul class="quote">
-					<li>【日時】 12月5日（月曜）19時〜21時30分</li>
-					<li>【場所】 <a href="https://ooloo.i-ra.jp/">カフェ・うーるー</a><span class="small">（バス停「一本松」すぐ）</span><a href="https://goo.gl/maps/ngQAUmScG3JfFPFC8" class="small">&rarr; Google Map</a></li>
-					<li>【参加費】 500円＋１オーダー（予約不要）</li>
-					<li>【ウェブサイト】 <a href="https://info25612.wixsite.com/karunozousen">軽野造船所</a></li>
+					<li>【日時】 1月21日（土曜）10時〜（2時間程度）</li>
+					<li>【場所】 <a href="https://goo.gl/maps/izjSiaupXZhQBFFH6">カフェ・ハピネス</a><span class="small">（三島広小路駅より徒歩3分）</span></li>
+					<li>【参加費】 500円＋１オーダー</li>
+					<li>【定員】 先着7名まで。ハピネスさんに電話でお申し込みください（電話番号は上記リンク先にあります）。</li>
+					<li><small>※広小路駅から会場までの徒歩道順……三島大通りを東へ。居酒屋さかなや道場の角を南へ。焼肉・東海苑の前の小道を東へ。まもなく左手に見えます。</small></li>
 				</ul>
 			</div>
 		</section>
