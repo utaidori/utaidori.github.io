@@ -1,5 +1,5 @@
 @charset "UTF-8";
-body, h1, h2, h3, p, ul, li
+body, h1, h2, h3, h4, p, ul, li
 {margin:0;padding:0;}
 img, hr
 {border:none;}
@@ -52,6 +52,13 @@ border-color: #f7ca80;
 h3 a:link, h3 a:visited {
 color: #3e3e3e;
 }
+h4 {
+font-weight: normal;
+}
+ul.inside {
+margin-left: .5em;
+list-style-position: inside;
+}
 img {
 vertical-align: middle;
 }
@@ -62,15 +69,12 @@ background-color: #cbe8ef;
 .svg-plus {
 width: 105px;
 }
-.boku {
-margin: 1rem 0;
-}
+
 nav {
 line-height: 1.7;
 }
 nav li {
 padding-left: 1rem;
-/*list-style-type: circle;*/
 list-style-type: disc;
 list-style-position: inside;
 }

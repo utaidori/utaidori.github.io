@@ -1,7 +1,7 @@
 @charset "UTF-8";
 body {
 margin: 0 auto;
-padding: 2.5rem;
+/*padding: 2.5rem;*/
 max-width: 1024px;
 }
 .svg-mma {
@@ -33,13 +33,10 @@ font-weight: normal;
 /*font-size: 1.5rem;*/
 font-size: 1.3rem;
 }
-.boku {
-font-size: 1rem;
-}
 .parenthesis {
 font-size: .9rem;
 }
-.koverto{max-width:1rem;max-height:1rem}
+.koverto{max-width:1.5rem;max-height:1.5rem}
 .hr-hr {
 height: 13px;
 max-width: 60%;

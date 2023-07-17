@@ -7,11 +7,14 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon-180x180.png">
 	<link rel="icon" type="image/png" sizes="192x192" href="./android-chrome-192x192.png">
 	<link rel="stylesheet" href="abc.css" media="print, screen">
+<!-- 	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet"> -->
 	<style>
 /*	p{background-color:#fffff8;
 	display: inline-block;
 	}*/
-	.koverto{display:inline;max-width:60px;max-height:60px;fill:#005f87;vertical-align:middle}
+	.koverto{display:inline;max-width:32px;max-height:32px;fill:#005f87;vertical-align:middle}
 	.defs{display:none}
 	.listo {
 		margin: .5em 0;
@@ -22,9 +25,19 @@
 		vertical-align: middle;
 		font-size: .9em;
 	}
-	.nauxdek {
+
+	@font-face {
+		font-family: 'Fira Sans';
+		font-style: normal;
+		font-weight: 400;
+		font-display: swap;
+		src: url(https://fonts.gstatic.com/s/firasans/v17/va9E4kDNxMZdWfMOD5VfkA.ttf) format('truetype');
 	}
-	
+
+	:lang(eo) {
+		font-family: "Fira Sans", sans-serif;
+		font-size: 110%;
+	}
 	</style>
 	<link rel="stylesheet" href="pc.css" media="screen and (min-width:1024px)">
 </head>
@@ -38,17 +51,22 @@
 
 	<h1><a href="index.html"><img class="svg-mma" src="mma.svg" alt="牢獄機械文書群"><img class="svg-plus" src="plus.svg"></a></h1>
 
-	<p class="boku">
-		間宮 緑 -- 小説家。たまに農家。エスペラント語翻訳も。<br>
-		<svg class="koverto"><use xlink:href="#koverto"/></svg>
-		<a href="mailto:ararezake@gmail.com">ararezake@gmail.com</a>
+	<p style="margin-top:1rem;font-size:100%;">
+		<span style="font-weight:bold">間宮 緑</span> -- 小説家。たまに農家。エスペランティスト（創作・翻訳）。
+<!-- 		<span style="font-size:90%;">
+			<svg class="koverto"><use xlink:href="#koverto"/></svg>
+			<a href="mailto:ararezake@gmail.com" lang="eo">ararezake@gmail.com</a>
+		</span> -->
 	</p>
 
 	<nav>
 		<ul>
 			<li><a href="hibi.html">日々の記録</a></li>
 			<li><a href="rireki.html">プロフィール / 履歴</a></li>
-			<li><a href="https://twitter.com/utaidori">Twitter</a></li>
+			<!-- <li><a href="https://twitter.com/utaidori" lang="eo">Twitter</a></li> -->
+			<li><svg class="koverto"><use xlink:href="#koverto"/></svg>
+			<!-- <a href="mailto:ararezake@gmail.com" lang="eo">ararezake@gmail.com</a> -->
+			<a href="mailto:ararezake@gmail.com" lang="eo">E-mail</a></li>
 		</ul>
 	</nav>
 
@@ -105,7 +123,7 @@
 			<div class="thumbnail"><a href="https://www.amazon.co.jp/dp/490723936X"><img src="jpeg/libro_septembre.jpg" alt="thumbnail"></a></div>
 			<div class="description">
 				<h3>
-					<a href="https://www.amazon.co.jp/dp/490723936X"> Septembre, surstrate en Tokio <small>『九月、東京の路上で』エスペラント訳</small></a>
+					<a href="https://www.amazon.co.jp/dp/490723936X"><span lang="eo">Septembre, surstrate en Tokio</span> <small>『九月、東京の路上で』エスペラント訳</small></a>
 					<div class="parenthesis">（ころから・2018年9月1日）</div>
 				</h3>
 				<p>『九月、東京の路上で』（加藤直樹・著、<a href="http://korocolor.com/">ころから</a>）のエスペラント翻訳です。<br>
@@ -125,13 +143,13 @@
 			<div class="description">
 				<h3>
 					<a href="https://bobelarto.ink/">
-					Antaŭ la truo de kuniklo <small>(ウサギの穴の前で)</small> -- Amo, tuso kaj forpaso</a>
+					<span lang="eo">Antaŭ la truo de kuniklo</span> <small>(ウサギの穴の前で)</small> -- <span lang="eo">Amo, tuso kaj forpaso</span></a>
 					<div class="parenthesis">（KAVA-PECH - 2022年8月）</div>
 				</h3>
 				<p>コロナウイルスが蔓延し始めた頃の迷いを描いた短編小説です。</p>
-				<p><a href="https://bobelarto.ink/">Bobelarto</a> が主催する異文化小説コンクール INK (Interkultura Novelo-Konkurso) 第1回に応募した作品で、コンクールのテーマは “Kiel KOVIM-19 ŝanĝis nin?” (コロナウイルスは私たちをどう変えたか) でした。<br>最終10選に選ばれたため小説集 «Amo, tuso kaj forpaso» (愛と咳とお別れ) に収録され、チェコの出版社 KAVA-PECH から刊行されています。エスペラント版とチェコ語訳版が出ています。</p>
-				<p>Bobelarto の無料電子ニュースレターを購読すると «Amo, tuso kaj forpaso» PDF版をダウンロードできます。</p>
-				<p>INK は現在<a href="https://bobelarto.ink/eo/konkurso/">第3回コンクール</a>の応募作品を募集しています。エスペラント以外にもいくつか対象の言語での作品を受け付けています。</p>
+				<p><a href="https://bobelarto.ink/" lang="eo">Bobelarto</a> が主催する異文化小説コンクール <span lang="eo">INK (Interkultura Novelo-Konkurso)</span> 第1回に応募した作品で、コンクールのテーマは <span lang="eo">“Kiel KOVIM-19 ŝanĝis nin?”</span> (コロナウイルスは私たちをどう変えたか) でした。<br>最終10選に選ばれたため小説集 <span lang="eo">«Amo, tuso kaj forpaso»</span> (愛と咳とお別れ) に収録され、チェコの出版社 <span lang="eo">KAVA-PECH</span> から刊行されています。エスペラント版とチェコ語訳版が出ています。</p>
+<!-- 				<p>Bobelarto の無料電子ニュースレターを購読すると «Amo, tuso kaj forpaso» PDF版をダウンロードできます。</p>
+				<p>INK は現在<a href="https://bobelarto.ink/eo/konkurso/">第3回コンクール</a>の応募作品を募集しています。エスペラント以外にもいくつか対象の言語での作品を受け付けています。</p> -->
 			</div>
 		</div>
 	</article>
@@ -142,10 +160,10 @@
 			<div class="description">
 				<h3>
 					<a href="https://gogolatalante.hatenablog.com/">
-					折り紙のクジラ -- ATALANTE TRIANGLE vol.2</a>
+					折り紙のクジラ -- <span lang="eo">ATALANTE TRIANGLE vol.2</span></a>
 					<div class="parenthesis">（2022年3月5日）</div>
 				</h3>
-				<p>内山丈史さんの ZINE 「ATALANTE TRIANGLE vol.2」に短編小説「折り紙のクジラ」を寄稿しました。</p>
+				<p>内山丈史さんの <span lang="eo">ZINE</span> 「<span lang="eo">ATALANTE TRIANGLE vol.2</span>」に短編小説「折り紙のクジラ」を寄稿しました。</p>
 			</div>
 		</div>
 	</article>
@@ -158,8 +176,7 @@
 					<a href="http://gunzo.kodansha.co.jp/52563/54446.html">語り手たち -- 群像9月号</a>
 					<div class="parenthesis">（講談社 2019年8月7日）</div>
 				</h3>
-				<p>物語の「語り手」をめぐるお話です。</p>
-				<p>物語ることをやめてしまった語り手。その語り手について話す老人と、その話を知りたい人たち。</p>
+				<p>物語ることをやめてしまった語り手。<br>その語り手について話す老人と、その話を知りたい人たち。<br>物語の「語り手」をめぐるお話です。</p>
 				<p>『群像』9月号（8月7日発売）に掲載されています。</p>
 			</div>
 		</div>
@@ -170,15 +187,15 @@
 			<div class="thumbnail"><a href="jpeg/ba34.jpg" target="_blank"><img src="jpeg/ba34s.jpg" alt=""></a></div>
 			<div class="description">
 				<h3>
-					<a href="http://www.beletraalmanako.com/boao/ba34/index.html">Korespondado -- Beletra Almanako n-ro 34</a>
+					<a href="http://www.beletraalmanako.com/boao/ba34/index.html" lang="eo">Korespondado -- Beletra Almanako n-ro 34</a>
 					<div class="parenthesis">（Mondial 2019年7月）</div>
 				</h3>
 				<p>エスペラントで書いた短篇小説です。<br>
 				国際的なエスペラント文芸誌
-				Beletra Almanako 34号に掲載されました。<br>
+				<span lang="eo">«Beletra Almanako»</span> 34号に掲載されました。<br>
 				僕にとって初めての国際誌掲載です。<br>
-				日本でも書店などで手に入ります。<br>
-				<p><a href="https://www.amazon.co.jp/Beletra-Almanako-BA34-Literaturo-Esperanto/dp/1595693890">Amazon</a> / <a href="https://www.kinokuniya.co.jp/f/dsg-02-9781595693891">紀伊国屋</a></p>
+				<!-- 日本でも書店などで手に入ります。<br> -->
+				<!-- <p><a href="https://www.amazon.co.jp/Beletra-Almanako-BA34-Literaturo-Esperanto/dp/1595693890">→ Amazon</a> / <a href="https://www.kinokuniya.co.jp/f/dsg-02-9781595693891">→ 紀伊国屋書店</a></p> -->
 			</div>
 		</div>
 	</article>
@@ -212,8 +229,15 @@
 				</h3>
 				<p>伊豆半島ジオパーク主催の鼎談イベント<a href="https://izugeopark.org/2021/11/22/bungo-3/">「ジオ文豪カフェ」</a>でお話をしました。<br>
 				会場は みしま未来研究所。ライブ配信もされました。</p>
-				<p>登壇者は徳山加陽さん（井上靖文学館）、山本隆太さん（静岡大学）、遠藤大介さん・辻修次さん（ジオパーク推進協議会）、間宮です。</p>
-				<p>動画 (YouTube)：
+				<h4>[登壇者]</h4>
+				<ul class="inside">
+					<li>徳山加陽さん (井上靖文学館)</li>
+					<li>山本隆太さん (静岡大学)</li>
+					<li>遠藤大介さん (ジオパーク推進協議会)</li>
+					<li>辻修次さん (ジオパーク推進協議会)</li>
+					<li>間宮緑</li>
+				</ul>
+				<p style="margin-top:1em;">動画 (YouTube)：
 					<a href="https://www.youtube.com/watch?v=P7N5Edur35k">→ (新釈) ジオ文豪カフェ「ジオと文章の世界　そのまじわるところ」</a>
 				</p>
 			</div>
