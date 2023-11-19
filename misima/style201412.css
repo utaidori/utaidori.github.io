@@ -252,6 +252,7 @@ padding: 0 6px;
 /*  height: 240px;*/
   height: auto;
   border-radius: 6px;
+	object-fit: cover;
 } .leftside img.noimage {
   width: 32px;
   height: 32px;
