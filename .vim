@@ -11,3 +11,4 @@ function! LasiAfisxon(elm)
 endfunction
 
 noremap <f2> :call LasiAfisxon(35)<CR>
+inoremap <C-g>e <span lang="eo"></span><C-o>F<
