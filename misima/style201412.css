@@ -140,7 +140,9 @@ img { border: 0; }
 /* {{{ BLOCKQUOTE */
 blockquote {
 position: relative;
-margin: .5rem .5rem .5rem 1.5rem;
+/*margin: .5rem .5rem .5rem 1.5rem;*/
+/* mod 2024-08-06 02:26 */
+margin: .5rem .5rem .5rem .5rem;
 padding: 1em;
 border: 1px dotted #fc0;
 border-left: .8rem solid #fc0;
