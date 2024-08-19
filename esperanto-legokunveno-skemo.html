@@ -30,8 +30,14 @@ body {
   list-style-type: none;
   padding-left: 0;
 }
+.senmarko:lang(eo) {
+  padding-left: 1.5em;
+}
 .senmarko li {
   margin: .5em 0;
+}
+li > p {
+	padding-left: 2.5em;
 }
 h1 {
   font-size: 1.5rem;
@@ -64,7 +70,19 @@ menu {
 	height: 1em;
 	vertical-align: middle;
 }
-
+details summary {
+	text-decoration: underline;
+}
+details[open] summary {
+	text-decoration: none;
+}
+.filmeto {
+	background-image: url(./svg/filmeto.svg);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 1.5em;
+	padding-left: 2em;
+}
   </style>
 </head>
 
@@ -81,15 +99,18 @@ menu {
 <p>エスペラントが堪能な人もまだ堪能でない人も一緒にエスペラント文学に親しみ、楽しめる場を設けたいと思っています。</p>
 
 <h2>概要</h2>
+<h3>第2回</h3>
 <ul class="senmarko">
-  <li>【日時】8月18日（日曜）21時～22時</li>
+  <li>【日時】9月22日（日曜）21時～22時</li>
   <li>【使用言語】日本語</li>
-  <li>【作品】<strong lang="eo">“Dancanta kun ŝarkoj” Julian Modest</strong>
-    <ul>
-      <li lang="eo">[Web] <a class="malgranda" href="http://verkoj.com/verkistoj/julian-modest/dancado-kun-sarkoj/" target="_new" rel=”noopener”>http://verkoj.com/verkistoj/julian-modest/dancado-kun-sarkoj/</a></li>
-      <li><span lang="eo">[PDF]</span> <span class="malgranda">（私的利用に限る）</span><a lang="eo" class="malgranda" href="https://app.box.com/s/xi0k7q05zjtz1yk4nlolh3ugbcs048lc" target="_new" rel=”noopener”>https://app.box.com/s/xi0k7q05zjtz1yk4nlolh3ugbcs048lc</a></li>
-    </ul>
+  <li>【作品】<strong lang="eo">“La lasta vojaĝo de Cezaro” （チェーザレの最後の旅） Emanuela Pellicciaro</strong>
+    <p>第2回 INK の小説集 <span lang="eo">«La lasta vojaĝo de Cezaro kaj aliaj noktaj aventuroj»</span> に収められた短篇小説です。<a href="https://bobelarto.ink/" target="_new" rel=”noopener”>Bobelarto</a> のニュースレターからダウンロードできます。入手できなかった等ありましたらご連絡ください。抜粋を送ります。</p>
+		<p><a class="filmeto" href="https://www.youtube.com/watch?v=3jm_4VfLPLI">https://www.youtube.com/watch?v=3jm_4VfLPLI</a></p>
   </li>
+  <li>【補足】エスペラント原作ではなくイタリア語原作のようです。すみません。</li>
+</ul>
+<h3>基本方針</h3>
+<ul class="senmarko">
   <li>【進めかた】
     <ol>
       <li>画面共有されたテキストを音読（ひとり数段落ずつ読んで交代）。</li>
@@ -97,7 +118,7 @@ menu {
       <li>作品について感想を述べたり意見を交わす。</li>
     </ol>
   </li>
-  <li>【ツール】Nextcloud Talk: ブラウザで動く Zoom に似たツール。参加者には URL を送ります。音声のみの参加も可。</li>
+  <li>【ツール】Nextcloud Talk: ブラウザで動く Zoom に似たツール。参加予定者には URL を送ります。音声のみの参加も可。<a href="legokunveno/kiel-ensaluti-la-cxambron.html">入室方法の説明はこちら。</a></li>
   <li>【参加申し込み】<a href="https://forms.gle/KvztYjSQ8L7Hxg6R8" target="_new" rel=”noopener”>Googleフォーム</a>に入力、またはメールで。メールの場合は <a href="mailto:utaidori@gmail.com" lang="eo">utaidori@gmail.com</a> 宛てに「エスペラント読書会参加希望」の件名で、名前（ニックネーム可）とメールアドレスを書いて送ってください。</li>
   <li>【備考】早めの入室 OK 。参加無料です。</li>
 </ul>
@@ -106,6 +127,25 @@ menu {
 <ul>
   <li>作品を読む。</li>
   <li>知らない単語があったら辞書を引く。</li>
+</ul>
+
+<h2>過去の読書会</h2>
+<ul class="senmarko" lang="eo">
+	<li>
+		<details>
+			<summary>La 1-a kunveno</summary>
+			<ul>
+				<li>Dato: La 18-a de aŭgusto, dimanĉe de 12h00 ĝis 13h00 (UTC) <small>[de 21h00 ĝis 22h00 (JST)]</small></li>
+				<!-- <li>Lingvo: La japana</li> -->
+				<li>Novelo: <strong>“Dancanta kun ŝarkoj” Julian Modest</strong>
+					<ul>
+						<li>[TTT] <a class="malgranda" href="http://verkoj.com/verkistoj/julian-modest/dancado-kun-sarkoj/" target="_new" rel=”noopener”>http://verkoj.com/verkistoj/julian-modest/dancado-kun-sarkoj/</a></li>
+					</ul>
+				</li>
+				<li>Ĉeestis 7</li>
+			</ul>
+		</details>
+	</li>
 </ul>
 
 <hr>
@@ -127,5 +167,5 @@ menu {
 <h2>連絡先</h2>
 <p>ご質問がありましたら 間宮緑 <a href="mailto:utaidori@gmail.com" lang="eo">utaidori@gmail.com</a> 宛てにお願いします。</p>
 
-<time>作成日: 2024/07/31 23:32</time>
+<time>更新日: 2024/08/20</time>
 </body></html>

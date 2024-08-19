@@ -29,23 +29,26 @@ body {
 }
 .senmarko {
   list-style-type: none;
-  padding-left: 0;
+  padding-left: 1.5em;
 }
 li {
-  margin: 0.2rem 0;
+	margin: 0.2rem 0;
+}
+li > p {
+	padding-left: 2.5em;
 }
 h1 {
   font-size: 1.5rem;
 }
 h2 {
-  margin-top: 2em;
+	margin-top: 2em;
 	margin-bottom: 0;
 	padding-bottom: 0;
-  font-size: 1.3rem;
+	font-size: 1.3rem;
 	line-height: 1.0;
 }
 .malgranda {
-  font-size: 0.9em;
+	font-size: 0.9em;
 }
 
 hr {
@@ -63,7 +66,19 @@ menu {
 .ja-lingvo {
 	color: darkorange;
 }
-
+details summary {
+	text-decoration: underline;
+}
+details[open] summary {
+	text-decoration: none;
+}
+.filmeto {
+	background-image: url(./svg/filmeto.svg);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 1.5em;
+	padding-left: 2em;
+}
   </style>
 </head>
 
@@ -78,15 +93,18 @@ menu {
 <p>En la reta lego-kunveno ni legas Esperanto-originalan novelon kaj interparolas pri ĝi japane. La celo estas ke kaj komencantaj kaj spertaj esperantistoj el japan-lingvanoj kune ĝuu Esperanto-literaturon.</p>
 
 <h2>Skemo</h2>
+<h3>La dua kunveno</h3>
 <ul>
-  <li>Dato: <strong>La 18-a de aŭgusto, dimanĉe de 12h00 ĝis 13h00 (UTC)</strong> <small>[de 21h00 ĝis 22h00 (JST)]</small></li>
+  <li>Dato: <strong>La 22-a de septembro, dimanĉe de 12h00 ĝis 13h00 (UTC)</strong> <small>[de 21h00 ĝis 22h00 (JST)]</small></li>
   <li>Lingvo: La japana</li>
-  <li>Novelo: <strong>“Dancanta kun ŝarkoj” Julian Modest</strong>
-    <ul>
-      <li>[TTT] <a class="malgranda" href="http://verkoj.com/verkistoj/julian-modest/dancado-kun-sarkoj/" target="_new" rel=”noopener”>http://verkoj.com/verkistoj/julian-modest/dancado-kun-sarkoj/</a></li>
-      <li>[PDF] (Por privata uzo) <a class="malgranda" href="https://app.box.com/s/xi0k7q05zjtz1yk4nlolh3ugbcs048lc" target="_new" rel=”noopener”>https://app.box.com/s/xi0k7q05zjtz1yk4nlolh3ugbcs048lc</a></li>
-    </ul>
+  <li>Novelo: <strong>“La lasta vojaĝo de Cezaro” Emanuela Pellicciaro</strong>
+    <p>La novelon enhavas la INK-2 novelaro «La lasta vojaĝo de Cezaro kaj aliaj noktaj aventuroj», kiu elŝuteblas el novaĵletero de <a href="https://bobelarto.ink/" target="_new" rel=”noopener”>Bobelarto</a>. Se vi ne sukcesis havi ĝin aŭ simile, kontaktu min por ke mi sendu al vi necesan ekstrakton.</p>
+		<p><a class="filmeto" href="https://www.youtube.com/watch?v=3jm_4VfLPLI">https://www.youtube.com/watch?v=3jm_4VfLPLI</a></p>
   </li>
+	<li>Aldono: La novelo estas origine verkita en la itala. Pardonon!</li>
+</ul>
+<h3>Principo</h3>
+<ul>
   <li>Maniero:
     <ol>
       <li>Unu el la partoprenantoj legas kelkajn alineojn sur la ekrano kaj transdonas la vicon al alia.</li>
@@ -94,7 +112,7 @@ menu {
 			<li>Ni komentas kaj opinias pri la novelo.</li>
     </ol>
   </li>
-  <li>Kunvenejo: Post la aliĝo vi ricevos ligilon de la reta ĉambro. Por eniri en la ĉambron vi simple malfermas la ligilon per retumilo kaj entajpas vian aliĝ-nomon. Se vi ne emas vidigi vin per kamerao, vi rajtas partopreni nur mikrofone.</li>
+  <li>Kunvenejo: Post la aliĝo vi ricevos ligilon de la reta ĉambro. Por eniri en la ĉambron vi simple malfermas la ligilon per retumilo kaj entajpas vian aliĝ-nomon. Se vi ne emas vidigi vin per kamerao, vi rajtas partopreni nur mikrofone. <a href="./legokunveno/kiel-ensaluti-la-cxambron-eo.html">Jen la retpaĝo klarigi kiel eniri.</a></li>
 
   <li>Aliĝo: Sciigu al mi viajn retadreson kaj nomon (aŭ pseŭdonimon) per <a href="https://forms.gle/KvztYjSQ8L7Hxg6R8" target="_new" rel=”noopener”>Google formularo</a> aŭ retpoŝte al <a href="mailto:utaidori@gmail.com">utaidori@gmail.com</a>.</li>
   <li>Noto: La ĉambro pretos akcepti vin sufiĉe antaŭ la fiksita horo. Partopreno estas senpaga.</li>
@@ -104,6 +122,25 @@ menu {
 <ul>
   <li>Legi la tekston anticipe.</li>
   <li>Konsulti vortaron pri novaj vortoj por vi.</li>
+</ul>
+
+<h2>Pasintaj kunvenoj</h2>
+<ul class="senmarko">
+	<li>
+		<details>
+			<summary>La 1-a kunveno</summary>
+			<ul>
+				<li>Dato: La 18-a de aŭgusto, dimanĉe de 12h00 ĝis 13h00 (UTC) <small>[de 21h00 ĝis 22h00 (JST)]</small></li>
+				<!-- <li>Lingvo: La japana</li> -->
+				<li>Novelo: <strong>“Dancanta kun ŝarkoj” Julian Modest</strong>
+					<ul>
+						<li>[TTT] <a class="malgranda" href="http://verkoj.com/verkistoj/julian-modest/dancado-kun-sarkoj/" target="_new" rel=”noopener”>http://verkoj.com/verkistoj/julian-modest/dancado-kun-sarkoj/</a></li>
+					</ul>
+				</li>
+				<li>Ĉeestis 7</li>
+			</ul>
+		</details>
+	</li>
 </ul>
 
 <hr>
@@ -122,5 +159,5 @@ menu {
 <h2>Kontaktu min</h2>
 <p>Mamija Midori <a href="mailto:utaidori@gmail.com">utaidori@gmail.com</a></p>
 
-<time>Konservita: 2024/08/13 02:10</time>
+<time>Konservita: 2024/08/20</time>
 </body></html>
