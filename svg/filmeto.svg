@@ -3,9 +3,8 @@
 xmlns="http://www.w3.org/2000/svg"
 width="16"
 height="16"
-viewBox="0 1 16 17">
+viewBox="0 0 16 16">
 >
-<path d="M1 3 h14 v10 h-14 z" stroke-width="1.2" stroke="#393939" fill="transparent" />
-<path d="M0.4 14.5 h15.2" stroke-width="1.2" stroke="#393939" fill="transparent" />
-<path d="M6.5 5.5 v5 l4 -2.5 z" stroke-width="1" stroke="#393939" fill="#393939" />
+<path d="M1 3 h14 v10 h-14 z" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" stroke="#555" fill="white" />
+<path d="M6.5 5.5 v5 l4 -2.5 z" stroke-width="1" stroke="#555" fill="#555" />
 </svg>

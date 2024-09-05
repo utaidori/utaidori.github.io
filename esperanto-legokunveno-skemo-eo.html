@@ -29,13 +29,23 @@ body {
 }
 .senmarko {
   list-style-type: none;
-  padding-left: 1.5em;
+  /*padding-left: 1.5em;*/
+	padding: 0 0 0 0.2em;
+}
+.senspaco {
+	padding: 0;
+}
+ul {
+	padding: 0 0 0 1.2em;
 }
 li {
 	margin: 0.2rem 0;
 }
 li > p {
 	padding-left: 2.5em;
+}
+.kapo {
+	min-width: 120px;
 }
 h1 {
   font-size: 1.5rem;
@@ -76,8 +86,9 @@ details[open] summary {
 	background-image: url(./svg/filmeto.svg);
 	background-repeat: no-repeat;
 	background-position: left center;
-	background-size: 1.5em;
+	background-size: 1.5rem;
 	padding-left: 2em;
+	font-size: 0.9rem;
 }
   </style>
 </head>
@@ -95,8 +106,8 @@ details[open] summary {
 
 <h2>Skemo</h2>
 <h3>La dua kunveno</h3>
-<ul>
-  <li>Dato: <strong>La 22-a de septembro, dimanĉe de 12h00 ĝis 13h00 (UTC)</strong> <small>[de 21h00 ĝis 22h00 (JST)]</small></li>
+<ul class="senmarko senspaco">
+  <li><span class="kapo">Dato:</span> <strong>La 22-a de septembro, dimanĉe de 12h00 ĝis 13h00 (UTC)</strong> <small>[de 21h00 ĝis 22h00 (JST)]</small></li>
   <li>Lingvo: La japana</li>
   <li>Novelo: <strong>“La lasta vojaĝo de Cezaro” Emanuela Pellicciaro</strong>
     <p>La novelon enhavas la INK-2 novelaro «La lasta vojaĝo de Cezaro kaj aliaj noktaj aventuroj», kiu elŝuteblas el novaĵletero de <a href="https://bobelarto.ink/" target="_new" rel=”noopener”>Bobelarto</a>. Se vi ne sukcesis havi ĝin aŭ simile, kontaktu min por ke mi sendu al vi necesan ekstrakton.</p>
