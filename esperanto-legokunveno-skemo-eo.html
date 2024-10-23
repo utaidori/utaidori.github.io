@@ -41,9 +41,9 @@ ul {
 li {
 	margin: 0.2rem 0;
 }
-li > p {
+/*li > p {
 	padding-left: 2.5em;
-}
+}*/
 .kapo {
 	min-width: 120px;
 }
@@ -82,6 +82,9 @@ details summary {
 details[open] summary {
 	text-decoration: none;
 }
+details ul {
+	padding-left: 2.5em;
+}
 .filmeto {
 	background-image: url(./svg/filmeto.svg);
 	background-repeat: no-repeat;
@@ -90,6 +93,20 @@ details[open] summary {
 	padding-left: 2em;
 	font-size: 0.9rem;
 }
+
+dt, dd {
+	display: inline-block;
+}
+dt {
+	min-width: 4em;
+}
+dd {
+	margin: 0.2rem 0;
+}
+dl > p {
+	padding-left: 2.5em;
+}
+
   </style>
 </head>
 
@@ -105,16 +122,14 @@ details[open] summary {
 <p>En la reta lego-kunveno ni legas Esperanto-originalan novelon kaj interparolas pri ĝi japane. La celo estas ke kaj komencantaj kaj spertaj esperantistoj el japan-lingvanoj kune ĝuu Esperanto-literaturon.</p>
 
 <h2>Skemo</h2>
-<h3>La dua kunveno</h3>
-<ul class="senmarko senspaco">
-  <li><span class="kapo">Dato:</span> <strong>La 22-a de septembro, dimanĉe de 12h00 ĝis 13h00 (UTC)</strong> <small>[de 21h00 ĝis 22h00 (JST)]</small></li>
-  <li>Lingvo: La japana</li>
-  <li>Novelo: <strong>“La lasta vojaĝo de Cezaro” Emanuela Pellicciaro</strong>
-    <p>La novelon enhavas la INK-2 novelaro «La lasta vojaĝo de Cezaro kaj aliaj noktaj aventuroj», kiu elŝuteblas el novaĵletero de <a href="https://bobelarto.ink/" target="_new" rel=”noopener”>Bobelarto</a>. Se vi ne sukcesis havi ĝin aŭ simile, kontaktu min por ke mi sendu al vi necesan ekstrakton.</p>
-		<p><a class="filmeto" href="https://www.youtube.com/watch?v=3jm_4VfLPLI">https://www.youtube.com/watch?v=3jm_4VfLPLI</a></p>
+<h3>La tria kunveno</h3>
+<dl>
+  <div><dt><span class="kapo">Dato:</span></dt> <dd><strong>La 16-a de novembro, sabate de 12h00 ĝis 13h00 (UTC)</strong> <small>[de 21h00 ĝis 22h00 (JST)]</small></dd></div>
+  <div><dt>Novelo:</dt> <dd><strong></strong></dd></div>
+    <!-- <p>La novelon enhavas la INK-3 novelaro «La sekreta vivo de miaj najbaroj», kiu elŝuteblas el novaĵletero de <a href="https://bobelarto.ink/" target="_new" rel=”noopener”>Bobelarto</a>. Se vi ne sukcesis havi ĝin aŭ simile, kontaktu min por ke mi sendu al vi necesan ekstrakton.</p> -->
   </li>
-	<li>Aldono: La novelo estas origine verkita ne en Esperanto sed en la itala. Pardonon!</li>
-</ul>
+</dl>
+
 <h3>Principo</h3>
 <ul>
   <li>Maniero:
@@ -142,8 +157,7 @@ details[open] summary {
 		<details>
 			<summary>La 1-a kunveno</summary>
 			<ul>
-				<li>Dato: La 18-a de aŭgusto, dimanĉe de 12h00 ĝis 13h00 (UTC) <small>[de 21h00 ĝis 22h00 (JST)]</small></li>
-				<!-- <li>Lingvo: La japana</li> -->
+				<li>Dato: 2024/08/18 dim 12h--13h (UTC)</li>
 				<li>Novelo: <strong>“Dancanta kun ŝarkoj” Julian Modest</strong>
 					<ul>
 						<li>[TTT] <a class="malgranda" href="http://verkoj.com/verkistoj/julian-modest/dancado-kun-sarkoj/" target="_new" rel=”noopener”>http://verkoj.com/verkistoj/julian-modest/dancado-kun-sarkoj/</a></li>
@@ -154,19 +168,38 @@ details[open] summary {
 			</ul>
 		</details>
 	</li>
+	<li>
+		<details>
+			<summary>La 2-a kunveno</summary>
+			<ul>
+				<li>Dato: 2024/09/22 dim 12h--13h (UTC)</li>
+				<li>Novelo: <strong>“La lasta vojaĝo de Cezaro” Emanuela Pellicciaro</strong></li>
+				<li>Ĉeestis 8</li>
+			</ul>
+		</details>
+	</li>
+	<li>
+		<details>
+			<summary>La 3-a kunveno</summary>
+			<ul>
+				<li>Dato: 2024/10/19 sab 12h--13h (UTC)</li>
+				<li>Novelo: <strong>“... kaj la fenestroj, okulojn” Jorge Rafael Nogueras</strong></li>
+				<li>Ĉeestis 5</li>
+			</ul>
+		</details>
+	</li>
 </ul>
 
 <hr>
 
 <h2>Preparo por postaj kunvenoj (preferinda)</h2>
 <p>Aboni la senpagan novaĵleteron de <a href="https://bobelarto.ink/" target="_new" rel=”noopener”>Bobelarto</a>. (Tajpu vian retadreson ĉe la sekcio de novaĵletero kaj puŝu la butonon de “Mi volas partopreni”.)</p>
-<p>Vi ricevos novaĵleteron kun la ligiloj, el kiuj vi povas elŝuti PDF-dosierojn de la novelaroj <strong>«Amo, tuso kaj forpaso»</strong>, <strong>«La lasta vojaĝo de Cezaro kaj aliaj noktaj aventuroj»</strong> kaj <strong>«La sekreta vivo de miaj najbaroj»</strong>. Ni legos novelojn el ili por niaj postaj kunvenoj.</p>
+<p>Vi ricevos novaĵleteron kun la ligiloj, el kiuj vi povas elŝuti PDF-dosierojn de la novelaroj <strong>«Amo, tuso kaj forpaso»</strong>, <strong>«La lasta vojaĝo de Cezaro kaj aliaj noktaj aventuroj»</strong> kaj <strong>«La sekreta vivo de miaj najbaroj»</strong>.</p>
 <p>La noveloj estas finalistaj konkursaĵoj de Interkultura Novelo-Konkurso (INK) de Bobelarto.</p>
 <p>Se la novaĵletero ne atingos vin antaŭ la sekva kunveno, sciigu min, kaj mi persone rete sendu al vi necesan ekstrakton.</p>
 
 <h2>Lego-kunveno en Esperanto</h2>
 <p>Vi povas kunveni en Esperanto en la reta kunveno de la <strong>Ruĝa Plumo</strong> okazigata ĉiumonate de Ilia Dewi el Indonezio. Ni sammaniere kunvenas per Zoom kaj kutime legas verkon el INK-novelaroj iafoje kun ĝia aŭtoro. Registraĵoj de la kunvenoj spekteblas en la <a href="https://www.youtube.com/@esperantoindonesia/videos" target="_new" rel=”noopener”>YouTube-kanalo de Indonezia Esperanto-Asocio</a>.</p>
-<!-- <p>La sekva kunveno de la Ruĝa Plumo okazos en <strong>la 25-a de aŭgusto dimanĉe de 11h45 ĝis 13h00 (UTC)</strong> <small>[de 20h45 ĝis 22h00 (JST)]</small>. Se vi volas partopreni, kontaktu min.</p> -->
 <p>Se vi volas partopreni, kontaktu min.</p>
 <p>Krome, rekomendindas ankaŭ la lego-kunveno de Bobelarto. La detaloj troviĝas en la retejo kaj novaĵletero de Bobelarto.</p>
 
