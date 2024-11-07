@@ -9,14 +9,11 @@
 	<link rel="preconnect" href="https://rsms.me/">
 	<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   <style>
-:lang(eo) {
+/*:lang(eo) {*/
+:root {
   font-family: Inter, sans-serif;
   font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
-}
-/*@supports (font-variation-settings: normal) {
-  :root { font-family: InterVariable, sans-serif; }
-}*/
-:root {
+
   border-top: 3px solid green;
   border-bottom: 3px solid green;
 }
@@ -64,7 +61,7 @@ menu {
 	/*text-align: center;*/
 }
 .eo-lingvo {
-	color: green;
+	/*color: green;*/
 }
 .icon-flago {
 	height: 1em;
@@ -86,15 +83,27 @@ details[open] summary {
 .grasa {
 	font-weight: bold;
 }
+
+.lingvo-menu {
+	/*margin: .5em 0 0 0;*/
+	margin: 0;
+	padding: .5em;
+	background-color: #f5f5ee;
+	color: #a1a199;
+}
+.lingvo-menu a {
+	/*color: #696962;*/
+	color: darkgreen;
+	font-weight: bold;
+	text-decoration: none;
+}
   </style>
 </head>
 
 <body>
 
-<menu>
-	<!-- <div lang="eo">Lingvo de la paĝo → <a href="esperanto-legokunveno-skemo-eo.html" class="eo-lingvo"><img class="icon-flago" src="svg/esperanto-flago.svg">Esperanto</a></div> -->
-	<!-- <div lang="eo"><span class="">日本語</span> / <a href="esperanto-legokunveno-skemo-eo.html" class="eo-lingvo"><img class="icon-flago" src="svg/esperanto-flago.svg"> Esperanto</a></div> -->
-	<div lang="eo"><span class="">日本語</span> / <a href="esperanto-legokunveno-skemo-eo.html" class="eo-lingvo">Esperanto</a></div>
+<menu class="lingvo-menu">
+	<div>日本語 | <a href="esperanto-legokunveno-skemo-eo.html">Esperanto</a></div>
 </menu>
 
 <h1>エスペラント小説読書会 <span lang="eo">«Venu, legemuloj»</span></h1>
@@ -106,7 +115,7 @@ details[open] summary {
 <h2>概要</h2>
 <h3>第4回</h3>
 <ul class="senmarko" style="font-size:120%;">
-  <li>【日時】11月16日（土）21時～22時</li>
+  <li>【日時】<span style="letter-spacing:.15em;">11月16日(土) 21時～22時</span></li>
   <li>【作品】<strong lang="eo">“Etfingropromeso” Akiko Ĵin</strong>
 	　<small><span lang="eo">«La sekreta vivo de miaj najbaroj»</span> から</small>
     <!-- <p>第3回 INK の小説集 <span lang="eo">«La sekreta vivo de miaj najbaroj»</span> に収められた短篇小説です。<a href="https://bobelarto.ink/" target="_new" rel=”noopener”>Bobelarto</a> のニュースレターからダウンロードできます。入手できなかった等ありましたらご連絡ください。抜粋を送ります。</p> -->

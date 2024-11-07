@@ -41,9 +41,6 @@ ul {
 li {
 	margin: 0.2rem 0;
 }
-/*li > p {
-	padding-left: 2.5em;
-}*/
 .kapo {
 	min-width: 120px;
 }
@@ -69,12 +66,8 @@ hr {
 hr::before {
 	content: '* * *';
 }
-menu {
-	margin: 1rem 0 0 0;
-	padding: 0;
-}
 .ja-lingvo {
-	color: darkorange;
+	/*color: darkorange;*/
 }
 details summary {
 	text-decoration: underline;
@@ -107,14 +100,32 @@ dl > p {
 	padding-left: 2.5em;
 }
 
+.lingvo-menu {
+	/*margin: .5em 0 0 0;*/
+	margin: 0;
+	padding: .5em;
+	background-color: #f5f5ee;
+	color: #a1a199;
+}
+.lingvo-menu a {
+	/*color: #696962;*/
+	color: darkorange;
+	font-weight: bold;
+	text-decoration: none;
+}
+/*a:link {
+	color: #1a0dab;
+}
+a:visited {
+	color: #681da8;
+}*/
   </style>
 </head>
 
 <body>
 
-<menu>
-	<!-- Lingvo de la paĝo → <a href="esperanto-legokunveno-skemo.html" class="ja-lingvo">La japana</a> -->
-	<div>Esperanto / <a href="esperanto-legokunveno-skemo.html" class="ja-lingvo">日本語</a></div>
+<menu class="lingvo-menu">
+	<div>Esperanto | <a href="esperanto-legokunveno-skemo.html" class="ja-lingvo">日本語</a></div>
 </menu>
 
 <h1>La lego-kunveno de Esperanto-noveloj <span lang="eo">«Venu, legemuloj»</span></h1>
