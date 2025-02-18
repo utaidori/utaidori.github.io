@@ -34,8 +34,8 @@ main {
 }
 .senmarko {
   list-style-type: none;
-  /*padding-left: 1.5em;*/
 	padding: 0 0 0 0.2em;
+	display: none;
 }
 .senspaco {
 	padding: 0;
@@ -77,7 +77,6 @@ hr::before {
 	content: '* * *';
 }
 .ja-lingvo {
-	/*color: darkorange;*/
 }
 details summary {
 	text-decoration: underline;
@@ -111,24 +110,61 @@ dl > p {
 }
 
 .lingvo-menu {
-	/*margin: .5em 0 0 0;*/
 	margin: 0;
 	padding: .5em;
 	background-color: #f5f5ee;
 	color: #a1a199;
 }
 .lingvo-menu a {
-	/*color: #696962;*/
 	color: darkorange;
 	font-weight: bold;
 	text-decoration: none;
 }
+
+table.pasintaj-kunvenoj {
+	border-collapse: collapse;
+	margin: 2rem 0;
+	/*padding: 1.5rem;*/
+	width: 100%;
+	/*border: thin solid #ddd;*/
+}
+.pasintaj-kunvenoj tr {
+	border-bottom: thin solid #ddd;
+}
+.pasintaj-kunvenoj tr:nth-child(1) {
+	border-bottom: thin solid #888;
+}
+.pasintaj-kunvenoj th {
+	text-align: left;
+}
+.pasintaj-kunvenoj th,
+.pasintaj-kunvenoj td {
+	padding: .25rem 1rem;
+}
+.pasintaj-kunvenoj td:nth-child(1),
+.pasintaj-kunvenoj td:nth-child(2),
+.pasintaj-kunvenoj td:nth-child(5) {
+	font-family: monospace;
+}
+.pasintaj-kunvenoj td:nth-child(1) {
+	width: 3em;
+}
+.pasintaj-kunvenoj td:nth-child(2) {
+	width: 7em;
+}
+.pasintaj-kunvenoj th:nth-child(5),
+.pasintaj-kunvenoj td:nth-child(5) {
+	width: 3rem;
+	text-align: right;
+}
+
 /*a:link {
 	color: #1a0dab;
 }
 a:visited {
 	color: #681da8;
 }*/
+
   </style>
 </head>
 
@@ -141,10 +177,18 @@ a:visited {
 <main>
 
 <h1>
-La lego-kunveno de Esperanto-noveloj <span lang="eo">«Venu, legemuloj»</span></h1>
+<!-- La lego-kunveno de Esperanto-noveloj <span lang="eo">«Venu, legemuloj»</span> -->
+<span lang="eo">Venu, legemuloj!</span>
+</h1>
 
-<p>En la kunveno ni legas Esperanto-originalan novelon kaj interparolas pri ĝi japane.<br>
-Ni celas ke kaj komencantaj kaj spertaj esperantistoj el japan-lingvanoj kune ĝuu Esperanto-literaturon.</p>
+<!-- <p>En la kunveno ni legas Esperanto-originalan novelon kaj interparolas pri ĝi japane.<br>
+Ni celas ke kaj komencantaj kaj spertaj esperantistoj el japan-lingvanoj kune ĝuu Esperanto-literaturon.</p> -->
+
+<p>Legu Esperante, interparolu japane! Ĉiumonate ni kunvenas por legi novelon Esperante kaj interparoli japane.<br>
+
+<!-- En la kunveno ni legas Esperanto-originalan novelon kaj interparolas pri ĝi japane.<br> -->
+Ni, esperantistoj el japan-lingvanoj, kaj komencantoj kaj progresintoj kune ĝuu verdan literaturon.</p>
+
 
 <h2>Anonco</h2>
 <h3>La 7-a kunveno</h3>
@@ -155,30 +199,89 @@ Ni celas ke kaj komencantaj kaj spertaj esperantistoj el japan-lingvanoj kune ĝ
 </dl>
 
 <h2>Principo</h2>
-<ul>
-  <li>Privateco: La kunvenoj <strong>neniam</strong> estas registrataj nek elsendataj.
+<ul style="margin: 1em 0;">
+	<li>Preparo:
+		Vi povas partopreni sen ia preparo.
+		Preferinde estas anticipe legi la tekston kaj konsulti vortaron pri novaj vortoj por vi.
 	</li>
-  <li style="margin: 1em 0;">Maniero:
+  <li>Maniero:
     <ol>
-      <li>Legado de la teksto. Unu legas alineojn aŭ paĝon kaj petas alian daŭrigi.</li>
-			<li>Diskuto pri novaj vortoj.</li>
-			<li>Diskuto pri la enhavo.</li>
+<!--       <li>Legado de la teksto per kundivida ekrano. Unu legas alineojn aŭ paĝon kaj petas alian daŭrigi.</li>
+			<li>Diskuto pri novaj vortoj por ni.</li>
+			<li>Diskuto pri la enhavo.</li> -->
+      <li>Legu la tekston sur kundivida ekrano. Laŭvice unu el ni laŭte legu po linioj aŭ alineoj.</li>
+			<li>Diskutu pri novaj vortoj por ni.</li>
+			<li>Diskutu pri la enhavo.</li>
     </ol>
   </li>
-  <li>Babil-ĉambro: Por eniri la ĉambron, vi bezonas nur malfermi ĝian ligilon kaj tie tajpi vian nomon. La adreson vi ricevos post via aliĝo. Eblas partopreni nur mikrofone.
-<a href="./legokunveno/kiel-ensaluti-la-cxambron-eo.html">Jen detala klarigo por eniri.</a></li>
-
-  <li>Aliĝo: Sciigu viajn retadreson kaj nomon per <a href="https://forms.gle/KvztYjSQ8L7Hxg6R8" target="_new" rel=”noopener”>Google formularo</a> aŭ al <a href="mailto:utaidori@gmail.com">utaidori@gmail.com</a>.</li>
+  <!-- <li>Babil-ĉambro: Por eniri la ĉambron, vi bezonas nur malfermi ĝian ligilon kaj tie tajpi vian nomon. La adreson vi ricevos post via aliĝo. Eblas partopreni nur mikrofone. -->
+  <li>Kunvenejo: Reta ĉambro, kies ligilon vi ricevos post aliĝo, kaj kiun vi eniros kun kamerao aŭ nur kun mikrofono.
+<a href="./legokunveno/kiel-ensaluti-la-cxambron-eo.html">Detaloj jen.</a></li>
+  <li>Privateco: La kunvenoj <strong>neniam</strong> estas registrataj nek elsendataj.</li>
+  <li>Aliĝo: Lasu mesaĝon al <a href="mailto:utaidori@gmail.com">utaidori@gmail.com</a> </li>
   <!-- <li>Noto: La ĉambro pretos akcepti vin sufiĉe antaŭ la fiksita horo. Partopreno estas senpaga.</li> -->
 </ul>
 
-<h2>Preparoj (laŭ via bontrovo)</h2>
+<!-- <h2>Preparoj (laŭ via bontrovo)</h2>
 <ul>
   <li>Legi la tekston anticipe.</li>
   <li>Konsulti vortaron pri novaj vortoj por vi.</li>
-</ul>
+</ul> -->
 
 <h2>Pasintaj kunvenoj</h2>
+
+<table class="pasintaj-kunvenoj">
+	<tr>
+		<th>N-ro</th>
+		<th>Dato</th>
+		<th>Novelo</th>
+		<th>Aŭtoro</th>
+		<th>Ĉeesto</th>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>2024/08/18</td>
+		<td>“Dancanta kun ŝarkoj”</td>
+		<td>Julian Modest</td>
+		<td>7</td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>2024/09/22</td>
+		<td>“La lasta vojaĝo de Cezaro”</td>
+		<td>Emanuela Pellicciaro</td>
+		<td>8</td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>2024/10/19</td>
+		<td>“... kaj la fenestroj, okulojn”</td>
+		<td>Jorge Rafael Nogueras</td>
+		<td>5</td>
+	</tr>
+	<tr>
+		<td>4</td>
+		<td>2024/11/16</td>
+		<td>“Etfingropromeso”</td>
+		<td>Akiko Ĵin</td>
+		<td>3</td>
+	</tr>
+	<tr>
+		<td>5</td>
+		<td>2024/12/15</td>
+		<td>“Fabeloj”</td>
+		<td>Tatjana Tereĥova</td>
+		<td>4</td>
+	</tr>
+	<tr>
+		<td>6</td>
+		<td>2025/01/19</td>
+		<td>“La Plej Granda Tragedio”</td>
+		<td>Ariel Bonkorpa</td>
+		<td>7</td>
+	</tr>
+</table>
+
 <ul class="senmarko">
 	<li>
 		<details>
@@ -257,6 +360,7 @@ Ni celas ke kaj komencantaj kaj spertaj esperantistoj el japan-lingvanoj kune ĝ
 <strong>«Amo, tuso kaj forpaso»</strong>, <strong>«La lasta vojaĝo de Cezaro kaj aliaj noktaj aventuroj»</strong> kaj <strong>«La sekreta vivo de miaj najbaroj»</strong>.</p>
 <p>Ili estas la finalistaj konkursaĵoj de <strong>Interkultura Novelo-Konkurso</strong> (INK).</p>
 <!-- <p>Se la novaĵletero ne atingos vin antaŭ la sekva kunveno, sciigu min, kaj mi persone rete sendu al vi necesan ekstrakton.</p> -->
+<p>Bobelarto regule okazigas ankaŭ sian <strong>Legosalonon</strong>. Anoncas ĝin la novaĵleteroj kaj la retejo.</p>
 
 <hr>
 
@@ -266,10 +370,8 @@ per Zoom iafoje kun ĝia aŭtoro. <br>
 <!-- </p> -->
 <!-- <p>La prezidanto estas Ilia Dewi el Indonezio, kaj kunlaboranto estas mi.</p> -->
 <!-- <p> -->
-Ĉiuj ĝiaj kunvenoj estas <strong>registrataj</strong> kaj spekteblas en <a href="https://www.youtube.com/@esperantoindonesia/videos" target="_new" rel=”noopener”>YouTube</a>. Kontaktu min por partopreni.</p>
-<p>
-Kaj,
-<strong>Bobelarto</strong> havas sian <strong>Legosalonon</strong>. Troviĝas ĝiaj detaloj en la retejo de <a href="https://bobelarto.ink/" target="_new" rel=”noopener”>Bobelarto</a>. Aŭ kontaktu min por havi la informojn.</p>
+Ĉiuj ĝiaj kunvenoj estas <strong>registrataj</strong> kaj spekteblas en <a href="https://www.youtube.com/@esperantoindonesia/videos" target="_new" rel=”noopener”>YouTube</a>. Kontaktu min, se vi emas partopreni.</p>
+
 <hr>
 
 <h2>Kontaktu min</h2>
