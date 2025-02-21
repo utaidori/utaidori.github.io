@@ -97,6 +97,20 @@ details[open] summary {
 	font-weight: bold;
 }
 
+dl {
+	line-height: 1.8;
+}
+dt, dd {
+	display: inline-block;
+}
+dt {
+	min-width: 4em;
+}
+dd {
+	/*margin: 0.2rem 0;*/
+	margin-left: 0;
+}
+
 .lingvo-menu {
 	/*margin: .5em 0 0 0;*/
 	margin: 0;
@@ -110,10 +124,10 @@ details[open] summary {
 	font-weight: bold;
 	text-decoration: none;
 }
-.dato span {
+/*.dato span {
 	font-size: 1.2em;
 	margin: 0 .25em;
-}
+}*/
 
 table.pasintaj-kunvenoj {
 	border-collapse: collapse;
@@ -164,8 +178,8 @@ table.pasintaj-kunvenoj {
 
 <main>
 
-<!-- <h1>エスペラント小説読書会 <span lang="eo">«Venu, legemuloj»</span></h1> -->
-<h1><span lang="eo">Venu, legemuloj!</span></h1>
+<!-- <h1>エスペラント小説読書会 <span>«Venu, legemuloj»</span></h1> -->
+<h1><span>Venu, legemuloj!</span></h1>
 
 <p>エスペラントの小説を読み、日本語で語り合うオンライン読書会です。</p>
 <!-- <p>読書会は日本語で進行します。</p> -->
@@ -173,12 +187,20 @@ table.pasintaj-kunvenoj {
 
 <h2>次回予定</h2>
 <h3>第7回</h3>
-<ul class="senmarko" style="font-size:120%;">
-  <li class="dato">【日時】<span>2</span>月<span>23</span>日(日) 21時～22時 (2025年)</li>
-  <li>【作品】<strong lang="eo">“Eskapo” Ewa Grochowska</strong>
-	</small>
-  </li>
-</ul>
+<dl style="font-size:120%;">
+  <div>
+		<dt><span class="kapo">【日時】</span></dt>
+		<dd><span>2</span>月<span>23</span>日(日) 21時～22時 (2025年)</dd>
+  </div>
+  <div>
+		<dt>【作品】</dt>
+		<dd style="vertical-align:top;">
+			<strong>“Mi ne estas Mona Lisa”</strong> Julia Sigmond
+			<br>
+			<strong>“Eskapo”</strong> Ewa Grochowska
+		</dd>
+  </div>
+</dl>
 
 <h2>基本方針</h2>
 <ul class="senmarko">
@@ -197,8 +219,8 @@ table.pasintaj-kunvenoj {
 ブラウザで指定の URL を開くとビデオ通話に参加できます。音声のみの参加も可。<a href="legokunveno/kiel-ensaluti-la-cxambron.html">詳細はこちら。</a></li>
   <li>【プライバシー】
 	当読書会は<strong>録画も配信もされません</strong>。
-  <li>【参加申し込み】<a href="mailto:utaidori@gmail.com" lang="eo">utaidori@gmail.com</a> までメールをお送りください。</li>
-  <!-- <li>【参加申し込み】こちらの<a href="https://forms.gle/KvztYjSQ8L7Hxg6R8" target="_new" rel=”noopener”>Googleフォーム</a>から。または名前とメールアドレスを <a href="mailto:utaidori@gmail.com" lang="eo">utaidori@gmail.com</a> まで教えてください。</li> -->
+  <li>【参加申し込み】<a href="mailto:utaidori@gmail.com">utaidori@gmail.com</a> までメールをお送りください。</li>
+  <!-- <li>【参加申し込み】こちらの<a href="https://forms.gle/KvztYjSQ8L7Hxg6R8" target="_new" rel=”noopener”>Googleフォーム</a>から。または名前とメールアドレスを <a href="mailto:utaidori@gmail.com">utaidori@gmail.com</a> まで教えてください。</li> -->
   <!-- <li>【備考】早めの入室 OK 。参加無料です。</li> -->
 </ul>
 
@@ -262,7 +284,7 @@ table.pasintaj-kunvenoj {
 </table>
 
 
-<ul class="senmarko" lang="eo" style="display:none;">
+<ul class="senmarko" style="display:none;">
 	<li>
 		<details>
 			<summary>La 1-a kunveno</summary>
@@ -333,26 +355,26 @@ table.pasintaj-kunvenoj {
 <hr>
 
 <!-- <h2>次回以降のための準備（推奨）</h2> -->
-<h2><span lang="eo">Bobelarto</span> と小説集のダウンロードについて</h2>
-<p>文学サークル <a lang="eo" href="https://bobelarto.ink/" target="_new" rel=”noopener”><strong>Bobelarto</strong></a> のニュースレターを購読してください。無料です。電子メールで届きます。<br>
-<!-- ※ <span lang="eo">novaĵletero</span> の項目でメールアドレスを入力、<span lang="eo">“Mi volas partopreni”</span> ボタンを押す。</p> -->
-<p>ニュースレター内のリンクから <strong lang="eo">«Amo, tuso kaj forpaso», «La lasta vojaĝo de Cezaro kaj aliaj noktaj aventuroj», «La sekreta vivo de miaj najbaroj»</strong> のPDFをダウンロードしてください。</p>
-<p>小説コンクール <span lang="eo"><strong>Interkultura Novelo-Konkurso</strong> (INK)</span> の優秀作を収めた小説集です。</p>
+<h2><span>Bobelarto</span> と小説集のダウンロードについて</h2>
+<p>文学サークル <a href="https://bobelarto.ink/" target="_new" rel=”noopener”><strong>Bobelarto</strong></a> のニュースレターを購読してください。無料です。電子メールで届きます。<br>
+<!-- ※ <span>novaĵletero</span> の項目でメールアドレスを入力、<span>“Mi volas partopreni”</span> ボタンを押す。</p> -->
+<p>ニュースレター内のリンクから <strong>«Amo, tuso kaj forpaso», «La lasta vojaĝo de Cezaro kaj aliaj noktaj aventuroj», «La sekreta vivo de miaj najbaroj»</strong> のPDFをダウンロードしてください。</p>
+<p>小説コンクール <span><strong>Interkultura Novelo-Konkurso</strong> (INK)</span> の優秀作を収めた小説集です。</p>
 <!-- <p>次回までにニュースレターの受信が間に合わなかった人には、間宮が抜粋したPDFをメールに添付します。</p> -->
-<p><span lang="eo">Bobelarto</span> は定期的に <strong lang="eo">Legosalono</strong> という読書会も開いています。詳細はウェブサイトやニュースレターをご参照ください。</p>
+<p><span>Bobelarto</span> は定期的に <strong>Legosalono</strong> という読書会も開いています。詳細はウェブサイトやニュースレターをご参照ください。</p>
 
 <!-- <hr> -->
 
 <!-- <h2>他のエスペラントでの読書会について</h2> -->
-<h2><span lang="eo">Ruĝa Plumo</lang> の読書会について</h2>
-<p>エスペラントで語り合いたい、というかたには、毎月第2日曜日に開催される <strong lang="eo">Ruĝa Plumo</strong> の読書会をおすすめします。進めかたは同じです。作者がゲスト参加することもあります。</p>
-<p><strong lang="eo">Ruĝa Plumo</strong> の読書会は<strong>録画されます</strong>。動画は <a href="https://www.youtube.com/@esperantoindonesia/videos" target="_new" rel=”noopener” lang="eo">YouTube</a> で視聴できます。<br>
+<h2><span>Ruĝa Plumo</lang> の読書会について</h2>
+<p>エスペラントで語り合いたい、というかたには、毎月第2日曜日に開催される <strong>Ruĝa Plumo</strong> の読書会をおすすめします。進めかたは同じです。作者がゲスト参加することもあります。</p>
+<p><strong>Ruĝa Plumo</strong> の読書会は<strong>録画されます</strong>。動画は <a href="https://www.youtube.com/@esperantoindonesia/videos" target="_new" rel=”noopener”>YouTube</a> で視聴できます。<br>
 エスペラント初心者の方も歓迎です。参加希望の方はご連絡ください。</p>
 
 <!-- <hr> -->
 
 <h2>連絡先</h2>
-<p>間宮緑 - <a href="mailto:utaidori@gmail.com" lang="eo">utaidori@gmail.com</a></p>
+<p>間宮緑 - <a href="mailto:utaidori@gmail.com">utaidori@gmail.com</a></p>
 
 </main>
 <!-- <time>更新日: 2024/08/20</time> -->
