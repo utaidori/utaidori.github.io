@@ -136,11 +136,10 @@ em {
 table.principo {
 	margin-top: 1rem;
 	border-collapse: collapse;
-	/*line-height: 2;*/
+	border: thin solid #ddd;
+	border-width: 1px 0;
 }
 .principo tr {
-	border-top: thin solid #ddd;
-	vertical-align: text-top;
 }
 .principo tr:last-child {
 	/*border-width: 0;*/
@@ -148,9 +147,9 @@ table.principo {
 }
 .principo td {
 	padding: .5em .9em;
+	vertical-align: top;
 }
 .principo td:nth-child(1) {
-	/*min-width: 7em;*/
 	font-weight: bold;
 	background-color: #f5f5f5;
 	text-align: center;
