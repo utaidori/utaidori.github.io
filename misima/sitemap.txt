@@ -11,3 +11,4 @@ https://utaidori.github.io/misima/log_2020.html
 https://utaidori.github.io/misima/log_2021.html
 https://utaidori.github.io/misima/log_2022.html
 https://utaidori.github.io/misima/notes.html
+https://utaidori.github.io/misima/sitemap.txt
