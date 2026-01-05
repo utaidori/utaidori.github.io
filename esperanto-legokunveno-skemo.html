@@ -225,40 +225,42 @@ color: initial;
 a:hover {
 text-decoration: none;
 }
-  </style>
-    <style>
-        /* 言語切り替えのCSS */
-        .lang-ja [lang="eo"] {
-            display: none !important;
-        }
-        .lang-eo [lang="ja"] {
-            display: none !important;
-        }
-        /* すべての言語要素のデフォルトdisplayを保険で設定（消失防止） */
-        [lang="ja"], [lang="eo"] {
-            display: revert;  /* ブラウザのデフォルトに戻す（initialより安全） */
-        }
-        /* 要素ごとの調整（必要に応じて追加） */
-        h1[lang], p[lang], div[lang] { display: block; }
-        li[lang] { display: list-item; }  /* liはlist-item */
+	</style>
+		<style>
+				/* 言語切り替えのCSS */
+				.lang-ja [lang="eo"] {
+						display: none !important;
+				}
+				.lang-eo [lang="ja"] {
+						display: none !important;
+				}
+				/* すべての言語要素のデフォルトdisplayを保険で設定（消失防止） */
+				[lang="ja"], [lang="eo"] {
+						display: revert;  /* ブラウザのデフォルトに戻す（initialより安全） */
+				}
+				/* 要素ごとの調整（必要に応じて追加） */
+				h1[lang], p[lang], div[lang] { display: block; }
+				li[lang] { display: list-item; }  /* liはlist-item */
 				.lang-eo body {line-height:1.6;}
-    </style>
-    <script>
-        function toggleLanguage() {
-            const html = document.documentElement;  // <html>要素
-            if (html.classList.contains('lang-ja')) {
-                html.classList.remove('lang-ja');
-                html.classList.add('lang-eo');
-                html.lang = 'eo';  // lang属性も変更
-                document.getElementById('langToggle').textContent = '日本語で表示';
-            } else {
-                html.classList.remove('lang-eo');
-                html.classList.add('lang-ja');
-                html.lang = 'ja';
-                document.getElementById('langToggle').textContent = 'Vidigu en Esperanto';
-            }
-        }
-    </script>
+		</style>
+		<script>
+				function toggleLanguage() {
+						const html = document.documentElement;  // <html>要素
+						if (html.classList.contains('lang-ja')) {
+								html.classList.remove('lang-ja');
+								html.classList.add('lang-eo');
+								html.lang = 'eo';  // lang属性も変更
+								document.title = "Lego-kunveno «Venu, legemuloj!»";
+								document.getElementById('langToggle').textContent = '日本語で表示';
+						} else {
+								html.classList.remove('lang-eo');
+								html.classList.add('lang-ja');
+								html.lang = 'ja';
+								document.title = "エスペラント小説読書会 Venu, legemuloj!";
+								document.getElementById('langToggle').textContent = 'Vidigu en Esperanto';
+						}
+				}
+		</script>
 </head>
 
 <body>
@@ -304,7 +306,7 @@ Bonvenon kaj komencantoj kaj progresintoj.</p>
 			<!-- - Spomenka Štimec -->
 		</dd>
 	</div>
-<!-- 	<div style="font-size:90%">
+<!--	<div style="font-size:90%">
 		<dt>
 		【備考】
 		</dt>
@@ -313,11 +315,11 @@ Bonvenon kaj komencantoj kaj progresintoj.</p>
 		</dd>
 	</div> -->
 
-<!-- 	<div>
+<!--	<div>
 		<dt>
 		【出典】
 		</dt> -->
-<!-- 		<dd style="font-size:90%;"><span style="color:gray;">&#8599;</span> <a href="http://literaturo.esperanto.net/tekstoj/johansson/bon.html" target="_new" rel=”noopener”>“Bonan matenon!”</a>
+<!--		<dd style="font-size:90%;"><span style="color:gray;">&#8599;</span> <a href="http://literaturo.esperanto.net/tekstoj/johansson/bon.html" target="_new" rel=”noopener”>“Bonan matenon!”</a>
 		<span style="color:gray;">&#8599;</span> <a href="http://literaturo.esperanto.net/tekstoj/johansson/choku.html" target="_new" rel=”noopener”>“Ĉokolada biskvito”</a></dd> -->
 		<!-- <dd><span style="color:gray;">&#8599;</span><a href="https://tekstaro.com/t?nomo=ombro-sur-interna-pejzagho&uzistreketojn=0&tipo=&sekcio=ba-teksto&antauasekcio=1" target="_new" rel=”noopener” style="font-size:90%;">La teksto publikigita en Tekstaro</a></dd> -->
 		<!-- <dd style="font-size:0.9em;">詩は <span style="color:gray;">&#8599;</span> <a href="https://www.literaturavivo.com/" target="_new" rel=”noopener”>«Literatura vivo» n-ro 4</a> に所収</dd> -->
