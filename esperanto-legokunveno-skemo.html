@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" class="lang-ja">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,19 +27,63 @@ main {
 	margin: auto;
 	padding: 0 1rem 1rem 1rem;
 }
-li > p {
+
+.lang-ja li > p {
 	padding-left: 2.5em;
 }
+
+.lang-eo ul {
+	padding: 0 0 0 1.2em;
+}
+.lang-eo li {
+	margin: 0.2rem 0;
+}
+.lang-eo .kapo {
+	min-width: 120px;
+}
+
+button {
+margin: .5rem 0 .5rem .3rem;
+padding: .5rem;
+border: 1px solid #888;
+border-radius: 3px;
+background-color: #f5f5ee;
+/*color: #a1a199;*/
+color: black;
+font-weight: bold;
+}
+.lang-ja button {
+/*color: darkgreen;*/
+font-size: 100%;
+}
+.lang-eo button {
+/*color: darkorange;*/
+font-size: 90%;
+}
+
 h1 {
 	font-size: 1.5rem;
 	background-image: url(./favicon/legemuloj-192-alpha.png);
 	background-repeat: no-repeat;
 	background-size: 3em;
+}
+
+.lang-ja h1 {
 	padding: 1.5rem 0 0.6rem 5.5rem;
 }
+.lang-eo h1 {
+	padding: 1.3rem 0 0.6rem 5.5rem;
+}
+
 h2 {
 	margin-top: 2em;
 	font-size: 1.3rem;
+}
+
+.lang-eo h2 {
+	margin-bottom: 0;
+	padding-bottom: 0;
+	line-height: 1.0;
 }
 
 hr {
@@ -50,10 +94,12 @@ hr {
 hr::before {
 	content: '* * *';
 }
-menu {
+
+.lang-ja menu {
 	margin: 1rem 0 0 0;
 	padding: 0;
 }
+
 .filmeto {
 	background-image: url(./svg/filmeto.svg);
 	background-repeat: no-repeat;
@@ -61,9 +107,19 @@ menu {
 	background-size: 1.5em;
 	padding-left: 2em;
 }
+
+.lang-eo .filmeto {
+	font-size: 0.9rem;
+}
+
 dl {
 	line-height: 1.8;
 }
+
+.lang-ja .anonco-dl {
+	font-size: 120%;
+}
+
 dt, dd {
 	display: inline-block;
 }
@@ -87,9 +143,16 @@ dd {
 }
 table.pasintaj-kunvenoj {
 	border-collapse: collapse;
-	margin: 1rem 0;
 	width: 100%;
 }
+
+.lang-ja table.pasintaj-kunvenoj {
+	margin: 1rem 0;
+}
+.lang-eo table.pasintaj-kunvenoj {
+	margin: 2rem 0;
+}
+
 .pasintaj-kunvenoj tr {
 	border-bottom: thin solid #ddd;
 	vertical-align: text-top;
@@ -122,6 +185,11 @@ table.pasintaj-kunvenoj {
 	text-align: right;
 }
 
+.lang-eo em {
+	font-weight: bold;
+	font-style: oblique;
+}
+
 table.principo {
 	margin-top: 1rem;
 	border-collapse: collapse;
@@ -141,57 +209,101 @@ table.principo {
 .principo td:nth-child(1) {
 	font-weight: bold;
 	background-color: #f5f5f5;
+	color: #333;
 	text-align: center;
 }
 
-.number-dd span {
-	font-size: 1.2em;
+.lang-ja .number-dd .numero {
+	/*font-size: 1.2em;*/
 	margin: 0 .2em;
-	/*letter-spacing: 1px;*/
+}
+
+a {
+text-decoration: underline;
+color: initial;
+}
+a:hover {
+text-decoration: none;
 }
   </style>
+    <style>
+        /* 言語切り替えのCSS */
+        .lang-ja [lang="eo"] {
+            display: none !important;
+        }
+        .lang-eo [lang="ja"] {
+            display: none !important;
+        }
+        /* すべての言語要素のデフォルトdisplayを保険で設定（消失防止） */
+        [lang="ja"], [lang="eo"] {
+            display: revert;  /* ブラウザのデフォルトに戻す（initialより安全） */
+        }
+        /* 要素ごとの調整（必要に応じて追加） */
+        h1[lang], p[lang], div[lang] { display: block; }
+        li[lang] { display: list-item; }  /* liはlist-item */
+				.lang-eo body {line-height:1.6;}
+    </style>
+    <script>
+        function toggleLanguage() {
+            const html = document.documentElement;  // <html>要素
+            if (html.classList.contains('lang-ja')) {
+                html.classList.remove('lang-ja');
+                html.classList.add('lang-eo');
+                html.lang = 'eo';  // lang属性も変更
+                document.getElementById('langToggle').textContent = '日本語で表示';
+            } else {
+                html.classList.remove('lang-eo');
+                html.classList.add('lang-ja');
+                html.lang = 'ja';
+                document.getElementById('langToggle').textContent = 'Vidigu en Esperanto';
+            }
+        }
+    </script>
 </head>
 
 <body>
+	<!-- <span style="color:#a1a199;">→</span>  -->
+	<button id="langToggle" onclick="toggleLanguage()">Vidigu en Esperanto</button>
 
-<menu class="lingvo-menu">
-	<!-- <div><a href="esperanto-legokunveno-skemo-eo.html">Esperanto</a> | 日本語</div> -->
+<!-- <menu class="lingvo-menu">
+	<div><a href="esperanto-legokunveno-skemo-eo.html">Esperanto</a> | 日本語</div>
 	<div>→ <a href="esperanto-legokunveno-skemo-eo.html">Esperanto</a></div>
-</menu>
+</menu> -->
 
 <main>
 
 <h1><span>Venu, legemuloj!</span></h1>
 
-<p>エスペラントの小説を読み、日本語で語り合うオンライン読書会です。<br>
+<p lang="ja">エスペラントの小説を読み、日本語で語り合うオンライン読書会です。<br>
 	エスペラントの初心者も流暢な人も、一緒にエスペラント文学を楽しみましょう。</p>
+<p lang="eo">Legu Esperante, interparolu japane! Ĉiumonata kunveno por legi novelon Esperante kaj interparoli japane.
+Bonvenon kaj komencantoj kaj progresintoj.</p>
 
-<h2>次回予定</h2>
-<h3>第15回</h3>
-<dl style="font-size:120%;">
+<h2><span lang="ja">次回予定</span><span lang="eo">Anonco</span></h2>
+<h3>
+<span lang="ja">第</span>
+<span lang="eo">La</span>
+15<span lang="ja"> 回</span><span lang="eo">-a kunveno</span>
+</h3>
+<dl class="anonco-dl">
 	<div>
-		<dt><span class="kapo">【日時】</span></dt>
-		<dd class="number-dd"><span>2025</span>年 <span>10</span>月<span>26</span>日(日) 21時～22時</dd>
+		<dt><span class="kapo"><span lang="ja">【日時】</span><span lang="eo">Dato:</span></span></dt>
+		<dd class="number-dd">
+			<span lang="ja"><span class="numero">2026</span>年 <span class="numero">1</span>月<span class="numero">24</span>日(土) 21時</span>
+			<span lang="eo">sabato, 24 januaro 2026 | 12:00 (UTC) / 21:00 (JST)</span>
+			<!-- <strong>La 24-a de Januaro (2026) sabate 12:00-13:00 (UTC) / 21:00-22:00 (JST)</strong> -->
+		</dd>
 	</div>
 	<div>
-		<dt>【作品1】</dt>
-		<dd style="vertical-align:top; font-size:0.9em;">
-Ne mi sen vi
-<!-- “Bonan matenon!”</strong> kaj <strong>“La ĉokolada biskvito” -->
+		<dt><span lang="ja">【作品】</span><span lang="eo">Verko:</span></span></dt>
+		<dd style="vertical-align:top;">
+<strong>“Burĝonos la migdalfloroj”</strong>
+- Nicola Ruggiero el «Belartaj Rikoltoj 2015»
 			<!-- Ombro sur interna pejzaĝo (2) -->
-			（詩） - Malekera Bonne Idée
 			<!-- - Sten Johansson  -->
 			<!-- - Spomenka Štimec -->
 		</dd>
 	</div>
-	<div>
-		<dt>【作品2】</dt>
-		<dd style="vertical-align:top; font-size:0.9em;">
-			«Centvorte» からマイクロノベル4篇、（時間があれば）La ĉioscieco de OV-GPT
-			（小説） - Jorge Rafael Nogueras
-		</dd>
-	</div>
-
 <!-- 	<div style="font-size:90%">
 		<dt>
 		【備考】
@@ -200,19 +312,21 @@ Ne mi sen vi
 		※ 複数回に分けて読んでいきます。
 		</dd>
 	</div> -->
-	<div>
+
+<!-- 	<div>
 		<dt>
 		【出典】
-		</dt>
+		</dt> -->
 <!-- 		<dd style="font-size:90%;"><span style="color:gray;">&#8599;</span> <a href="http://literaturo.esperanto.net/tekstoj/johansson/bon.html" target="_new" rel=”noopener”>“Bonan matenon!”</a>
 		<span style="color:gray;">&#8599;</span> <a href="http://literaturo.esperanto.net/tekstoj/johansson/choku.html" target="_new" rel=”noopener”>“Ĉokolada biskvito”</a></dd> -->
 		<!-- <dd><span style="color:gray;">&#8599;</span><a href="https://tekstaro.com/t?nomo=ombro-sur-interna-pejzagho&uzistreketojn=0&tipo=&sekcio=ba-teksto&antauasekcio=1" target="_new" rel=”noopener” style="font-size:90%;">La teksto publikigita en Tekstaro</a></dd> -->
-		<dd style="font-size:0.9em;">詩は <span style="color:gray;">&#8599;</span> <a href="https://www.literaturavivo.com/" target="_new" rel=”noopener”>«Literatura vivo» n-ro 4</a> に所収</dd>
-	</div>
+		<!-- <dd style="font-size:0.9em;">詩は <span style="color:gray;">&#8599;</span> <a href="https://www.literaturavivo.com/" target="_new" rel=”noopener”>«Literatura vivo» n-ro 4</a> に所収</dd> -->
+	<!-- </div> -->
 </dl>
 
-<h2>基本方針</h2>
-<table class="principo">
+<h2><span lang="ja">基本方針</span><span lang="eo">Principo</span></h2>
+
+<table class="principo" lang="ja">
 	<tr>
 		<td>事前の準備</td>
 		<td>
@@ -236,9 +350,7 @@ Ne mi sen vi
 	</tr>
 	<tr>
 		<td>プライバシー</td>
-		<td>
-	当読書会は<strong>録画も配信もされません</strong>。
-		</td>
+		<td>当読書会は<strong>録画も配信もされません</strong>。</td>
 	</tr>
 	<tr>
 		<td>参加申し込み</td>
@@ -246,15 +358,46 @@ Ne mi sen vi
 	</tr>
 </table>
 
+<table class="principo" lang="eo">
+	<tr>
+		<td>Preparo</td>
+		<td>
+			Nenia preparo necesas. Preferinde estas anticipe legi la tekston kaj konsulti vortaron pri nekonataj vortoj.
+		</td>
+	</tr>
+	<tr>
+		<td>Maniero</td>
+		<td>
+			1. Kunlegado. Ĉiu el ni laŭvice laŭte legas tekston sur kundividita ekrano.<br>
+			2. Diskuto pri nekonataj vortoj kaj esprimoj.<br>
+			3. Ni libere parolas rilate la tekston.
+		</td>
+	</tr>
+	<tr>
+		<td>Kunvenejo</td>
+		<td>
+			<!-- Reta ĉambro, kies ligilon vi ricevos post aliĝo, kaj kiun vi eniros per retumilo kun kamerao aŭ nur kun mikrofono. <a href="./legokunveno/kiel-ensaluti-la-cxambron-eo.html">Jen detaloj.</a> -->
+			<strong>Google Meet</strong>, kies ligilon vi ricevos post aliĝo.
+		</td>
+	</tr>
+	<tr>
+		<td>Privateco</td>
+		<td>La kunvenoj <strong>neniam</strong> estas registrataj nek elsendataj.</td>
+	</tr>
+	<tr>
+		<td>Aliĝo</td>
+		<td>Lasu mesaĝon al <a href="mailto:utaidori@gmail.com">utaidori@gmail.com</a></td>
+	</tr>
+</table>
 
-<h2>過去の読書会</h2>
+<h2><span lang="ja">過去の読書会</span><span lang="eo">Pasintaj kunvenoj</span></h2>
 <table class="pasintaj-kunvenoj">
 	<tr>
-		<th>回</th>
-		<th>日付</th>
-		<th>作品</th>
-		<th>著者</th>
-		<th>参加</th>
+		<th><span lang="ja">回</span>  <span lang="eo">N<sup>-ro</sup></span></th>
+		<th><span lang="ja">日付</span><span lang="eo">Dato</span></th>
+		<th><span lang="ja">作品</span><span lang="eo">Verko</span></th>
+		<th><span lang="ja">著者</span><span lang="eo">Aŭtoro</span></th>
+		<th><span lang="ja">参加</span><span lang="eo">Ĉeesto</span></th>
 	</tr>
 	<tr>
 		<td>1-a</td>
@@ -359,7 +502,7 @@ Ne mi sen vi
 		<td>12-a</td>
 		<td>2025.07.27</td>
 		<td>
-			Ombro sur interna pejzaĝo (1)
+			Ombro sur interna pejzaĝo 1
 		</td>
 		<td>
 			Spomenka Štimec
@@ -381,7 +524,7 @@ Ne mi sen vi
 		<td>14-a</td>
 		<td>2025.09.28</td>
 		<td>
-			Ombro sur interna pejzaĝo (2)
+			Ombro sur interna pejzaĝo 2
 		</td>
 		<td>
 			Spomenka Štimec
@@ -389,39 +532,93 @@ Ne mi sen vi
 		<td>6</td>
 	</tr>
 	<tr>
-			<td>15-a</td>
-		 <td>2025.10.26</td>
-			<td>
-				Ne mi sen vi (poemo)<br>
-				4 verkoj el «Centvorte»
-			</td>
-			<td>
-				Malekera Bonne Idée<br>
-				Jorge Rafael Nogueras
-			</td>
-			<td>6</td>
+		<td>15-a</td>
+		<td>2025.10.26</td>
+		<td>
+			Ne mi sen vi (poemo)<br>
+			4 verkoj el <i>Centvorte</i>
+		</td>
+		<td>
+			Malekera Bonne Idée<br>
+			Jorge Rafael Nogueras
+		</td>
+		<td>6</td>
+	</tr>
+	<tr>
+		<td>16-a</td>
+		<td>2025.11.23</td>
+		<td>
+			Sputnik 1
+		</td>
+		<td>
+			Sten Johansson
+		</td>
+		<td>6</td>
+	</tr>
+	<tr>
+		<td>17-a</td>
+		<td>2025.12.20</td>
+		<td>
+			Sputnik 2
+		</td>
+		<td>
+			Sten Johansson
+		</td>
+		<td>6</td>
+	</tr>
+	<tr>
+		<td>18-a</td>
+		<td>2026.01.24</td>
+		<td>
+			Burĝonos la migdalfloroj
+		</td>
+		<td>
+			Nicola Ruggiero
+		</td>
+		<td></td>
 	</tr>
 </table>
 
 <hr>
 
+<section lang="ja">
 <h2>Bobelarto と小説集のダウンロードについて</h2>
 <p>文学サークル <a href="https://bobelarto.ink/" target="_new" rel=”noopener”><strong>Bobelarto</strong></a> のニュースレターを購読してください。無料です。電子メールで届きます。<br>
 <!-- ※ <span>novaĵletero</span> の項目でメールアドレスを入力、<span>“Mi volas partopreni”</span> ボタンを押す。</p> -->
 <p>ニュースレター内のリンクから <i>«Amo, tuso kaj forpaso», «La lasta vojaĝo de Cezaro kaj aliaj noktaj aventuroj», «La sekreta vivo de miaj najbaroj»</i> の各PDFをダウンロードしてください。小説コンクール <strong>Interkultura Novelo-Konkurso</strong> (INK)の優秀作を収めた小説集です。</p>
 <p>Bobelarto は定期的に <strong>Legosalono</strong> という読書会も開いています。詳細はウェブサイトやニュースレターをご参照ください。</p>
+</section>
+
+<section lang="eo">
+<h2>Bobelarto kaj novelaroj</h2>
+<p>Abonu la senpagan novaĵleteron de la teamo <a href="https://bobelarto.ink/" target="_new" rel=”noopener”><strong>Bobelarto</strong></a>, el kies ligiloj elŝuteblas jenaj novelaroj:
+<i>«Amo, tuso kaj forpaso»</i>, <i>«La lasta vojaĝo de Cezaro kaj aliaj noktaj aventuroj»</i> kaj <i>«La sekreta vivo de miaj najbaroj»</i>.
+Ili estas la finalistaj konkursaĵoj de <strong>Interkultura Novelo-Konkurso</strong> (INK).</p>
+<p>Bobelarto regule okazigas ankaŭ sian lego-kunvenon nomatan <strong>Legosalono</strong>, kiun anoncas la novaĵleteroj kaj la retejo.</p>
+</section>
+
 
 <!-- <hr> -->
 
+<section lang="ja">
 <h2>Ruĝa Plumo の読書会について</h2>
 <p>エスペラントで語り合いたい、というかたには、毎月第2日曜日に開催される <strong>Ruĝa Plumo</strong> の読書会をおすすめします。進めかたは同じです。作者がゲスト参加することもあります。</p>
 <p><strong>Ruĝa Plumo</strong> の読書会は<strong>録画されます</strong>。動画は <a href="https://www.youtube.com/@esperantoindonesia/videos" target="_new" rel=”noopener”>YouTube</a> で視聴できます。<br>
 エスペラント初心者の方も歓迎です。参加希望の方はご連絡ください。</p>
+</section>
+
+<section lang="eo">
+<h2>Ruĝa Plumo</h2>
+<p>La teamo <strong>Ruĝa Plumo</strong> ĉiumonate en la <strong>dua dimanĉo</strong> okazigas lego-kunvenon
+per Zoom iafoje kun ĝia aŭtoro. <br>
+Ĝiaj kunvenoj principe estas <strong>registrataj</strong> kaj spekteblas en <a href="https://www.youtube.com/@esperantoindonesia/videos" target="_new" rel=”noopener”>YouTube</a>. Se ĝi interesas vin, min kontaktu.</p>
+</section>
 
 <!-- <hr> -->
 
-<h2>連絡先</h2>
-<p>間宮 緑 - <a href="mailto:utaidori@gmail.com">utaidori@gmail.com</a></p>
+<h2><span lang="ja">連絡先</span><span lang="eo">Kontaktu min</span></h2>
+<p><span lang="ja">間宮 緑</span><span lang="eo">Mamija Midori</span> - <a href="mailto:utaidori@gmail.com">utaidori@gmail.com</a></p>
 
 </main>
 </body></html>
+
