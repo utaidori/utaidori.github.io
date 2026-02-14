@@ -163,6 +163,9 @@ table.pasintaj-kunvenoj {
 .pasintaj-kunvenoj th {
 	text-align: left;
 }
+.pasintaj-kunvenoj th:nth-child(1) {
+	text-align: right;
+}
 .pasintaj-kunvenoj th,
 .pasintaj-kunvenoj td {
 	padding: .25rem 1rem;
@@ -173,8 +176,10 @@ table.pasintaj-kunvenoj {
 	font-family: monospace;
 }
 .pasintaj-kunvenoj td:nth-child(1) {
-	width: 2.5em;
+	/*width: 2.5em;*/
+	width: 2em;
 	font-weight: bold;
+	text-align: right;
 }
 .pasintaj-kunvenoj td:nth-child(2) {
 	width: 7em;
@@ -398,56 +403,57 @@ Bonvenon kaj komencantoj kaj progresintoj.</p>
 <h2><span lang="ja">過去の読書会</span><span lang="eo">Pasintaj kunvenoj</span></h2>
 <table class="pasintaj-kunvenoj">
 	<tr>
-		<th><span lang="ja">回</span>  <span lang="eo">N<sup>-ro</sup></span></th>
+		<!-- <th><span lang="ja">回</span>  <span lang="eo">N<sup>-ro</sup></span></th> -->
+		<th><span lang="ja">#</span><span lang="eo">#</span></th>
 		<th><span lang="ja">日付</span><span lang="eo">Dato</span></th>
 		<th><span lang="ja">作品</span><span lang="eo">Verko</span></th>
 		<th><span lang="ja">著者</span><span lang="eo">Aŭtoro</span></th>
 		<th><span lang="ja">参加</span><span lang="eo">Ĉeesto</span></th>
 	</tr>
 	<tr>
-		<td>1-a</td>
+		<td>1<span style="display:none">-a</span></td>
 		<td>2024.08.18</td>
 		<td>Dancanta kun ŝarkoj</td>
 		<td>Julian Modest</td>
 		<td>7</td>
 	</tr>
 	<tr>
-		<td>2-a</td>
+		<td>2<span style="display:none">-a</span></td>
 		<td>2024.09.22</td>
 		<td>La lasta vojaĝo de Cezaro</td>
 		<td>Emanuela Pellicciaro</td>
 		<td>8</td>
 	</tr>
 	<tr>
-		<td>3-a</td>
+		<td>3<span style="display:none">-a</span></td>
 		<td>2024.10.19</td>
 		<td>... kaj la fenestroj, okulojn</td>
 		<td>Jorge Rafael Nogueras</td>
 		<td>5</td>
 	</tr>
 	<tr>
-		<td>4-a</td>
+		<td>4<span style="display:none">-a</span></td>
 		<td>2024.11.16</td>
 		<td>Etfingropromeso</td>
 		<td>Akiko Ĵin</td>
 		<td>3</td>
 	</tr>
 	<tr>
-		<td>5-a</td>
+		<td>5<span style="display:none">-a</span></td>
 		<td>2024.12.15</td>
 		<td>Fabeloj</td>
 		<td>Tatjana Tereĥova</td>
 		<td>4</td>
 	</tr>
 	<tr>
-		<td>6-a</td>
+		<td>6<span style="display:none">-a</span></td>
 		<td>2025.01.19</td>
 		<td>La Plej Granda Tragedio</td>
 		<td>Ariel Bonkorpa</td>
 		<td>7</td>
 	</tr>
 	<tr>
-		<td>7-a</td>
+		<td>7<span style="display:none">-a</span></td>
 		<td>2025.02.23</td>
 		<td>
 			Mi ne estas Mona Lisa<br>
@@ -460,7 +466,7 @@ Bonvenon kaj komencantoj kaj progresintoj.</p>
 		<td>7</td>
 	</tr>
 	<tr>
-		<td>8-a</td>
+		<td>8<span style="display:none">-a</span></td>
 		<td>2025.03.23</td>
 		<td>
 			La gajnita motorciklo
@@ -471,7 +477,7 @@ Bonvenon kaj komencantoj kaj progresintoj.</p>
 		<td>4</td>
 	</tr>
 		<tr>
-		<td>9-a</td>
+		<td>9<span style="display:none">-a</span></td>
 		<td>2025.04.27</td>
 		<td>
 			Kredu min, sinjorino! <small>ĉapitro 4</small>
@@ -482,7 +488,7 @@ Bonvenon kaj komencantoj kaj progresintoj.</p>
 		<td>5</td>
 	</tr>
 	<tr>
-		<td>10-a</td>
+		<td>10<span style="display:none">-a</span></td>
 		<td>2025.05.17</td>
 		<td>
 			Reviviĝo
@@ -493,7 +499,7 @@ Bonvenon kaj komencantoj kaj progresintoj.</p>
 		<td>5</td>
 	</tr>
 	<tr>
-		<td>11-a</td>
+		<td>11<span style="display:none">-a</span></td>
 		<td>2025.06.22</td>
 		<td>
 			Arkta simfonio
@@ -504,7 +510,7 @@ Bonvenon kaj komencantoj kaj progresintoj.</p>
 		<td>4</td>
 	</tr>
 	<tr>
-		<td>12-a</td>
+		<td>12<span style="display:none">-a</span></td>
 		<td>2025.07.27</td>
 		<td>
 			Ombro sur interna pejzaĝo 1
@@ -515,7 +521,7 @@ Bonvenon kaj komencantoj kaj progresintoj.</p>
 		<td>4</td>
 	</tr>
 	<tr>
-		<td>13-a</td>
+		<td>13<span style="display:none">-a</span></td>
 		<td>2025.08.24</td>
 		<td>
 			Bonan matenon! / La ĉokolada biskvito
@@ -526,7 +532,7 @@ Bonvenon kaj komencantoj kaj progresintoj.</p>
 		<td>7</td>
 	</tr>
 	<tr>
-		<td>14-a</td>
+		<td>14<span style="display:none">-a</span></td>
 		<td>2025.09.28</td>
 		<td>
 			Ombro sur interna pejzaĝo 2
@@ -537,7 +543,7 @@ Bonvenon kaj komencantoj kaj progresintoj.</p>
 		<td>6</td>
 	</tr>
 	<tr>
-		<td>15-a</td>
+		<td>15<span style="display:none">-a</span></td>
 		<td>2025.10.26</td>
 		<td>
 			Ne mi sen vi (poemo)<br>
@@ -550,7 +556,7 @@ Bonvenon kaj komencantoj kaj progresintoj.</p>
 		<td>6</td>
 	</tr>
 	<tr>
-		<td>16-a</td>
+		<td>16<span style="display:none">-a</span></td>
 		<td>2025.11.23</td>
 		<td>
 			Sputnik 1
@@ -561,7 +567,7 @@ Bonvenon kaj komencantoj kaj progresintoj.</p>
 		<td>6</td>
 	</tr>
 	<tr>
-		<td>17-a</td>
+		<td>17<span style="display:none">-a</span></td>
 		<td>2025.12.20</td>
 		<td>
 			Sputnik 2
@@ -572,7 +578,7 @@ Bonvenon kaj komencantoj kaj progresintoj.</p>
 		<td>6</td>
 	</tr>
 	<tr>
-		<td>18-a</td>
+		<td>18<span style="display:none">-a</span></td>
 		<td>2026.01.24</td>
 		<td>
 			Burĝonos la migdalfloroj
@@ -583,7 +589,7 @@ Bonvenon kaj komencantoj kaj progresintoj.</p>
 		<td>5</td>
 	</tr>
 	<tr>
-		<td>19-a</td>
+		<td>19<span style="display:none">-a</span></td>
 		<td>2026.02.21</td>
 		<td>
 			La dolĉa portreto
