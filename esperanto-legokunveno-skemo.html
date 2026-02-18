@@ -44,13 +44,33 @@ main {
 
 button {
 margin: .5rem 0 .5rem .3rem;
-padding: .5rem;
+/*margin-right: .5rem;*/
+padding: .7em 1em;
 border: 1px solid #888;
 border-radius: 3px;
 background-color: #f5f5ee;
 /*color: #a1a199;*/
 color: black;
-font-weight: bold;
+/*font-weight: bold;*/
+font-weight: normal;
+box-shadow: 0 8px 3px -5px rgba(64,64,64,0.2);
+}
+/*button a::before {*/
+button svg {
+}
+button a::after {
+padding-left: .5em;
+vertical-align: middle;
+content: url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="%23555555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>' );
+}
+
+button a:link, 
+button a:visited {
+text-decoration: none;
+color: #333;
+}
+button a:hover {
+color: #888;
 }
 .lang-ja button {
 /*color: darkgreen;*/
@@ -244,42 +264,48 @@ color: #840084;
 a:hover {
 text-decoration: none;
 }
+
+
 	</style>
-		<style>
-				/* 言語切り替えのCSS */
-				.lang-ja [lang="eo"] {
-						display: none !important;
-				}
-				.lang-eo [lang="ja"] {
-						display: none !important;
-				}
-				/* すべての言語要素のデフォルトdisplayを保険で設定（消失防止） */
-				[lang="ja"], [lang="eo"] {
-						display: revert;  /* ブラウザのデフォルトに戻す（initialより安全） */
-				}
-				/* 要素ごとの調整（必要に応じて追加） */
-				h1[lang], p[lang], div[lang] { display: block; }
-				li[lang] { display: list-item; }  /* liはlist-item */
-				.lang-eo body {line-height:1.6;}
-		</style>
-		<script>
-				function toggleLanguage() {
-						const html = document.documentElement;  // <html>要素
-						if (html.classList.contains('lang-ja')) {
-								html.classList.remove('lang-ja');
-								html.classList.add('lang-eo');
-								html.lang = 'eo';  // lang属性も変更
-								document.title = "Lego-kunveno «Venu, legemuloj!»";
-								document.getElementById('langToggle').textContent = '日本語で表示';
-						} else {
-								html.classList.remove('lang-eo');
-								html.classList.add('lang-ja');
-								html.lang = 'ja';
-								document.title = "エスペラント小説読書会 Venu, legemuloj!";
-								document.getElementById('langToggle').textContent = 'Vidigu en Esperanto';
-						}
-				}
-		</script>
+
+	<style>
+	/* 言語切り替えのCSS */
+	.lang-ja [lang="eo"] {
+display: none !important;
+	}
+.lang-eo [lang="ja"] {
+display: none !important;
+}
+/* すべての言語要素のデフォルトdisplayを保険で設定（消失防止） */
+[lang="ja"], [lang="eo"] {
+display: revert;  /* ブラウザのデフォルトに戻す（initialより安全） */
+}
+/* 要素ごとの調整（必要に応じて追加） */
+h1[lang], p[lang], div[lang] { display: block; }
+li[lang] { display: list-item; }  /* liはlist-item */
+.lang-eo body {line-height:1.6;}
+	</style>
+
+	<script>
+
+	function toggleLanguage() {
+		const html = document.documentElement;  // <html>要素
+		if (html.classList.contains('lang-ja')) {
+			html.classList.remove('lang-ja');
+			html.classList.add('lang-eo');
+			html.lang = 'eo';  // lang属性も変更
+			document.title = "Lego-kunveno «Venu, legemuloj!»";
+			document.getElementById('langToggle').textContent = '日本語で表示';
+	} else {
+			html.classList.remove('lang-eo');
+			html.classList.add('lang-ja');
+			html.lang = 'ja';
+			document.title = "エスペラント小説読書会 Venu, legemuloj!";
+			document.getElementById('langToggle').textContent = 'Vidigu en Esperanto';
+		}
+	}
+
+	</script>
 </head>
 
 <body>
@@ -630,6 +656,9 @@ Ili estas la finalistaj konkursaĵoj de <strong><a href="https://bobelarto.ink/e
 <p>Bobelarto regule okazigas ankaŭ sian lego-kunvenon nomatan <strong>Legosalono</strong>, kiun anoncas la novaĵleteroj kaj la retejo.</p>
 </section>
 
+<!-- <div class="ligilbutono">Interkultura Novelo Konkurso</div> -->
+<button><a href="https://bobelarto.ink/" target="_new" rel=”noopener”>Bobelarto</a></button>
+<button><a href="https://bobelarto.ink/eo/konkurso/" target="_new" rel=”noopener”>Interkultura Novelo Konkurso</a></button>
 
 <!-- <hr> -->
 
@@ -646,6 +675,8 @@ Ili estas la finalistaj konkursaĵoj de <strong><a href="https://bobelarto.ink/e
 per Zoom iafoje kun ĝia aŭtoro. <br>
 Ĝiaj kunvenoj principe estas <strong>registrataj</strong> kaj spekteblas en <a href="https://www.youtube.com/@esperantoindonesia/videos" target="_new" rel=”noopener”>YouTube</a>. Se ĝi interesas vin, min kontaktu.</p>
 </section>
+
+<button><a href="https://www.youtube.com/@esperantoindonesia/videos" target="_new" rel=”noopener”>Esperanto Indonesia ĉe YouTube</a></button>
 
 <!-- <hr> -->
 
