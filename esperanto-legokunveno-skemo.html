@@ -52,6 +52,7 @@ background-color: #f5f5ee;
 /*color: #a1a199;*/
 color: black;
 font-weight: normal;
+font-size: 1em;
 box-shadow: 0 8px 3px -5px rgba(64,64,64,0.2);
 }
 /*button a::before {*/
@@ -71,10 +72,10 @@ color: #333;
 button a:hover {
 color: #888;
 }
-.lang-ja button {
+.lang-ja button#langToggle  {
 font-size: 100%;
 }
-.lang-eo button {
+.lang-eo button#langToggle {
 font-size: 90%;
 }
 
@@ -268,6 +269,10 @@ a:hover {
 text-decoration: none;
 }
 
+i {
+font-family: 'Georgia', serif;
+font-size: 1.05em;
+}
 
 	</style>
 
@@ -647,21 +652,21 @@ li[lang] { display: list-item; }  /* liはlist-item */
 
 <section lang="ja">
 <h2>Bobelarto と小説集のダウンロードについて</h2>
-<p>文学サークル <a href="https://bobelarto.ink/" target="_new" rel=”noopener”><strong>Bobelarto</strong></a> のニュースレターを購読してください。無料です。電子メールで届きます。<br>
+<!-- <p>文学サークル <a href="https://bobelarto.ink/" target="_new" rel=”noopener”><strong>Bobelarto</strong></a> のニュースレターを購読してください。無料です。電子メールで届きます。<br> -->
+<p>文学サークル <strong>Bobelarto</strong> のニュースレターを購読してください。無料です。電子メールで届きます。<br>
 <!-- ※ <span>novaĵletero</span> の項目でメールアドレスを入力、<span>“Mi volas partopreni”</span> ボタンを押す。</p> -->
-<p>ニュースレター内のリンクから <i>«Amo, tuso kaj forpaso», «La lasta vojaĝo de Cezaro kaj aliaj noktaj aventuroj», «La sekreta vivo de miaj najbaroj»</i> の各PDFをダウンロードしてください。小説コンクール <strong><a href="https://bobelarto.ink/ja/konkurso/" target="_new" rel=”noopener”>Interkultura Novelo-Konkurso</a></strong> (INK)の優秀作を収めた小説集です。</p>
-<p>Bobelarto は定期的に <strong>Legosalono</strong> という読書会も開いています。詳細はウェブサイトやニュースレターをご参照ください。</p>
+<p>ニュースレター内のリンクから <i>«Amo, tuso kaj forpaso», «La lasta vojaĝo de Cezaro kaj aliaj noktaj aventuroj», «La sekreta vivo de miaj najbaroj»</i> の各PDFをダウンロードしてください。小説コンクール <strong>Interkultura Novelo-Konkurso</strong> (INK)の優秀作を収めた小説集です。</p>
+<p>Bobelarto は定期的に Legosalono という読書会も開いています。詳細はウェブサイトやニュースレターをご参照ください。</p>
 </section>
 
 <section lang="eo">
 <h2>Bobelarto kaj novelaroj</h2>
-<p>Abonu la senpagan novaĵleteron de la teamo <a href="https://bobelarto.ink/" target="_new" rel=”noopener”><strong>Bobelarto</strong></a>, el kies ligiloj elŝuteblas jenaj novelaroj:
+<p>Abonu la senpagan novaĵleteron de la teamo <strong>Bobelarto</strong>, el kies ligiloj elŝuteblas jenaj novelaroj:
 <i>«Amo, tuso kaj forpaso»</i>, <i>«La lasta vojaĝo de Cezaro kaj aliaj noktaj aventuroj»</i> kaj <i>«La sekreta vivo de miaj najbaroj»</i>.
-Ili estas la finalistaj konkursaĵoj de <strong><a href="https://bobelarto.ink/eo/konkurso/" target="_new" rel=”noopener”>Interkultura Novelo-Konkurso</a></strong> (INK).</p>
-<p>Bobelarto regule okazigas ankaŭ sian lego-kunvenon nomatan <strong>Legosalono</strong>, kiun anoncas la novaĵleteroj kaj la retejo.</p>
+Ili estas la finalistaj konkursaĵoj de <strong>Interkultura Novelo-Konkurso</strong> (INK).</p>
+<p>Bobelarto regule okazigas sian lego-kunvenon nomatan Legosalono, kiun oni anoncas per la novaĵletero kaj retejo.</p>
 </section>
 
-<!-- <div class="ligilbutono">Interkultura Novelo Konkurso</div> -->
 <button><a href="https://bobelarto.ink/" target="_new" rel=”noopener”>Bobelarto</a></button>
 <button><a href="https://bobelarto.ink/eo/konkurso/" target="_new" rel=”noopener”>Interkultura Novelo Konkurso</a></button>
 
@@ -669,8 +674,8 @@ Ili estas la finalistaj konkursaĵoj de <strong><a href="https://bobelarto.ink/e
 
 <section lang="ja">
 <h2>Ruĝa Plumo の読書会について</h2>
-<p>エスペラントで語り合いたい、というかたには、毎月第2日曜日に開催される <strong>Ruĝa Plumo</strong> の読書会をおすすめします。進めかたは同じです。作者がゲスト参加することもあります。</p>
-<p>Ruĝa Plumo の読書会は<strong>録画されます</strong>。動画は <a href="https://www.youtube.com/@esperantoindonesia/videos" target="_new" rel=”noopener”>YouTube</a> で視聴できます。<br>
+<p>エスペラントで語り合いたい、というかたには、<strong>毎月第2日曜日</strong>に開催される <strong>Ruĝa Plumo</strong> の読書会をおすすめします。進めかたは同じです。作者がゲスト参加することもあります。</p>
+<p>Ruĝa Plumo の読書会は録画されます。動画は YouTube で視聴できます。<br>
 エスペラント初心者の方も歓迎です。参加希望の方はご連絡ください。</p>
 </section>
 
@@ -678,7 +683,7 @@ Ili estas la finalistaj konkursaĵoj de <strong><a href="https://bobelarto.ink/e
 <h2>Ruĝa Plumo</h2>
 <p>La teamo <strong>Ruĝa Plumo</strong> ĉiumonate en la <strong>dua dimanĉo</strong> okazigas lego-kunvenon
 per Zoom iafoje kun ĝia aŭtoro. <br>
-Ĝiaj kunvenoj principe estas <strong>registrataj</strong> kaj spekteblas en <a href="https://www.youtube.com/@esperantoindonesia/videos" target="_new" rel=”noopener”>YouTube</a>. Se ĝi interesas vin, min kontaktu.</p>
+Ĝiaj kunvenoj principe estas registrataj kaj spekteblas en YouTube. Se ĝi interesas vin, min kontaktu.</p>
 </section>
 
 <button><a href="https://www.youtube.com/@esperantoindonesia/videos" target="_new" rel=”noopener”>Esperanto Indonesia ĉe YouTube</a></button>
