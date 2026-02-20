@@ -310,13 +310,27 @@ section.item h4 + p {
 			<p>ショートカットファイルのプロパティの「ショートカット」タブ、「ショートカットキー(<u>K</u>)」の項目で、アプリを起動するショートカットキーを設定した。しかし元のファイルがどれか忘れた。デスクトップのアイコンを確認したが、見つからない。</p>
 			<h4>解決策：</h4>
 			<p>
-			スタートメニュー内のショートカットファイルである可能性が高い。<br>
+			<strong>スタートメニュー内のショートカットファイル</strong>である可能性が高い。<br>
 			エクスプローラーで開く: %AppData%\Microsoft\Windows\Start Menu\Programs
 			</p>
 		</section>
 
 	</section>
 
+	<section>
+		<h2>Github Desktop</h2>
+
+		<section class="item">
+			<h3>Pull せずにファイルを編集し Commit したため Push が失敗する</h3>
+			<h4>問題：</h4>
+			<p>Pull する前にファイルを編集し Commit してしまい、コンフリクトが発生した。</p>
+			<h4>解決策：</h4>
+			<p>
+			<strong>アプリ左下に Undo ボタン</strong>がある。コミットを取り消し、各ファイルを右クリックして Discard changes を選ぶ。すでに重要な変更を行っている場合は、変更部分をコピーして Pull の後に改めて行う。（原始的かもしれないが迷いの少ない方法。）
+			</p>
+		</section>
+
+	</section>
 
 	<section>
 		<h2>Vim (gVim 9.0)</h2>
