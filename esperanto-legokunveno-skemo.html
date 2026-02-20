@@ -58,6 +58,10 @@ box-shadow: 0 8px 3px -5px rgba(64,64,64,0.2);
 /*button a::before {*/
 button svg {
 }
+button:hover {
+/*transform: scale(1.05);*/
+/*transition: .3s;*/
+}
 button a::after {
 padding-left: .5em;
 vertical-align: middle;
@@ -77,6 +81,9 @@ font-size: 100%;
 }
 .lang-eo button#langToggle {
 font-size: 90%;
+}
+button#langToggle:hover {
+color: #888;
 }
 
 h1 {
@@ -229,6 +236,15 @@ table.principo {
 	border: thin solid #ddd;
 	border-width: 1px 0;
 }
+.principo ol {
+margin: 0;
+padding: 0;
+list-style-position: inside;
+}
+.principo ol li {
+margin: 0;
+padding: 0;
+}
 .principo tr {
 		border-bottom: thin solid #efefef;
 }
@@ -264,7 +280,8 @@ a:link {
 color: #0063c6;
 }
 a:visited {
-color: #840084;
+/*color: #840084;*/
+color: #bc6f89;
 }
 a:hover {
 text-decoration: none;
@@ -385,25 +402,32 @@ li[lang] { display: list-item; }  /* liはlist-item */
 
 <table class="principo" lang="ja">
 	<tr>
+		<td>テキスト</td>
+		<td>
+参加者には作品の原文と日本語訳のPDFを事前に送ります。
+		</td>
+	</tr>
+	<tr>
 		<td>準備</td>
 		<td>
-<!--		特に準備は要りません。可能なら事前にテキストを読み、知らない単語を辞書で引いておきましょう。 -->
-できれば事前にテキストを読み、知らない単語を辞書で引いておきましょう。
+テキストを読むのは当日初めてでも構いませんが、事前に読んでおくと内容が分かりやすいです。
 		</td>
 	</tr>
 	<tr>
 		<td>進めかた</td>
 		<td>
-			1. 画面共有されたテキストをひとりずつ順番に音読。<br>
-			2. 知らない単語や表現について話す。<br>
-			3. 作品の内容について感想を話す。
+			<ol>
+				<li>画面共有されたテキストをひとりずつ順番に音読。</li>
+				<li>単語や表現について話す。</li>
+				<li>作品の内容について感想を話す。</li>
+			</ol>
 		</td>
 	</tr>
 	<tr>
 		<td>会場</td>
 		<td>
 <!-- ブラウザで指定の URL を開くとビデオ通話に参加できます。音声のみの参加も可。<a href="legokunveno/kiel-ensaluti-la-cxambron.html">詳細はこちら。</a> -->
-		<strong>Google Meet</strong> を使います。リンクは参加申し込み後にメールで送ります。
+		<strong>Google Meet</strong> を使います。参加申し込み後にリンクをお送りします。
 		</td>
 	</tr>
 	<tr>
@@ -412,39 +436,50 @@ li[lang] { display: list-item; }  /* liはlist-item */
 	</tr>
 	<tr>
 		<td>参加申し込み</td>
-		<td><a href="mailto:utaidori@gmail.com">utaidori@gmail.com</a> までメールをお送りください。</td>
+		<td><a href="mailto:utaidori@gmail.com">utaidori@gmail.com</a></td>
 	</tr>
 </table>
 
 <table class="principo" lang="eo">
 	<tr>
+		<td>Teksto</td>
+		<td>
+La aliĝintoj anticipe ricevos la originalan tekston kaj ĝian tradukaĵon en la formo de PDF.
+		</td>
+	</tr>
+	<tr>
 		<td>Preparo</td>
 		<td>
-			Preferinde estas anticipe legi la tekston kaj konsulti vortaron pri nekonataj vortoj.
+			<!-- Preferinde estas anticipe legi la tekston kaj konsulti vortaron pri nekonataj vortoj. -->
+La tekston oni povas anticipe legi por pli facile kompreni la enhavon ol unuafoje legi surloke.
 		</td>
 	</tr>
 	<tr>
 		<td>Maniero</td>
 		<td>
-			1. Kunlegado. Ĉiu el ni laŭvice laŭte legas tekston sur kundividita ekrano.<br>
-			2. Diskuto pri nekonataj vortoj kaj esprimoj.<br>
-			3. Ni libere parolas rilate la tekston.
+			<ol>
+				<li>Kunlegado. Ĉiu laŭvice legas tekston sur komuna ekrano.</li>
+				<li>Diskuto pri vortoj kaj esprimoj.</li>
+				<!-- <li>Ni libere parolas rilate la tekston.</li> -->
+				<li>Interparolo rilate la tekston.</li>
+			</ol>
 		</td>
 	</tr>
 	<tr>
 		<td>Kunvenejo</td>
 		<td>
 			<!-- Reta ĉambro, kies ligilon vi ricevos post aliĝo, kaj kiun vi eniros per retumilo kun kamerao aŭ nur kun mikrofono. <a href="./legokunveno/kiel-ensaluti-la-cxambron-eo.html">Jen detaloj.</a> -->
-			<strong>Google Meet</strong>, kies ligilon vi ricevos post aliĝo.
+			<strong>Google Meet</strong>, kies ligilon oni ricevos post aliĝo.
 		</td>
 	</tr>
 	<tr>
 		<td>Privateco</td>
-		<td>La kunvenoj <strong>neniam</strong> estas registrataj nek elsendataj.</td>
+		<!-- <td>La kunvenoj <strong>neniam</strong> estas registrataj nek elsendataj.</td> -->
+		<td>Oni <strong>neniam</strong> registros nek elsendos la kunvenojn.</td>
 	</tr>
 	<tr>
 		<td>Aliĝo</td>
-		<td>Lasu mesaĝon al <a href="mailto:utaidori@gmail.com">utaidori@gmail.com</a></td>
+		<td>Mesaĝu al <a href="mailto:utaidori@gmail.com">utaidori@gmail.com</a></td>
 	</tr>
 </table>
 
