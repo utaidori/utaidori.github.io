@@ -12,62 +12,63 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="./favicon/legemuloj-180.png">
 	<link rel="icon" type="image/png" sizes="192x192" href="./favicon/legemuloj-192-alpha.png">
 	<style>
+/* ページ全体 */
 :root {
-	font-family: Inter, sans-serif;
-	font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
-	border-top: 3px solid green;
-	border-bottom: 3px solid green;
+font-family: Inter, sans-serif;
+font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+border-top: 3px solid green;
+border-bottom: 3px solid green;
 }
 body {
-	margin: 0;
-	line-height: 1.7;
+margin: 0;
+line-height: 1.7;
 }
 main {
-	max-width: 1024px;
+margin: auto;
+padding: 0 1rem 1rem 1rem;
+}
+@media screen and (min-width: 1025px) {
+	main {
+		max-width: 1024px;
+	}
+	header {
+	max-width: 1200px;
 	margin: auto;
-	padding: 0 1rem 1rem 1rem;
+	}
 }
 
+/* 調整 */
 .lang-ja li > p {
-	padding-left: 2.5em;
+padding-left: 2.5em;
 }
 
 .lang-eo ul {
-	padding: 0 0 0 1.2em;
+padding: 0 0 0 1.2em;
 }
 .lang-eo li {
-	margin: 0.2rem 0;
+margin: 0.2rem 0;
 }
 .lang-eo .kapo {
-	min-width: 120px;
+min-width: 120px;
 }
 
+/* ボタン */
 button {
 margin: .5rem 0 .5rem .3rem;
-/*margin-right: .5rem;*/
 padding: .7em 1em;
-border: 1px solid #888;
+border: thin solid #888;
 border-radius: 3px;
 background-color: #f8f5ee;
-/*color: #a1a199;*/
 color: black;
 font-weight: normal;
 font-size: 1em;
 box-shadow: 0 8px 3px -5px rgba(64,64,64,0.2);
-}
-/*button a::before {*/
-button svg {
-}
-button:hover {
-/*transform: scale(1.05);*/
-/*transition: .3s;*/
 }
 button a::after {
 padding-left: .5em;
 vertical-align: middle;
 content: url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%23555555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>' );
 }
-
 button a:link, 
 button a:visited {
 text-decoration: none;
@@ -76,200 +77,165 @@ color: #333;
 button a:hover {
 color: #888;
 }
+
+/* ボタン: 言語切り替え */
+#langToggle:hover {
+color: #888;
+}
 .lang-ja button#langToggle  {
 font-size: 100%;
 }
 .lang-eo button#langToggle {
 font-size: 90%;
 }
-button#langToggle:hover {
-color: #888;
-}
 
+/* 見出し、区切り */
 h1 {
-	font-size: 1.5rem;
-	background-image: url(./favicon/legemuloj-192-alpha.png);
-	background-repeat: no-repeat;
-	background-size: 3em;
+font-size: 1.5rem;
+background-image: url(./favicon/legemuloj-192-alpha.png);
+background-repeat: no-repeat;
+background-size: 3em;
 }
-
 .lang-ja h1 {
-	padding: 1.5rem 0 0.6rem 5.5rem;
+padding: 1.5rem 0 0.6rem 5.5rem;
 }
 .lang-eo h1 {
-	padding: 1.3rem 0 0.6rem 5.5rem;
+padding: 1.3rem 0 0.6rem 5.5rem;
 }
 
 h2 {
-	margin-top: 3em;
-	font-size: 1.3rem;
+margin-top: 3em;
+font-size: 1.3rem;
 }
-h3 {
-	padding-bottom: 0;
-	margin-bottom: 0;
+.lang-eo h2 {
+margin-bottom: 0;
+padding-bottom: 0;
+line-height: 1.0;
 }
 
-.lang-eo h2 {
-	margin-bottom: 0;
-	padding-bottom: 0;
-	line-height: 1.0;
+h3 {
+padding-bottom: 0;
+margin-bottom: 0;
 }
 
 hr {
-	margin: 2rem 0;
-	border: none;
-	text-align: center;
+margin: 2rem 0;
+border: none;
+text-align: center;
 }
 hr::before {
-	content: '* * *';
+content: '* * *';
 }
 
-.lang-ja menu {
-	margin: 1rem 0 0 0;
-	padding: 0;
-}
-
-.filmeto {
-	background-image: url(./svg/filmeto.svg);
-	background-repeat: no-repeat;
-	background-position: left center;
-	background-size: 1.5em;
-	padding-left: 2em;
-}
-
-.lang-eo .filmeto {
-	font-size: 0.9rem;
-}
-
+/* 次回予定 */
 dl {
-	margin-top: 0;
-	line-height: 1.8;
+margin-top: 0;
+line-height: 1.8;
 }
-
-.lang-ja .anonco-dl {
-	font-size: 120%;
+.lang-ja dl.anonco-dl {
+font-size: 120%;
+}
+.lang-ja dl.anonco-dl .number-dd .numero {
+margin: 0 .2em;
 }
 
 dt, dd {
-	display: inline-block;
+display: inline-block;
 }
 dt {
-	min-width: 4em;
+min-width: 4em;
 }
 dd {
-	margin-left: 0;
+margin-left: 0;
 }
 
-.lingvo-menu {
-	margin: 0;
-	padding: .5em;
-	background-color: #f8f5ee;
-	color: #a1a199;
-}
-.lingvo-menu a {
-	color: darkgreen;
-	font-weight: bold;
-	text-decoration: none;
-}
-table.pasintaj-kunvenoj {
-	border-collapse: collapse;
-	width: 100%;
-}
-
-.lang-ja table.pasintaj-kunvenoj {
-	margin: 1rem 0;
-}
-.lang-eo table.pasintaj-kunvenoj {
-	margin: 2rem 0;
-}
-
-.pasintaj-kunvenoj tr {
-	border-bottom: thin solid #ddd;
-	vertical-align: text-top;
-}
-.pasintaj-kunvenoj tr:nth-child(1) {
-	border-bottom: thin solid #888;
-}
-.pasintaj-kunvenoj th {
-	text-align: left;
-	/*font-weight: normal;*/
-}
-.pasintaj-kunvenoj th:nth-child(1) {
-	text-align: right;
-}
-.pasintaj-kunvenoj th,
-.pasintaj-kunvenoj td {
-	padding: .25rem 1rem;
-}
-.pasintaj-kunvenoj th:nth-child(1),
-.pasintaj-kunvenoj td:nth-child(1) {
-	background-color: #f8f5ee;
-}
-.pasintaj-kunvenoj td:nth-child(1),
-.pasintaj-kunvenoj td:nth-child(2),
-.pasintaj-kunvenoj td:nth-child(5) {
-	font-family: monospace;
-}
-.pasintaj-kunvenoj td:nth-child(1) {
-	/*width: 2.5em;*/
-	width: 2em;
-	/*font-weight: bold;*/
-	text-align: right;
-}
-.pasintaj-kunvenoj td:nth-child(2) {
-	width: 7em;
-}
-.pasintaj-kunvenoj th:nth-child(5),
-.pasintaj-kunvenoj td:nth-child(5) {
-	width: 3rem;
-	text-align: right;
-}
-
-.lang-eo em {
-	font-weight: bold;
-	font-style: oblique;
-}
-
+/* 読書会の概要 */
 table.principo {
-	margin-top: 1rem;
-	border-collapse: collapse;
-	border: thin solid #ddd;
-	border-width: 1px 0;
+margin-top: 1rem;
+border-collapse: collapse;
+border: thin solid #ddd;
+border-width: thin 0;
 }
-.principo ol {
+table.principo tr {
+border-bottom: thin solid #efefef;
+}
+table.principo tr:last-child {
+border-width: 0;
+}
+table.principo td {
+padding: .5em .9em;
+vertical-align: top;
+}
+table.principo td:nth-child(1) {
+font-weight: bold;
+background-color: #f8f5ee;
+color: #333;
+text-align: center;
+}
+.lang-ja table.principo td:nth-child(1) {
+min-width: 6em; 
+}
+table.principo ol {
 margin: 0;
 padding: 0;
 list-style-position: inside;
 }
-.principo ol li {
+table.principo ol li {
 margin: 0;
 padding: 0;
 }
-.principo tr {
-		border-bottom: thin solid #efefef;
+
+/* 過去の読書会 */
+table.pasintaj-kunvenoj {
+border-collapse: collapse;
+width: 100%;
 }
-.principo tr:last-child {
-	border-width: 0;
+.lang-ja table.pasintaj-kunvenoj {
+margin: 1rem 0;
 }
-.principo td {
-	padding: .5em .9em;
-	vertical-align: top;
+.lang-eo table.pasintaj-kunvenoj {
+margin: 2rem 0;
 }
-.principo td:nth-child(1) {
-	font-weight: bold;
-	background-color: #f8f5ee;
-	color: #333;
-	text-align: center;
+table.pasintaj-kunvenoj tr {
+border-bottom: thin solid #ddd;
+vertical-align: text-top;
 }
-.principo[lang="ja"] td:nth-child(1) {
- min-width: 6em; 
+table.pasintaj-kunvenoj tr:nth-child(1) {
+border-bottom: thin solid #888;
+}
+table.pasintaj-kunvenoj th,
+table.pasintaj-kunvenoj td {
+padding: .25rem 1rem;
+}
+table.pasintaj-kunvenoj th {
+text-align: left;
+}
+table.pasintaj-kunvenoj th:nth-child(1),
+table.pasintaj-kunvenoj td:nth-child(1) {
+background-color: #f8f5ee;
+}
+table.pasintaj-kunvenoj th:nth-child(5),
+table.pasintaj-kunvenoj td:nth-child(5) {
+width: 3rem;
+text-align: right;
+}
+table.pasintaj-kunvenoj th:nth-child(1) {
+text-align: right;
+}
+table.pasintaj-kunvenoj td:nth-child(1),
+table.pasintaj-kunvenoj td:nth-child(2),
+table.pasintaj-kunvenoj td:nth-child(5) {
+font-family: monospace;
+}
+table.pasintaj-kunvenoj td:nth-child(1) {
+width: 2em;
+text-align: right;
+}
+table.pasintaj-kunvenoj td:nth-child(2) {
+width: 7em;
 }
 
-.lang-ja .number-dd .numero {
-	/*font-size: 1.2em;*/
-	margin: 0 .2em;
-}
-
+/* インライン */
 a {
 text-decoration: underline;
 color: initial;
@@ -292,13 +258,30 @@ font-family: 'Georgia', serif;
 font-size: 1.05em;
 }
 
+.lang-eo em {
+font-weight: bold;
+font-style: oblique;
+}
+
+/*.filmeto {
+background-image: url(./svg/filmeto.svg);
+background-repeat: no-repeat;
+background-position: left center;
+background-size: 1.5em;
+padding-left: 2em;
+}
+.lang-eo .filmeto {
+font-size: 0.9rem;
+}*/
+
+
 	</style>
 
 	<style>
 	/* 言語切り替えのCSS */
-	.lang-ja [lang="eo"] {
+.lang-ja [lang="eo"] {
 display: none !important;
-	}
+}
 .lang-eo [lang="ja"] {
 display: none !important;
 }
@@ -308,40 +291,35 @@ display: revert;  /* ブラウザのデフォルトに戻す（initialより安�
 }
 /* 要素ごとの調整（必要に応じて追加） */
 h1[lang], p[lang], div[lang] { display: block; }
-li[lang] { display: list-item; }  /* liはlist-item */
+li[lang] { display: list-item; }
 .lang-eo body {line-height:1.6;}
 	</style>
 
 	<script>
-
-	function toggleLanguage() {
-		const html = document.documentElement;  // <html>要素
-		if (html.classList.contains('lang-ja')) {
-			html.classList.remove('lang-ja');
-			html.classList.add('lang-eo');
-			html.lang = 'eo';  // lang属性も変更
-			document.title = "Lego-kunveno «Venu, legemuloj!»";
-			document.getElementById('langToggle').textContent = '日本語で表示';
-	} else {
-			html.classList.remove('lang-eo');
-			html.classList.add('lang-ja');
-			html.lang = 'ja';
-			document.title = "エスペラント小説読書会 Venu, legemuloj!";
-			document.getElementById('langToggle').textContent = 'Vidigu en Esperanto';
-		}
+function toggleLanguage() {
+	const html = document.documentElement;  // <html>要素
+	if (html.classList.contains('lang-ja')) {
+		html.classList.remove('lang-ja');
+		html.classList.add('lang-eo');
+		html.lang = 'eo';  // lang属性も変更
+		document.title = "Lego-kunveno «Venu, legemuloj!»";
+		document.getElementById('langToggle').textContent = '日本語で表示';
+} else {
+		html.classList.remove('lang-eo');
+		html.classList.add('lang-ja');
+		html.lang = 'ja';
+		document.title = "エスペラント小説読書会 Venu, legemuloj!";
+		document.getElementById('langToggle').textContent = 'Vidigu en Esperanto';
 	}
-
+}
 	</script>
 </head>
 
 <body>
-	<!-- <span style="color:#a1a199;">→</span>  -->
-	<button id="langToggle" onclick="toggleLanguage()">Vidigu en Esperanto</button>
 
-<!-- <menu class="lingvo-menu">
-	<div><a href="esperanto-legokunveno-skemo-eo.html">Esperanto</a> | 日本語</div>
-	<div>→ <a href="esperanto-legokunveno-skemo-eo.html">Esperanto</a></div>
-</menu> -->
+<header>
+	<button id="langToggle" onclick="toggleLanguage()">Vidigu en Esperanto</button>
+</header>
 
 <main>
 
@@ -373,29 +351,8 @@ li[lang] { display: list-item; }  /* liはlist-item */
 		<dd style="vertical-align:top;">
 <strong>“La dolĉa portreto”</strong>
 - Ferenc Szilágyi
-			<!-- Ombro sur interna pejzaĝo (2) -->
-			<!-- - Sten Johansson  -->
-			<!-- - Spomenka Štimec -->
 		</dd>
 	</div>
-<!--	<div style="font-size:90%">
-		<dt>
-		【備考】
-		</dt>
-		<dd>
-		※ 複数回に分けて読んでいきます。
-		</dd>
-	</div> -->
-
-<!--	<div>
-		<dt>
-		【出典】
-		</dt> -->
-<!--		<dd style="font-size:90%;"><span style="color:gray;">&#8599;</span> <a href="http://literaturo.esperanto.net/tekstoj/johansson/bon.html" target="_new" rel=”noopener”>“Bonan matenon!”</a>
-		<span style="color:gray;">&#8599;</span> <a href="http://literaturo.esperanto.net/tekstoj/johansson/choku.html" target="_new" rel=”noopener”>“Ĉokolada biskvito”</a></dd> -->
-		<!-- <dd><span style="color:gray;">&#8599;</span><a href="https://tekstaro.com/t?nomo=ombro-sur-interna-pejzagho&uzistreketojn=0&tipo=&sekcio=ba-teksto&antauasekcio=1" target="_new" rel=”noopener” style="font-size:90%;">La teksto publikigita en Tekstaro</a></dd> -->
-		<!-- <dd style="font-size:0.9em;">詩は <span style="color:gray;">&#8599;</span> <a href="https://www.literaturavivo.com/" target="_new" rel=”noopener”>«Literatura vivo» n-ro 4</a> に所収</dd> -->
-	<!-- </div> -->
 </dl>
 
 <h2><span lang="ja">読書会の概要</span><span lang="eo">Principo</span></h2>
@@ -409,9 +366,7 @@ li[lang] { display: list-item; }  /* liはlist-item */
 	</tr>
 	<tr>
 		<td>準備</td>
-		<td>
-テキストを読むのは当日初めてでも構いませんが、事前に読んでおくと内容が分かりやすいです。
-		</td>
+		<td>テキストを読むのは当日初めてでも構いませんが、事前に読んでおくと内容が分かりやすいです。</td>
 	</tr>
 	<tr>
 		<td>進めかた</td>
@@ -425,10 +380,7 @@ li[lang] { display: list-item; }  /* liはlist-item */
 	</tr>
 	<tr>
 		<td>会場</td>
-		<td>
-<!-- ブラウザで指定の URL を開くとビデオ通話に参加できます。音声のみの参加も可。<a href="legokunveno/kiel-ensaluti-la-cxambron.html">詳細はこちら。</a> -->
-		<strong>Google Meet</strong> を使います。参加申し込み後にリンクをお送りします。
-		</td>
+		<td><strong>Google Meet</strong> を使います。参加申し込み後にリンクをお送りします。</td>
 	</tr>
 	<tr>
 		<td>プライバシー</td>
@@ -443,16 +395,11 @@ li[lang] { display: list-item; }  /* liはlist-item */
 <table class="principo" lang="eo">
 	<tr>
 		<td>Teksto</td>
-		<td>
-La aliĝintoj anticipe ricevos la originalan tekston kaj ĝian tradukaĵon en la formo de PDF.
-		</td>
+		<td>La aliĝintoj anticipe ricevos la originalan tekston kaj ĝian tradukaĵon en la formo de PDF.</td>
 	</tr>
 	<tr>
 		<td>Preparo</td>
-		<td>
-			<!-- Preferinde estas anticipe legi la tekston kaj konsulti vortaron pri nekonataj vortoj. -->
-La tekston oni povas anticipe legi por pli facile kompreni la enhavon ol unuafoje legi surloke.
-		</td>
+		<td>La tekston oni povas anticipe legi por pli facile kompreni la enhavon ol unuafoje legi surloke.</td>
 	</tr>
 	<tr>
 		<td>Maniero</td>
@@ -460,21 +407,16 @@ La tekston oni povas anticipe legi por pli facile kompreni la enhavon ol unuafoj
 			<ol>
 				<li>Kunlegado. Ĉiu laŭvice legas tekston sur komuna ekrano.</li>
 				<li>Diskuto pri vortoj kaj esprimoj.</li>
-				<!-- <li>Ni libere parolas rilate la tekston.</li> -->
 				<li>Interparolo rilate la tekston.</li>
 			</ol>
 		</td>
 	</tr>
 	<tr>
 		<td>Kunvenejo</td>
-		<td>
-			<!-- Reta ĉambro, kies ligilon vi ricevos post aliĝo, kaj kiun vi eniros per retumilo kun kamerao aŭ nur kun mikrofono. <a href="./legokunveno/kiel-ensaluti-la-cxambron-eo.html">Jen detaloj.</a> -->
-			<strong>Google Meet</strong>, kies ligilon oni ricevos post aliĝo.
-		</td>
+		<td><strong>Google Meet</strong>, kies ligilon oni ricevos post aliĝo.</td>
 	</tr>
 	<tr>
 		<td>Privateco</td>
-		<!-- <td>La kunvenoj <strong>neniam</strong> estas registrataj nek elsendataj.</td> -->
 		<td>Oni <strong>neniam</strong> registros nek elsendos la kunvenojn.</td>
 	</tr>
 	<tr>
@@ -486,7 +428,6 @@ La tekston oni povas anticipe legi por pli facile kompreni la enhavon ol unuafoj
 <h2><span lang="ja">過去の読書会</span><span lang="eo">Pasintaj kunvenoj</span></h2>
 <table class="pasintaj-kunvenoj">
 	<tr>
-		<!-- <th><span lang="ja">回</span>  <span lang="eo">N<sup>-ro</sup></span></th> -->
 		<th><span lang="ja">#</span><span lang="eo">#</span></th>
 		<th><span lang="ja">日付</span><span lang="eo">Dato</span></th>
 		<th><span lang="ja">作品</span><span lang="eo">Verko</span></th>
@@ -687,20 +628,18 @@ La tekston oni povas anticipe legi por pli facile kompreni la enhavon ol unuafoj
 <hr>
 
 <section lang="ja">
-<h2>Bobelarto と小説集のダウンロードについて</h2>
-<!-- <p>文学サークル <a href="https://bobelarto.ink/" target="_new" rel=”noopener”><strong>Bobelarto</strong></a> のニュースレターを購読してください。無料です。電子メールで届きます。<br> -->
-<p>文学サークル <strong>Bobelarto</strong> のニュースレターを購読してください。無料です。電子メールで届きます。<br>
-<!-- ※ <span>novaĵletero</span> の項目でメールアドレスを入力、<span>“Mi volas partopreni”</span> ボタンを押す。</p> -->
-<p>ニュースレター内のリンクから <i>«Amo, tuso kaj forpaso», «La lasta vojaĝo de Cezaro kaj aliaj noktaj aventuroj», «La sekreta vivo de miaj najbaroj»</i> の各PDFをダウンロードしてください。小説コンクール <strong>Interkultura Novelo-Konkurso</strong> (INK)の優秀作を収めた小説集です。</p>
-<p>Bobelarto は定期的に Legosalono という読書会も開いています。詳細はウェブサイトやニュースレターをご参照ください。</p>
+	<h2>Bobelarto と小説集のダウンロードについて</h2>
+	<p>文学サークル <strong>Bobelarto</strong> のニュースレターを購読してください。無料です。電子メールで届きます。<br>
+	<p>ニュースレター内のリンクから <i>«Amo, tuso kaj forpaso», «La lasta vojaĝo de Cezaro kaj aliaj noktaj aventuroj», «La sekreta vivo de miaj najbaroj»</i> の各PDFをダウンロードしてください。小説コンクール <strong>Interkultura Novelo-Konkurso</strong> (INK)の優秀作を収めた小説集です。</p>
+	<p>Bobelarto は定期的に Legosalono という読書会も開いています。詳細はウェブサイトやニュースレターをご参照ください。</p>
 </section>
 
 <section lang="eo">
-<h2>Bobelarto kaj novelaroj</h2>
-<p>Abonu la senpagan novaĵleteron de la teamo <strong>Bobelarto</strong>, el kies ligiloj elŝuteblas jenaj novelaroj:
-<i>«Amo, tuso kaj forpaso»</i>, <i>«La lasta vojaĝo de Cezaro kaj aliaj noktaj aventuroj»</i> kaj <i>«La sekreta vivo de miaj najbaroj»</i>.
-Ili estas la finalistaj konkursaĵoj de <strong>Interkultura Novelo-Konkurso</strong> (INK).</p>
-<p>Bobelarto regule okazigas sian lego-kunvenon nomatan Legosalono, kiun oni anoncas per la novaĵletero kaj retejo.</p>
+	<h2>Bobelarto kaj novelaroj</h2>
+	<p>Abonu la senpagan novaĵleteron de la teamo <strong>Bobelarto</strong>, el kies ligiloj elŝuteblas jenaj novelaroj:
+	<i>«Amo, tuso kaj forpaso»</i>, <i>«La lasta vojaĝo de Cezaro kaj aliaj noktaj aventuroj»</i> kaj <i>«La sekreta vivo de miaj najbaroj»</i>.
+	Ili estas la finalistaj konkursaĵoj de <strong>Interkultura Novelo-Konkurso</strong> (INK).</p>
+	<p>Bobelarto regule okazigas sian lego-kunvenon nomatan Legosalono, kiun oni anoncas per la novaĵletero kaj retejo.</p>
 </section>
 
 <button><a href="https://bobelarto.ink/" target="_new" rel=”noopener”>Bobelarto</a></button>
@@ -708,17 +647,16 @@ Ili estas la finalistaj konkursaĵoj de <strong>Interkultura Novelo-Konkurso</st
 
 
 <section lang="ja">
-<h2>Ruĝa Plumo の読書会について</h2>
-<p>エスペラントで語り合いたい、というかたには、<strong>毎月第2日曜日</strong>に開催される <strong>Ruĝa Plumo</strong> の読書会をおすすめします。進めかたは同じです。作者がゲスト参加することもあります。</p>
-<p>Ruĝa Plumo の読書会は録画されます。動画は YouTube で視聴できます。<br>
-エスペラント初心者の方も歓迎です。参加希望の方はご連絡ください。</p>
+	<h2>Ruĝa Plumo の読書会について</h2>
+	<p>エスペラントで語り合いたい、というかたには、<strong>毎月第2日曜日</strong>に開催される <strong>Ruĝa Plumo</strong> の読書会をおすすめします。進めかたは同じです。作者がゲスト参加することもあります。</p>
+	<p>Ruĝa Plumo の読書会は録画されます。動画は YouTube で視聴できます。<br>
+	エスペラント初心者の方も歓迎です。参加希望の方はご連絡ください。</p>
 </section>
 
 <section lang="eo">
-<h2>Ruĝa Plumo</h2>
-<p>La teamo <strong>Ruĝa Plumo</strong> ĉiumonate en la <strong>dua dimanĉo</strong> okazigas lego-kunvenon
-per Zoom iafoje kun ĝia aŭtoro. <br>
-Ĝiaj kunvenoj principe estas registrataj kaj spekteblas en YouTube. Se ĝi interesas vin, min kontaktu.</p>
+	<h2>Ruĝa Plumo</h2>
+	<p>La teamo <strong>Ruĝa Plumo</strong> ĉiumonate en la <strong>dua dimanĉo</strong> okazigas lego-kunvenon per Zoom iafoje kun ĝia aŭtoro.<br>
+	Ĝiaj kunvenoj principe estas registrataj kaj spekteblas en YouTube. Se ĝi interesas vin, min kontaktu.</p>
 </section>
 
 <button><a href="https://www.youtube.com/@esperantoindonesia/videos" target="_new" rel=”noopener”>Esperanto Indonesia ĉe YouTube</a></button>
