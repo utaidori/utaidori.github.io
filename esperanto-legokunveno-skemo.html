@@ -149,6 +149,13 @@ dd {
 margin-left: 0;
 }
 
+/* スマートフォン表示用 テーブルを横にスクロールできるようにする */
+.tablo-kovrilo {
+width: 100%;       /* 親要素いっぱいに広げる */
+overflow-x: auto;  /* 横方向にはみ出したらスクロールバーを出す */
+-webkit-overflow-scrolling: touch; /* iOSでのスクロールを滑らかにする */
+}
+
 /* 読書会の概要 */
 table.principo {
 margin-top: 1rem;
@@ -426,204 +433,206 @@ function toggleLanguage() {
 </table>
 
 <h2><span lang="ja">過去の読書会</span><span lang="eo">Pasintaj kunvenoj</span></h2>
-<table class="pasintaj-kunvenoj">
-	<tr>
-		<th><span lang="ja">#</span><span lang="eo">#</span></th>
-		<th><span lang="ja">日付</span><span lang="eo">Dato</span></th>
-		<th><span lang="ja">作品</span><span lang="eo">Verko</span></th>
-		<th><span lang="ja">著者</span><span lang="eo">Aŭtoro</span></th>
-		<th><span lang="ja">参加</span><span lang="eo">Ĉeesto</span></th>
-	</tr>
-	<tr>
-		<td>1<span style="display:none">-a</span></td>
-		<td>2024.08.18</td>
-		<td>Dancanta kun ŝarkoj</td>
-		<td>Julian Modest</td>
-		<td>7</td>
-	</tr>
-	<tr>
-		<td>2<span style="display:none">-a</span></td>
-		<td>2024.09.22</td>
-		<td>La lasta vojaĝo de Cezaro</td>
-		<td>Emanuela Pellicciaro</td>
-		<td>8</td>
-	</tr>
-	<tr>
-		<td>3<span style="display:none">-a</span></td>
-		<td>2024.10.19</td>
-		<td>... kaj la fenestroj, okulojn</td>
-		<td>Jorge Rafael Nogueras</td>
-		<td>5</td>
-	</tr>
-	<tr>
-		<td>4<span style="display:none">-a</span></td>
-		<td>2024.11.16</td>
-		<td>Etfingropromeso</td>
-		<td>Akiko Ĵin</td>
-		<td>3</td>
-	</tr>
-	<tr>
-		<td>5<span style="display:none">-a</span></td>
-		<td>2024.12.15</td>
-		<td>Fabeloj</td>
-		<td>Tatjana Tereĥova</td>
-		<td>4</td>
-	</tr>
-	<tr>
-		<td>6<span style="display:none">-a</span></td>
-		<td>2025.01.19</td>
-		<td>La Plej Granda Tragedio</td>
-		<td>Ariel Bonkorpa</td>
-		<td>7</td>
-	</tr>
-	<tr>
-		<td>7<span style="display:none">-a</span></td>
-		<td>2025.02.23</td>
-		<td>
-			Mi ne estas Mona Lisa<br>
-			Eskapo
-		</td>
-		<td>
-			Julia Sigmond<br>
-			Ewa Grochowska
-		</td>
-		<td>7</td>
-	</tr>
-	<tr>
-		<td>8<span style="display:none">-a</span></td>
-		<td>2025.03.23</td>
-		<td>
-			La gajnita motorciklo
-		</td>
-		<td>
-			Mikaelo Bronŝtejn
-		</td>
-		<td>4</td>
-	</tr>
+<div class="tablo-kovrilo">
+	<table class="pasintaj-kunvenoj">
 		<tr>
-		<td>9<span style="display:none">-a</span></td>
-		<td>2025.04.27</td>
-		<td>
-			Kredu min, sinjorino! <small>ĉapitro 4</small>
-		</td>
-		<td>
-			Cezaro Rossetti
-		</td>
-		<td>5</td>
-	</tr>
-	<tr>
-		<td>10<span style="display:none">-a</span></td>
-		<td>2025.05.17</td>
-		<td>
-			Reviviĝo
-		</td>
-		<td>
-			Leila Mohammad Alizadeh Niku
-		</td>
-		<td>5</td>
-	</tr>
-	<tr>
-		<td>11<span style="display:none">-a</span></td>
-		<td>2025.06.22</td>
-		<td>
-			Arkta simfonio
-		</td>
-		<td>
-			Jesper Jacobsen
-		</td>
-		<td>4</td>
-	</tr>
-	<tr>
-		<td>12<span style="display:none">-a</span></td>
-		<td>2025.07.27</td>
-		<td>
-			Ombro sur interna pejzaĝo #1
-		</td>
-		<td>
-			Spomenka Štimec
-		</td>
-		<td>4</td>
-	</tr>
-	<tr>
-		<td>13<span style="display:none">-a</span></td>
-		<td>2025.08.24</td>
-		<td>
-			Bonan matenon! / La ĉokolada biskvito
-		</td>
-		<td>
-			Sten Johansson
-		</td>
-		<td>7</td>
-	</tr>
-	<tr>
-		<td>14<span style="display:none">-a</span></td>
-		<td>2025.09.28</td>
-		<td>
-			Ombro sur interna pejzaĝo #2
-		</td>
-		<td>
-			Spomenka Štimec
-		</td>
-		<td>6</td>
-	</tr>
-	<tr>
-		<td>15<span style="display:none">-a</span></td>
-		<td>2025.10.26</td>
-		<td>
-			Ne mi sen vi (poemo)<br>
-			4 verkoj el <i>Centvorte</i>
-		</td>
-		<td>
-			Malekera Bonne Idée<br>
-			Jorge Rafael Nogueras
-		</td>
-		<td>6</td>
-	</tr>
-	<tr>
-		<td>16<span style="display:none">-a</span></td>
-		<td>2025.11.23</td>
-		<td>
-			Sputnik #1
-		</td>
-		<td>
-			Sten Johansson
-		</td>
-		<td>6</td>
-	</tr>
-	<tr>
-		<td>17<span style="display:none">-a</span></td>
-		<td>2025.12.20</td>
-		<td>
-			Sputnik #2
-		</td>
-		<td>
-			Sten Johansson
-		</td>
-		<td>6</td>
-	</tr>
-	<tr>
-		<td>18<span style="display:none">-a</span></td>
-		<td>2026.01.24</td>
-		<td>
-			Burĝonos la migdalfloroj
-		</td>
-		<td>
-			Nicola Ruggiero
-		</td>
-		<td>5</td>
-	</tr>
-	<tr>
-		<td>19<span style="display:none">-a</span></td>
-		<td>2026.02.21</td>
-		<td>
-			La dolĉa portreto
-		</td>
-		<td>
-			Ferenc Szilágyi	
-		</td>
-		<td>5</td>
-	</tr>
-</table>
+			<th><span lang="ja">#</span><span lang="eo">#</span></th>
+			<th><span lang="ja">日付</span><span lang="eo">Dato</span></th>
+			<th><span lang="ja">作品</span><span lang="eo">Verko</span></th>
+			<th><span lang="ja">著者</span><span lang="eo">Aŭtoro</span></th>
+			<th><span lang="ja">参加</span><span lang="eo">Ĉeesto</span></th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>2024.08.18</td>
+			<td>Dancanta kun ŝarkoj</td>
+			<td>Julian Modest</td>
+			<td>7</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>2024.09.22</td>
+			<td>La lasta vojaĝo de Cezaro</td>
+			<td>Emanuela Pellicciaro</td>
+			<td>8</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>2024.10.19</td>
+			<td>... kaj la fenestroj, okulojn</td>
+			<td>Jorge Rafael Nogueras</td>
+			<td>5</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>2024.11.16</td>
+			<td>Etfingropromeso</td>
+			<td>Akiko Ĵin</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>2024.12.15</td>
+			<td>Fabeloj</td>
+			<td>Tatjana Tereĥova</td>
+			<td>4</td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td>2025.01.19</td>
+			<td>La Plej Granda Tragedio</td>
+			<td>Ariel Bonkorpa</td>
+			<td>7</td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td>2025.02.23</td>
+			<td>
+				Mi ne estas Mona Lisa<br>
+				Eskapo
+			</td>
+			<td>
+				Julia Sigmond<br>
+				Ewa Grochowska
+			</td>
+			<td>7</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>2025.03.23</td>
+			<td>
+				La gajnita motorciklo
+			</td>
+			<td>
+				Mikaelo Bronŝtejn
+			</td>
+			<td>4</td>
+		</tr>
+			<tr>
+			<td>9</td>
+			<td>2025.04.27</td>
+			<td>
+				Kredu min, sinjorino! <small>ĉapitro 4</small>
+			</td>
+			<td>
+				Cezaro Rossetti
+			</td>
+			<td>5</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td>2025.05.17</td>
+			<td>
+				Reviviĝo
+			</td>
+			<td>
+				Leila Mohammad Alizadeh Niku
+			</td>
+			<td>5</td>
+		</tr>
+		<tr>
+			<td>11</td>
+			<td>2025.06.22</td>
+			<td>
+				Arkta simfonio
+			</td>
+			<td>
+				Jesper Jacobsen
+			</td>
+			<td>4</td>
+		</tr>
+		<tr>
+			<td>12</td>
+			<td>2025.07.27</td>
+			<td>
+				Ombro sur interna pejzaĝo #1
+			</td>
+			<td>
+				Spomenka Štimec
+			</td>
+			<td>4</td>
+		</tr>
+		<tr>
+			<td>13</td>
+			<td>2025.08.24</td>
+			<td>
+				Bonan matenon! / La ĉokolada biskvito
+			</td>
+			<td>
+				Sten Johansson
+			</td>
+			<td>7</td>
+		</tr>
+		<tr>
+			<td>14</td>
+			<td>2025.09.28</td>
+			<td>
+				Ombro sur interna pejzaĝo #2
+			</td>
+			<td>
+				Spomenka Štimec
+			</td>
+			<td>6</td>
+		</tr>
+		<tr>
+			<td>15</td>
+			<td>2025.10.26</td>
+			<td>
+				Ne mi sen vi (poemo)<br>
+				4 verkoj el <i>Centvorte</i>
+			</td>
+			<td>
+				Malekera Bonne Idée<br>
+				Jorge Rafael Nogueras
+			</td>
+			<td>6</td>
+		</tr>
+		<tr>
+			<td>16</td>
+			<td>2025.11.23</td>
+			<td>
+				Sputnik #1
+			</td>
+			<td>
+				Sten Johansson
+			</td>
+			<td>6</td>
+		</tr>
+		<tr>
+			<td>17</td>
+			<td>2025.12.20</td>
+			<td>
+				Sputnik #2
+			</td>
+			<td>
+				Sten Johansson
+			</td>
+			<td>6</td>
+		</tr>
+		<tr>
+			<td>18</td>
+			<td>2026.01.24</td>
+			<td>
+				Burĝonos la migdalfloroj
+			</td>
+			<td>
+				Nicola Ruggiero
+			</td>
+			<td>5</td>
+		</tr>
+		<tr>
+			<td>19</td>
+			<td>2026.02.21</td>
+			<td>
+				La dolĉa portreto
+			</td>
+			<td>
+				Ferenc Szilágyi	
+			</td>
+			<td>5</td>
+		</tr>
+	</table>
+</div>
 
 <hr>
 
