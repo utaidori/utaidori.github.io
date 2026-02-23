@@ -6,31 +6,34 @@
 	<meta name="author" content="MAMIJA Midori">
 	<title>Windows11 環境下でのトラブルと解決方法の覚書 | 牢獄機械文書群</title>
 	<link href="mailto:utaidori@gmail.com" title="Mamija Midori" rev="made">
-	<link rel="preconnect" href="https://rsms.me/">
-	<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-	<link rel="icon" type="image/x-icon" href="./favicon/favicon-eo.svg">
-	<link rel="apple-touch-icon" sizes="180x180" href="./favicon/legemuloj-180.png">
-	<link rel="icon" type="image/png" sizes="192x192" href="./favicon/legemuloj-192-alpha.png">
+	<!-- <link rel="preconnect" href="https://rsms.me/"> -->
+	<!-- <link rel="stylesheet" href="https://rsms.me/inter/inter.css"> -->
+	<!-- <link rel="icon" type="image/x-icon" href="./favicon/favicon-eo.svg"> -->
+	<!-- <link rel="apple-touch-icon" sizes="180x180" href="./favicon/legemuloj-180.png"> -->
+	<!-- <link rel="icon" type="image/png" sizes="192x192" href="./favicon/legemuloj-192-alpha.png"> -->
 	<style>
-
+:root {
+}
 body {
-	margin: 0;
-	line-height: 1.7;
-	font-size: 0.9rem;
+margin: 0;
+line-height: 1.7;
+font-size: 0.9rem;
+/*background-color: #fff;*/
+background-color: #f7f7f7;
 }
 
-main, nav {
-	max-width: 640px;
-	margin: auto;
-}
 main {
-	padding: 0 1rem 1rem 1rem;
+max-width: 640px;
+margin: auto;
+background-color: #fff;
+padding: 0 1rem 1rem 1rem;
+box-shadow: 8px 0 3px -5px #ddd, -8px 0 3px -5px #ddd;
 }
 nav {
-	padding: 1rem 0;
+padding: 1rem 0;
 }
 nav a:link, nav a:visited {
-	color: green;
+color: green;
 }
 
 /* Button {{{ */
@@ -63,79 +66,80 @@ color: #888;
 /* }}} */
 
 h1 {
-	font-size: 1.5rem;
+margin-top: 0;
+font-size: 1.5rem;
 }
 h2 {
-	margin-top: 2rem;
-	font-size: 1.2rem;
+margin-top: 2rem;
+font-size: 1.2rem;
 }
 h2 > img {
-	margin-right: .5em;
-	width: 1.5em;
-	height: 1.5em;
-	vertical-align: middle;
+margin-right: .5em;
+width: 1.5em;
+height: 1.5em;
+vertical-align: middle;
 }
 h3 {
-	margin: 0;
-	padding: .5em 1em;
-	margin-bottom: 1em;
-	background-color: #fff588;
-	/*background-color: #ffba08;*/
+margin: 0;
+padding: .5em 1em;
+margin-bottom: 1em;
+background-color: #fff588;
+/*background-color: #ffba08;*/
 }
 h4 {
-	padding: 0;
-	margin: 0;
+padding: 0;
+margin: 0;
 }
 
 .lang-eo h2 {
-	margin-bottom: 0;
-	padding-bottom: 0;
-	line-height: 1.0;
+margin-bottom: 0;
+padding-bottom: 0;
+line-height: 1.0;
 }
 
 hr {
-	margin: 2rem 0;
-	border: none;
-	text-align: center;
+margin: 2rem 0;
+border: none;
+text-align: center;
 }
 hr::before {
-	content: '* * *';
+content: '* * *';
 }
 
 .lang-ja menu {
-	margin: 1rem 0 0 0;
-	padding: 0;
+margin: 1rem 0 0 0;
+padding: 0;
 }
 
 .filmeto {
-	background-image: url(./svg/filmeto.svg);
-	background-repeat: no-repeat;
-	background-position: left center;
-	background-size: 1.5em;
-	padding-left: 2em;
+background-image: url(./svg/filmeto.svg);
+background-repeat: no-repeat;
+background-position: left center;
+background-size: 1.5em;
+padding-left: 2em;
 }
 
 .lang-eo .filmeto {
-	font-size: 0.9rem;
+font-size: 0.9rem;
 }
 
 dl {
-	margin-top: 0;
-	line-height: 1.8;
+margin-top: 0;
+line-height: 1.8;
 }
 dt, dd {
-	display: inline-block;
+display: inline-block;
 }
 dt {
-	min-width: 4em;
+min-width: 4em;
 }
 dd {
-	margin-left: 0;
+margin-left: 0;
 }
 
 table.pasintaj-kunvenoj {
-	border-collapse: collapse;
-	width: 100%;
+border-collapse: collapse;
+width: 100%;
 }
 
 a {
@@ -180,8 +184,8 @@ margin-top: 0;
 .key, .ekrano {
 display: inline-block;
 padding: 0 4px;
-border: 1px solid #888;
-background-color: #efefef;
+border: 1px solid #ccc;
+background-color: #f6f6f6;
 line-height: 1.4;
 }
 .ekrano {
@@ -194,13 +198,11 @@ color: #fff;
 
 <body>
 
-<header>
-	<nav>
-		<a href="index.html">牢獄機械文書群</a> &gt; Windows11 環境下でのトラブルと解決方法の覚書
-	</nav>
-</header>
-
 <main>
+
+<nav>
+	<a href="index.html">牢獄機械文書群</a> &gt; Windows11 環境下でのトラブルと解決方法の覚書
+</nav>
 
 <h1>Windows11 環境下でのトラブルと解決方法の覚書</h1>
 <!-- <time>更新日: 2026.02.19</time> -->
@@ -285,7 +287,7 @@ color: #fff;
 
 	</section>
 
-	<div style="text-align:center;"><a href="#" style="color:blue;">※　ページ最上部に戻る　※</a></div>
+	<div style="text-align:center;"><a href="#" style="color:blue;">※　ページ先頭に戻る　※</a></div>
 </main>
 </body></html>
 
