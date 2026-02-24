@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ja" class="lang-ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="MAMIJA Midori">
+	<title>Windows11 でのトラブルと解決 | 牢獄機械文書群</title>
+	<link href="mailto:utaidori@gmail.com" title="Mamija Midori" rev="made">
+	<style>
+:root {
+/*--koloro-flava: #fcd475;
+--koloro-flava: #fff588;*/
+--koloro-flava: #fee57f;
+/*--koloro-verda: #d9e367;*/
+/*--koloro-verda: #81bc06;*/
+/*--koloro-verda: #ddff88;*/
+--koloro-verda: #dbf178;
+}
+body {
+margin: 0;
+line-height: 1.7;
+font-size: 0.9rem;
+font-family: sans-serif;
+background-color: #f7f7f7;
+color: #333;
+}
+
+main {
+max-width: 720px;
+margin: auto;
+background-color: #fff;
+padding: 1rem;
+box-shadow: 8px 0 3px -5px #ddd, -8px 0 3px -5px #ddd;
+}
+
+/* Por tabuletoj kaj komputiloj */
+@media screen and (min-width: 1025px) {
+	main {
+		padding: 1rem 3rem;
+	}
+}
+
+nav {
+padding: 1rem 0;
+}
+nav a:link, nav a:visited {
+color: green;
+}
+
+/* Button {{{ */
+
+button {
+margin: .5rem 0 .5rem .3rem;
+padding: .7em 1em;
+border: 1px solid #888;
+border-radius: 3px;
+background-color: #f5f5ee;
+color: black;
+font-weight: normal;
+box-shadow: 0 8px 3px -5px rgba(64,64,64,0.2);
+}
+button svg {
+}
+button a::after {
+padding-left: .5em;
+vertical-align: middle;
+content: url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="%23555555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>' );
+}
+
+button a:link, 
+button a:visited {
+text-decoration: none;
+color: #333;
+}
+button a:hover {
+color: #888;
+}
+
+/* }}} */
+
+section {
+margin-top: 1rem;
+margin-bottom: 1rem;
+}
+section.theme {
+margin-top: 2rem;
+margin-bottom: 3rem;
+}
+
+h1, h2, h3, h4 {margin: 0; padding: 0;}
+h1 {
+font-size: 1.5rem;
+}
+h2 {
+font-size: 1.2rem;
+}
+h3 {
+font-size: 1rem;
+padding: .5em 1em;
+background-color: var(--koloro-flava);
+}
+
+h2 > img {
+margin-right: .5em;
+width: 1.5em;
+height: 1.5em;
+vertical-align: middle;
+}
+
+hr {
+margin: 2rem 0;
+border: none;
+text-align: center;
+}
+hr::before {
+content: '* * *';
+}
+
+.filmeto {
+background-image: url(./svg/filmeto.svg);
+background-repeat: no-repeat;
+background-position: left center;
+background-size: 1.5em;
+padding-left: 2em;
+}
+
+dl {
+margin-top: 0;
+line-height: 1.8;
+}
+dt, dd {
+display: inline-block;
+}
+dt {
+min-width: 4em;
+}
+dd {
+margin-left: 0;
+}
+
+a {
+text-decoration: underline;
+color: initial;
+}
+a:link {
+color: #1a0dab;
+}
+a:visited {
+color: #840084;
+}
+a:hover {
+text-decoration: none;
+}
+
+
+time {
+color: #555;
+}
+
+section.item {
+border: 1px solid #888;
+}
+section.item section.item {
+margin: 1em 0 1em 1em;
+border-right: none;
+}
+section.item section.item h3 {
+background-color: var(--koloro-verda);
+}
+section.details {
+padding: 0 1em;
+}
+section.details h4 + p {
+margin-top: 0;
+}
+
+.key, .ekrano {
+display: inline-block;
+padding: 0 4px;
+border: 1px solid #ccc;
+background-color: #f6f6f6;
+line-height: 1.4;
+}
+.ekrano {
+background-color: #000;
+color: #fff;
+}
+</style>
+
+</head>
+
+<body>
+
+<main>
+
+<nav>
+	<a href="index.html">牢獄機械文書群</a>
+</nav>
+
+<section>
+	<h1>Windows11 でのトラブルと解決</h1>
+	<p>トラブルをどう解決したかを記録しました。</p>
+	<!-- <time>更新日: 2026.02.19</time> -->
+</section>
+
+<section class="theme">
+	<h2><img src="../svg/windows_logo.svg" alt="">Windows11 OS</h2>
+
+	<section class="item">
+		<h3>アプリ起動のショートカットキーを設定した元のファイルが見つからない</h3>
+		<section class="details">
+<!-- 			<h4>問題：</h4>
+			<p>ショートカットファイルのプロパティの「ショートカット」タブ、「ショートカットキー(<u>K</u>)」の項目で、アプリを起動するショートカットキーを設定した。しかし元のファイルがデスクトップにも Program Files にもない。</p> -->
+			<!-- <h4>解決：</h4> -->
+			<p>
+			<strong>スタートメニュー内のショートカットファイル</strong>だった。<br>
+		エクスプローラーで開く: %AppData%\Microsoft\Windows\Start Menu\Programs
+			</p>
+		</section>
+	</section>
+
+</section>
+
+<section class="theme">
+	<h2><img src="../svg/github-icon.svg" alt="">Github Desktop</h2>
+
+	<section class="item">
+		<h3>Pull しないままファイルを編集し Commit したため Push が失敗する</h3>
+		<section class="details">
+<!-- 			<h4>問題：</h4>
+			<p>Pull する前にファイルを編集し Commit してしまい、コンフリクトが発生した。</p> -->
+			<!-- <h4>解決策：</h4> -->
+			<p>
+			<strong>アプリ左下に Undo ボタン</strong>がある。コミットを取り消し、各ファイルを右クリックして Discard changes を選ぶ。変更箇所は消えるので、先に当該箇所をコピーして Pull の後に改めて編集する。
+			</p>
+		</section>
+	</section>
+
+</section>
+
+<section class="theme">
+	<h2><img src="../svg/vim.svg" alt="">Vim (gVim 9.0)</h2>
+
+	<section class="item">
+		<h3>:terminal で起動した PowerShell でのトラブル</h3>
+		<section class="item">
+			<h3>[Ctrl] + [Backspace] で単語削除できない</h3>
+			<section class="details">
+				<!-- <h4>詳細</h4> -->
+				<p>
+				<span class="key">&lt;C-BS&gt;</span> を押下すると [8;5u という文字列が表示されてしまう。
+				</p>
+
+				<!-- <h4>解決策：</h4> -->
+				<p>
+				<strong>tmap</strong> で下記のようにリマップする。<br>
+	:tnoremap &lt;C-BS&gt; &lt;C-w&gt;.
+				</p>
+			</section>
+		</section>
+
+		<section class="item">
+			<h3>タブを移動できない</h3>
+			<section class="details">
+				<!-- <h4>問題：</h4> -->
+				<p>
+				<span class="key">&lt;C-Tab&gt;</span> に <span class="key">gt</span> （次のタブに移動）を割り当てたが機能しない。
+				<!-- :terminal で起動した PowerShell で <span class="key">&lt;C-Tab&gt;</span> でタブの移動ができない。 -->
+				</p>
+				<!-- <h4>解決策：</h4> -->
+				<p>
+				<strong>tmap</strong> で下記のようにリマップする。<br>
+	:tnoremap &lt;C-Tab&gt; &lt;C-w&gt;gt<br>
+	または<br>
+	:tnoremap &lt;C-Tab&gt; &lt;cmd&gt;tabn&lt;cr&gt;<br>
+				</p>
+			</section>
+		</section>
+	</section>
+
+</section>
+
+<div style="text-align:center;"><a href="#" style="color:blue;">※　ページ先頭に戻る　※</a></div>
+
+</main>
+</body></html>
