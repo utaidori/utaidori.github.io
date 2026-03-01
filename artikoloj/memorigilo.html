@@ -8,9 +8,33 @@
 	<link href="mailto:utaidori@gmail.com" title="Mamija Midori" rev="made">
 	<style>
 :root {
+/*--koloro-bg: #c0c4b9;*/
+/*--koloro-bg: #f0f0f0;*/
+/*--koloro-bg: #e0d8a7;*/
+/*--koloro-bg: #f7f7f7;*/
+--koloro-bg: #ffffff;
+
+--koloro-fg: #0f1419;
+/*--koloro-fg: #654321;*/
+/*--koloro-fg: #442200;*/
+
+/*--koloro-main: #d9dbce;*/
+/*--koloro-main: #f7f7f7;*/
+/*--koloro-main: #f0ecd5;*/
+--koloro-main: #ffffff;
+/*--koloro-main: #fdfdfd;*/
+
+/*--koloro-nav-hyperlink: #006fd6;*/
+--koloro-nav-hyperlink: green;
+
+/*--koloro-a-hyperlink: #1a0dab;*/
+--koloro-link-hyperlink: #006fd6;
+--koloro-visited-hyperlink: #840084;
+
 /*--koloro-flava: #fcd475;
 --koloro-flava: #fff588;*/
 --koloro-flava: #fee57f;
+
 /*--koloro-verda: #d9e367;*/
 /*--koloro-verda: #81bc06;*/
 /*--koloro-verda: #ddff88;*/
@@ -21,16 +45,16 @@ margin: 0;
 line-height: 1.7;
 font-size: 0.9rem;
 font-family: sans-serif;
-background-color: #f7f7f7;
-color: #333;
+background-color: var(--koloro-bg);
+color: var(--koloro-fg);
 }
 
 main {
 max-width: 720px;
 margin: auto;
-background-color: #fff;
+background-color: var(--koloro-main);
 padding: 1rem;
-box-shadow: 8px 0 3px -5px #ddd, -8px 0 3px -5px #ddd;
+	/*box-shadow: 8px 0 3px -5px #ddd, -8px 0 3px -5px #ddd;*/
 }
 
 /* Por tabuletoj kaj komputiloj */
@@ -41,10 +65,17 @@ box-shadow: 8px 0 3px -5px #ddd, -8px 0 3px -5px #ddd;
 }
 
 nav {
-padding: 1rem 0;
+/*padding: 1rem 0;*/
+padding-bottom: 1rem;
+font-size: 1rem;
 }
 nav a:link, nav a:visited {
-color: green;
+/*color: green;*/
+color: var(--koloro-nav-hyperlink);
+text-decoration: none;
+}
+nav a:hover {
+text-decoration: underline;
 }
 
 /* Button {{{ */
@@ -102,8 +133,9 @@ background-color: var(--koloro-flava);
 
 h2 > img {
 margin-right: .5em;
-width: 1.5em;
-height: 1.5em;
+padding-bottom: .2em;
+width: 1.5rem;
+height: 1.5rem;
 vertical-align: middle;
 }
 
@@ -143,10 +175,10 @@ text-decoration: underline;
 color: initial;
 }
 a:link {
-color: #1a0dab;
+color: var(--koloro-link-hyperlink);
 }
 a:visited {
-color: #840084;
+color: var(--koloro-visited-hyperlink);
 }
 a:hover {
 text-decoration: none;
@@ -185,6 +217,15 @@ line-height: 1.4;
 background-color: #000;
 color: #fff;
 }
+
+footer {
+margin: 0 0 1rem 0;
+}
+.footer-navigation {
+text-align: center;
+line-height: 2;
+}
+
 </style>
 
 </head>
@@ -194,12 +235,15 @@ color: #fff;
 <main>
 
 <nav>
-	<a href="index.html">牢獄機械文書群</a>
+	<a href="index.html" style="font-size:1.2rem;">牢獄機械文書群</a>
+	<!-- <a href="index.html"><img src="../mma.svg" alt="牢獄機械文書群" style="height:100%"></a> -->
 </nav>
 
 <section>
-	<h1>Windows11 でのトラブルと解決</h1>
-	<p>トラブルをどう解決したかを記録しました。</p>
+	<!-- <h1>Windows11 でのトラブルと解決</h1> -->
+	<!-- <p>トラブルをどのように解決したか</p> -->
+	<!-- <p>遭遇したトラブルと実際の解決方法（覚え書き）</p> -->
+	<h1>Windows11 で遭遇したトラブルとその解決方法（覚え書き）</p>
 	<!-- <time>更新日: 2026.02.19</time> -->
 </section>
 
@@ -280,7 +324,14 @@ color: #fff;
 
 </section>
 
-<div style="text-align:center;"><a href="#" style="color:blue;">※　ページ先頭に戻る　※</a></div>
-
 </main>
+
+<footer>
+	<div class="footer-navigation">
+		<div><a href="#" style="color:blue;">※　ページ先頭へ　※</a></div>
+		<!-- <div><a href="#" style="color:blue;">※　このカテゴリの扉ページへ　※</a></div> -->
+		<div><a href="../index.html" style="color:blue;">※　「牢獄機械文書群」へ　※</a></div>
+	</div>
+</footer>
+
 </body></html>
