@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja" class="lang-ja">
+<html lang="ja">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,14 +7,23 @@
 	<title>Windows11 でのトラブルと解決 | 牢獄機械文書群</title>
 	<link href="mailto:utaidori@gmail.com" title="Mamija Midori" rev="made">
 	<style>
+body, footer, h1, h2, h3, h4 {
+margin: 0;
+padding: 0;
+}
+* {
+box-sizing: border-box;
+}
 :root {
 /*--koloro-bg: #c0c4b9;*/
 /*--koloro-bg: #f0f0f0;*/
 /*--koloro-bg: #e0d8a7;*/
 /*--koloro-bg: #f7f7f7;*/
 --koloro-bg: #ffffff;
+/*--koloro-bg: #fefef1;*/
 
 --koloro-fg: #0f1419;
+/*--koloro-fg: #333;*/
 /*--koloro-fg: #654321;*/
 /*--koloro-fg: #442200;*/
 
@@ -41,8 +50,7 @@
 --koloro-verda: #dbf178;
 }
 body {
-margin: 0;
-line-height: 1.7;
+line-height: 1.75;
 font-size: 0.9rem;
 font-family: sans-serif;
 background-color: var(--koloro-bg);
@@ -50,10 +58,12 @@ color: var(--koloro-fg);
 }
 
 main {
-max-width: 720px;
+/*max-width: 1024px;*/
+/*max-width: 1200px;*/
+max-width: 940px;
+width: 90%;
 margin: auto;
 background-color: var(--koloro-main);
-padding: 1rem;
 	/*box-shadow: 8px 0 3px -5px #ddd, -8px 0 3px -5px #ddd;*/
 }
 
@@ -118,7 +128,9 @@ margin-top: 2rem;
 margin-bottom: 3rem;
 }
 
-h1, h2, h3, h4 {margin: 0; padding: 0;}
+h1, h2, h3, h4 {
+font-weight: 700;
+}
 h1 {
 font-size: 1.5rem;
 }
@@ -225,7 +237,6 @@ margin: 0 0 1rem 0;
 text-align: center;
 line-height: 2;
 }
-
 </style>
 
 </head>
@@ -240,11 +251,7 @@ line-height: 2;
 </nav>
 
 <section>
-	<!-- <h1>Windows11 でのトラブルと解決</h1> -->
-	<!-- <p>トラブルをどのように解決したか</p> -->
-	<!-- <p>遭遇したトラブルと実際の解決方法（覚え書き）</p> -->
-	<h1>Windows11 で遭遇したトラブルとその解決方法（覚え書き）</p>
-	<!-- <time>更新日: 2026.02.19</time> -->
+	<h1>Windows11 で遭遇したトラブルとその解決方法（覚え書き）</h1>
 </section>
 
 <section class="theme">
@@ -275,7 +282,18 @@ line-height: 2;
 			<p>Pull する前にファイルを編集し Commit してしまい、コンフリクトが発生した。</p> -->
 			<!-- <h4>解決策：</h4> -->
 			<p>
-			<strong>アプリ左下に Undo ボタン</strong>がある。コミットを取り消し、各ファイルを右クリックして Discard changes を選ぶ。変更箇所は消えるので、先に当該箇所をコピーして Pull の後に改めて編集する。
+				<strong>アプリ左下の Undo ボタン</strong>を押してコミットを取り消す。<br>
+				各ファイルを右クリックして Discard changes を選ぶ。<br>
+				Discard changes を実行すると、<strong>今回行った変更が消える</strong>。<br>
+				変更を維持したい場合は次の手順で行う。
+				<ol>
+					<li>各ファイルの今回変更した箇所をコピーしておく。</li>
+					<li>Undo ボタンでコミットを取り消す。</li>
+					<li>各ファイルを右クリックして Discard changes を選択。</li>
+					<li>Pull を行う。</li>
+					<li>コピーしておいた箇所をペーストする（あるいは置換する）。</li>
+					<li>コミットを行う。</li>
+				</ol>
 			</p>
 		</section>
 	</section>
