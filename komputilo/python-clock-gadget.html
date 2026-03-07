@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="MAMIJA Midori">
+	<title>Python で常に画面上に現在日時（日にち・曜日・時刻）を表示する</title>
+	<link href="mailto:utaidori@gmail.com" title="Mamija Midori" rev="made">
+  <link rel="stylesheet" type="text/css" href="fundamento.css"> 
+</head>
+
+<body>
+
+<main>
+
+<nav>
+	<a href="../index.html">牢獄機械文書群</a>
+</nav>
+
+<section>
+	<h1>Python で常に画面上に現在日時（日にち・曜日・時刻）を表示する</h1>
+</section>
+
+<section>
+<ul>
+	<li>概要：Windows のディスプレイ右上に時計を常時表示（表示オン・オフをホットキーで切り替える）</li>
+	<li>機能</li>
+	<ul>
+		<li>現在日時、曜日、バッテリー残量を表示する</li>
+		<li>表示オン・オフをホットキーで切り替える（AutoHotKeyを使う）</li>
+	</ul>
+	<li>挙動</li>
+	<ul>
+		<li>.pyw ファイルとして実行。ウインドウは常に最前面に表示する（フォーカスは奪わない）</li>
+		<li>バッテリー残量（パーセント）と残り駆動時間を表示（残り時間は充電時には ... と表示）</li>
+		<li>閉じるボタンがないので以下のような方法で終了する</li>
+		<ul>
+			<li>シェルの taskkill コマンド</li>
+			<li>タスクマネージャーからタスクを終了</li>
+			<li>フォーカスが合っている状態で Alt+F4</li>
+		</ul>
+	</ul>
+	<li>AutoHotKey で表示のオン・オフを切り替える</li>
+	<ul>
+		<li>AutoHotKey で時計の起動・終了をトグルするキーを設定する</li>
+		<li>AutoHotKey を使えば（前項のような面倒がなく）簡単に時計をトグルできる</li>
+		<li>※Python のみで表示をオン・オフする方法は模索せず、手軽な方法を採用した</li>
+	</ul>
+</ul>
+</section>
+
+<section>
+<h2>Python (3.11.3)</h2>
+<pre class="inverse"><code>import datetime
+import time
+import psutil
+import tkinter as tk
+
+def get_time():
+    now = datetime.datetime.now()
+    day_of_the_week = ['月', '火', '水', '木', '金', '土', '日']
+    label_time['text'] = f'{now.hour:02}:{now.minute:02}'
+    label_date['text'] = f'{now.month:02}/{now.day:02}'
+    label_day['text'] = f' {day_of_the_week[now.weekday()]} '
+
+    <span class="komento"># 次の更新までの残り秒数を計算</span>
+    remaining_seconds = 60 - now.second
+
+    if remaining_seconds == 0:
+        remaining_seconds = 1
+
+    <span class="komento"># 次の更新までの時間後にget_time()を再帰的に呼び出す</span>
+    root.after(remaining_seconds * 1000, get_time)
+
+def get_battery_info():
+    battery = psutil.sensors_battery()
+    plugged = battery.power_plugged
+    percent = battery.percent
+    time_left = f'...'
+
+    if not plugged:
+        time_left_secs = battery.secsleft
+        if time_left_secs > 0:
+            time_left_mins = time_left_secs // 60
+            time_left_hours = time_left_mins // 60
+            time_left_mins %= 60
+            time_left = f'{time_left_hours:02}h{time_left_mins:02}'
+
+    label_battery.config(text=f'{percent}% ({time_left})')
+    root.after(60000, get_battery_info)
+
+
+root = tk.Tk()
+root.title('Time')
+
+label_time = tk.Label(
+  root, font=("Lato", "18", "bold")
+)
+
+label_date = tk.Label(
+  root, font=("Lato", "10")
+)
+
+label_day = tk.Label(
+  root, font=("BDF東雲ゴシック", "9"), pady="3"
+)
+
+label_battery = tk.Label(
+  root, font=("Lato", "8"), foreground="#888888"
+)
+
+label_day.configure(
+  foreground="#f0f0f0",
+  background="#888888",
+  border=0
+)
+
+label_time.place(x=0, y=14)
+label_date.place(x=0, y=0)
+label_day.place(x=47, y=0)
+label_battery.place(x=0, y=42)
+
+get_time()
+get_battery_info()
+
+root.overrideredirect(True)
+root.geometry("70x62-0+0")
+root.attributes("-topmost", True)
+
+root.mainloop()
+</code></pre>
+	<ul>
+	<li>設定の変更</li>
+		<ul>
+			<li>"BDF東雲ゴシック", "Lato" はフォント名なので任意のフォントに変更する</li>
+			<li>フォントの変更に伴い、レイアウトの必要に応じて root.geometry() の引数を変更する</li>
+		</ul>
+	</ul>
+</section>
+
+<section>
+<h2>AutoHotKey v2</h2>
+<pre><code><span class="komento">; 左Windows + T で 起動/終了 を切り替え</span>
+<#t::
+{
+    if WinExist("Time")
+    {
+        <span class="komento">; ウィンドウが存在すれば終了させる</span>
+        Run 'taskkill /F /FI "WINDOWTITLE eq Time"', , "Hide"
+    }
+    else
+    {
+        <span class="komento">; ウィンドウが存在しなければ起動する</span>
+        Run "C:\Users\" . A_UserName . "\pyw\time.pyw"
+    }
+}
+</code></pre>
+	<ul>
+	<li>設定の変更</li>
+		<ul>
+			<li>time.pyw を置くフォルダは一例</li>
+			<li>A_UserName はユーザー名を格納したAHKの組み込み変数</li>
+		</ul>
+	</ul>
+</section>
+</main>
+
+<!-- <footer>
+	<div class="footer-navigation">
+		<div><a href="index.html">※　コンピューターの記事（一覧）　※</a></div>
+		<div><a href="../index.html">※　牢獄機械文書群（ホームページ）　※</a></div>
+	</div>
+</footer> -->
+{% include footer-nav.html %}
+
+</body></html>

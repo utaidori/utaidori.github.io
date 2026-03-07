@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="author" content="MAMIJA Midori">
-	<title>Windows11 でのトラブルと解決 | 牢獄機械文書群</title>
+	<title>トラブルと解決 (Windows11, Github Desktop, Vim) | 牢獄機械文書群</title>
 	<link href="mailto:utaidori@gmail.com" title="Mamija Midori" rev="made">
 	<style>
 body, footer, h1, h2, h3, h4 {
@@ -255,25 +255,20 @@ line-height: 2;
 </section>
 
 <section class="theme">
-	<h2><img src="../svg/windows_logo.svg" alt="">Windows11 OS</h2>
+	<h2><img src="img/windows_logo.svg" alt="">Windows11 OS</h2>
 
 	<section class="item">
 		<h3>アプリ起動のショートカットキーを設定した元のファイルが見つからない</h3>
 		<section class="details">
-<!-- 			<h4>問題：</h4>
-			<p>ショートカットファイルのプロパティの「ショートカット」タブ、「ショートカットキー(<u>K</u>)」の項目で、アプリを起動するショートカットキーを設定した。しかし元のファイルがデスクトップにも Program Files にもない。</p> -->
-			<!-- <h4>解決：</h4> -->
-			<p>
-			<strong>スタートメニュー内のショートカットファイル</strong>だった。<br>
-		エクスプローラーで開く: %AppData%\Microsoft\Windows\Start Menu\Programs
-			</p>
+			<p><strong>スタートメニューフォルダ（以下に書いたフォルダ）内のショートカットファイル</strong>だった。<br>
+		%AppData%\Microsoft\Windows\Start Menu\Programs</p>
 		</section>
 	</section>
 
 </section>
 
 <section class="theme">
-	<h2><img src="../svg/github-icon.svg" alt="">Github Desktop</h2>
+	<h2><img src="img/github-icon.svg" alt="">Github Desktop</h2>
 
 	<section class="item">
 		<h3>Pull しないままファイルを編集し Commit したため Push が失敗する</h3>
@@ -285,6 +280,7 @@ line-height: 2;
 				<strong>アプリ左下の Undo ボタン</strong>を押してコミットを取り消す。<br>
 				各ファイルを右クリックして Discard changes を選ぶ。<br>
 				Discard changes を実行すると、<strong>今回行った変更が消える</strong>。<br>
+				<br>
 				変更を維持したい場合は次の手順で行う。
 				<ol>
 					<li>各ファイルの今回変更した箇所をコピーしておく。</li>
@@ -301,7 +297,7 @@ line-height: 2;
 </section>
 
 <section class="theme">
-	<h2><img src="../svg/vim.svg" alt="">Vim (gVim 9.0)</h2>
+	<h2><img src="img/vim.svg" alt="">Vim (gVim 9.0)</h2>
 
 	<section class="item">
 		<h3>:terminal で起動した PowerShell でのトラブル</h3>
