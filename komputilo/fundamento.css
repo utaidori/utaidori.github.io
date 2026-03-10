@@ -1,5 +1,5 @@
 @charset "UTF-8";
-body, footer, h1, h2, h3, h4 {
+body, footer, h1, h2, h3, h4, code {
 margin: 0;
 padding: 0;
 }
@@ -23,11 +23,14 @@ background-color: var(--koloro-bg);
 color: var(--koloro-fg);
 }
 
-main {
+main, footer {
 max-width: var(--maksimuma-largxo);
 width: 90%;
 margin: auto;
 background-color: var(--koloro-main);
+}
+
+main {
 }
 
 nav {
@@ -71,34 +74,25 @@ padding: .5em 1em;
 font-size: 1rem;
 }
 
-/*hr.partigilo {
-max-width: 70%;
-margin: 1rem auto;
-border: solid #ccc;
-border-width: thin 0 thin 0;
-}
-hr.partigilo::before {
-content: '//////////';
-}*/
 hr.partigilo {
-  border: none;
-  border-top: 1px solid #ccc;
-  text-align: center;
-  position: relative;
-  overflow: visible;
-  height: 1px;
-  margin: 20px 0;
+border: none;
+border-top: 1px solid #ccc;
+text-align: center;
+position: relative;
+overflow: visible;
+height: 1px;
+margin: 20px 0;
 }
 hr.partigilo::after {
-  content: "###"; /* 表示したい文字 */
-  position: absolute;
-  top: -12px; /* 線の高さに合わせて調整 */
-  left: 50%;
-  transform: translateX(-50%);
-  background: white; /* 線を隠す背景色 */
-  padding: 0 10px;
-  color: #888;
-  font-size: 14px;
+content: "###"; /* 表示したい文字 */
+position: absolute;
+top: -12px; /* 線の高さに合わせて調整 */
+left: 50%;
+transform: translateX(-50%);
+background: white; /* 線を隠す背景色 */
+padding: 0 10px;
+color: #888;
+font-size: 14px;
 }
 hr.normala {
 max-width: var(--maksimuma-largxo);
@@ -143,8 +137,6 @@ color: #fff;
 }
 
 footer {
-max-width: var(--maksimuma-largxo);
-width: 90%;
 position: relative;
 margin: auto;
 font-weight: 600;
@@ -186,43 +178,14 @@ background-color: #efefef;
 }
 
 code {
-margin: 0; padding: 0;
 font-size: .9rem;
 font-family: Consolas, monospace;
-}
-code .komento {
-color: #aaa988;
-}
-code .direktivo {
-color: #dddd00;
-}
-code .rezervita {
-color: #eeaa55;
-}
-code .type {
-color: #aa99ee;
-}
-code .funkcio {
-color: #eeaa55;
-}
-code .direktivofunkcio {
-color: #00cdcd;
-}
-code .boolean {
-color: pink;
-}
-code .strings {
-color: #dddd00;
-}
-pre.inverse code .komento {
-color: #777;
 }
 
 @media screen and (min-width: 1025px) {
 /*	main,footer {padding: 1rem var(--komuna-farcxo-horizontala);}*/
 /*	footer {padding: 2rem var(--komuna-farcxo-horizontala);}*/
 }
-
 
 /* -------------------- */
 /* ベースのボックス設定 */
