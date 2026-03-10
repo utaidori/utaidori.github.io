@@ -144,6 +144,7 @@ color: #fff;
 
 footer {
 max-width: var(--maksimuma-largxo);
+width: 90%;
 position: relative;
 margin: auto;
 font-weight: 600;
