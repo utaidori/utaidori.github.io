@@ -1,0 +1,145 @@
+- vol: 20
+  date_short: "2026.03.14"
+  date_long_ja: "2026年 3月14日(土)"
+  date_long_eo: "sabate, 14 marto 2026"
+  works:
+    - title: "Poemoj"
+      author: "Eli Urbanová"
+  attendees: "-"
+
+- vol: 19
+  date_short: "2026.02.21"
+  works:
+    - title: "La dolĉa portreto"
+      author: "Ferenc Szilágyi"
+  attendees: 5
+
+- vol: 18
+  date_short: "2026.01.24"
+  works:
+    - title: "Burĝonos la migdalfloroj"
+      author: "Nicola Ruggiero"
+  attendees: 5
+
+- vol: 17
+  date_short: "2025.12.20"
+  works:
+    - title: "Sputnik #2"
+      author: "Sten Johansson"
+  attendees: 6
+
+- vol: 16
+  date_short: "2025.11.23"
+  works:
+    - title: "Sputnik #1"
+      author: "Sten Johansson"
+  attendees: 6
+
+- vol: 15
+  date_short: "2025.10.26"
+  works:
+    - title: "Ne mi sen vi (poemo)"
+      author: "Malekera Bonne Idée"
+    - title: "4 verkoj el Centvorte"
+      author: "Jorge Rafael Nogueras"
+  attendees: 6
+
+- vol: 14
+  date_short: "2025.09.28"
+  works:
+    - title: "Ombro sur interna pejzaĝo #2"
+      author: "Spomenka Štimec"
+  attendees: 6
+
+- vol: 13
+  date_short: "2025.08.24"
+  works:
+    - title: "Bonan matenon! / La ĉokolada biskvito"
+      author: "Sten Johansson"
+  attendees: 7
+
+- vol: 12
+  date_short: "2025.07.27"
+  works:
+    - title: "Ombro sur interna pejzaĝo #1"
+      author: "Spomenka Štimec"
+  attendees: 4
+
+- vol: 11
+  date_short: "2025.06.22"
+  works:
+    - title: "Arkta simfonio"
+      author: "Jesper Jacobsen"
+  attendees: 4
+
+- vol: 10
+  date_short: "2025.05.17"
+  works:
+    - title: "Reviviĝo"
+      author: "Leila Mohammad Alizadeh Niku"
+  attendees: 5
+
+- vol: 9
+  date_short: "2025.04.27"
+  works:
+    - title: "Kredu min, sinjorino! <small>ĉapitro 4</small>"
+      author: "Cezaro Rossetti"
+  attendees: 5
+
+- vol: 8
+  date_short: "2025.03.23"
+  works:
+    - title: "La gajnita motorciklo"
+      author: "Mikaelo Bronŝtejn"
+  attendees: 4
+
+- vol: 7
+  date_short: "2025.02.23"
+  works:
+    - title: "Mi ne estas Mona Lisa"
+      author: "Julia Sigmond"
+    - title: "Eskapo"
+      author: "Ewa Grochowska"
+  attendees: 7
+
+- vol: 6
+  date_short: "2025.01.19"
+  works:
+    - title: "La Plej Granda Tragedio"
+      author: "Ariel Bonkorpa"
+  attendees: 7
+
+- vol: 5
+  date_short: "2024.12.15"
+  works:
+    - title: "Fabeloj"
+      author: "Tatjana Tereĥova"
+  attendees: 4
+
+- vol: 4
+  date_short: "2024.11.16"
+  works:
+    - title: "Etfingropromeso"
+      author: "Akiko Ĵin"
+  attendees: 3
+
+- vol: 3
+  date_short: "2024.10.19"
+  works:
+    - title: "... kaj la fenestroj, okulojn"
+      author: "Jorge Rafael Nogueras"
+  attendees: 5
+
+- vol: 2
+  date_short: "2024.09.22"
+  works:
+    - title: "La lasta vojaĝo de Cezaro"
+      author: "Emanuela Pellicciaro"
+  attendees: 8
+
+- vol: 1
+  date_short: "2024.08.18"
+  works:
+    - title: "Dancanta kun ŝarkoj"
+      author: "Julian Modest"
+  attendees: 7

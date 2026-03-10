@@ -1,29 +1,7 @@
 ---
-
+layout: komputilo
+title: AutoHotKey v2 で Chrome のマウスジェスチャーを実現する
 ---
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="author" content="MAMIJA Midori">
-	<title>AutoHotKey v2 で Chrome のマウスジェスチャーを実現する</title>
-	<link href="mailto:utaidori@gmail.com" title="Mamija Midori" rev="made">
-  <link rel="stylesheet" type="text/css" href="fundamento.css"> 
-</head>
-
-<body>
-
-<main>
-
-<nav>
-	<a href="../index.html">牢獄機械文書群</a> &gt;<a href="index.html"> コンピューターの記事</a>
-</nav>
-
-<section>
-	<h1>AutoHotKey v2 で Chrome のマウスジェスチャーを実現する</h1>
-</section>
-
 <section>
 <ul>
 	<li>概要：アクティブウインドウが Chrome のとき有効になるマウスジェスチャー</li>
@@ -39,106 +17,106 @@
 
 <section>
 <h2>AutoHotKey v2</h2>
-<pre><code><span class="direktivo">#Requires</span> AutoHotkey v2.0
-<span class="direktivo">#MaxThreadsPerHotkey</span> 2
+<figure class="highlight"><pre><code class="language-autohotkey" data-lang="ahk"><span class="nd">#Requires</span> AutoHotkey v2.0
+<span class="nd">#MaxThreadsPerHotkey</span> 2
 
-<span class="direktivo">#HotIf</span> <span class="direktivofunkcio">WinActive</span>(<span class="strings">"ahk_exe chrome.exe"</span>)
-<span class="komento">; ズーム操作が行われたかを判定するフラグ</span>
-<span class="type">global</span> zoomUsed := <span class="boolean">false</span>
+<span class="nd">#HotIf</span> <span class="ow">WinActive</span>(<span class="s">"ahk_exe chrome.exe"</span>)
+<span class="c">; ズーム操作が行われたかを判定するフラグ</span>
+<span class="kt">global</span> zoomUsed := <span class="kc">false</span>
 
-<span class="komento">; --- ズーム操作（右クリックしながらホイール） ---</span>
-<span class="type">~RButton & WheelUp::</span> {
-    <span class="type">global</span> zoomUsed := <span class="boolean">true</span>
-    <span class="funkcio">Send</span>(<span class="strings">"^{+}"</span>)
+<span class="c">; --- ズーム操作（右クリックしながらホイール） ---</span>
+<span class="kt">~RButton & WheelUp::</span> {
+    <span class="kt">global</span> zoomUsed := <span class="kc">true</span>
+    <span class="fm">Send</span>(<span class="s">"^{+}"</span>)
 }
 
-<span class="type">~RButton & WheelDown::</span> {
-    <span class="type">global</span> zoomUsed := <span class="boolean">true</span>
-    <span class="funkcio">Send</span>(<span class="strings">"^-"</span>)
+<span class="kt">~RButton & WheelDown::</span> {
+    <span class="kt">global</span> zoomUsed := <span class="kc">true</span>
+    <span class="fm">Send</span>(<span class="s">"^-"</span>)
 }
 
-<span class="komento">; --- メインのジェスチャー処理 ---</span>
-<span class="type">RButton::</span> {
-    <span class="type">global</span> zoomUsed
-    zoomUsed := <span class="boolean">false</span> <span class="komento">; フラグのリセット</span>
+<span class="c">; --- メインのジェスチャー処理 ---</span>
+<span class="kt">RButton::</span> {
+    <span class="kt">global</span> zoomUsed
+    zoomUsed := <span class="kc">false</span> <span class="c">; フラグのリセット</span>
 
-    <span class="komento">; 1. LButton + RButton → F11 (同時押し判定)</span>
-    <span class="rezervita">if</span> GetKeyState(<span class="strings">"LButton"</span>, <span class="strings">"P"</span>) {
-        <span class="funkcio">Send</span>(<span class="strings">"{F11}"</span>)
-        <span class="rezervita">return</span>
+    <span class="c">; 1. LButton + RButton → F11 (同時押し判定)</span>
+    <span class="k">if</span> GetKeyState(<span class="s">"LButton"</span>, <span class="s">"P"</span>) {
+        <span class="fm">Send</span>(<span class="s">"{F11}"</span>)
+        <span class="k">return</span>
     }
 
-    <span class="komento">; 座標と履歴の初期化</span>
+    <span class="c">; 座標と履歴の初期化</span>
     MouseGetPos(&sx, &sy)
-    gesture := <span class="strings">""</span>
-    lastDir := <span class="strings">""</span>
-    threshold := 60 <span class="komento">; 判定のしきい値（ピクセル）</span>
+    gesture := <span class="s">""</span>
+    lastDir := <span class="s">""</span>
+    threshold := 60 <span class="c">; 判定のしきい値（ピクセル）</span>
 
-    <span class="komento">; タイムアウト設定（3秒以上押しっぱなしなら強制終了して右クリックを出す）</span>
+    <span class="c">; タイムアウト設定（3秒以上押しっぱなしなら強制終了して右クリックを出す）</span>
     startTime := A_TickCount
     
-    <span class="komento">; 右ボタンが離されるまでループ</span>
-    <span class="rezervita">while</span> GetKeyState(<span class="strings">"RButton"</span>, <span class="strings">"P"</span>) {
-        <span class="komento">; ズームが使われたら即座にループを抜ける（ジェスチャーを無効化）</span>
-        <span class="rezervita">if</span> (zoomUsed || A_TickCount - startTime > 3000)
-            <span class="rezervita">break</span>
+    <span class="c">; 右ボタンが離されるまでループ</span>
+    <span class="k">while</span> GetKeyState(<span class="s">"RButton"</span>, <span class="s">"P"</span>) {
+        <span class="c">; ズームが使われたら即座にループを抜ける（ジェスチャーを無効化）</span>
+        <span class="k">if</span> (zoomUsed || A_TickCount - startTime > 3000)
+            <span class="k">break</span>
 
         MouseGetPos(&cx, &cy)
         dx := cx - sx
         dy := cy - sy
         dist := Sqrt(dx**2 + dy**2)
 
-        <span class="rezervita">if</span> (dist > threshold) {
-            <span class="komento">; 方向判定</span>
-            dir := <span class="strings">""</span>
-            <span class="rezervita">if</span> (Abs(dx) > Abs(dy)) {
-                dir := (dx > 0) ? <span class="strings">"R"</span> : <span class="strings">"L"</span>
-            } <span class="rezervita">else</span> {
-                dir := (dy > 0) ? <span class="strings">"D"</span> : <span class="strings">"U"</span>
+        <span class="k">if</span> (dist > threshold) {
+            <span class="c">; 方向判定</span>
+            dir := <span class="s">""</span>
+            <span class="k">if</span> (Abs(dx) > Abs(dy)) {
+                dir := (dx > 0) ? <span class="s">"R"</span> : <span class="s">"L"</span>
+            } <span class="k">else</span> {
+                dir := (dy > 0) ? <span class="s">"D"</span> : <span class="s">"U"</span>
             }
 
-            <span class="komento">; 新しい方向であれば履歴に追加し、基準点を更新</span>
-            <span class="rezervita">if</span> (dir != lastDir) {
+            <span class="c">; 新しい方向であれば履歴に追加し、基準点を更新</span>
+            <span class="k">if</span> (dir != lastDir) {
                 gesture .= dir
                 lastDir := dir
                 sx := cx
                 sy := cy
             }
         }
-        <span class="funkcio">Sleep</span>(10)
+        <span class="fm">Sleep</span>(10)
     }
 
-    <span class="komento">; 2. ボタンを離した後のアクション分岐</span>
-    <span class="rezervita">if</span> (zoomUsed) {
-        <span class="komento">; ズーム使用後は何もしない</span>
-    } <span class="rezervita">else</span> <span class="rezervita">if</span> (gesture == <span class="strings">""</span>) {
-        <span class="komento">; 移動がなければ通常の右クリックを送信</span>
-        <span class="funkcio">Send</span>(<span class="strings">"{Blind}{RButton}"</span>)
-    } <span class="rezervita">else</span> {
-        <span class="komento">; ジェスチャー履歴に基づいて実行</span>
-        <span class="rezervita">switch</span> gesture {
-            <span class="komento">; --- 1アクション ---</span>
-            <span class="rezervita">case</span> <span class="strings">"L"</span>: <span class="funkcio">Send</span>(<span class="strings">"{XButton1}"</span>)  <span class="komento">; 戻る</span>
-            <span class="rezervita">case</span> <span class="strings">"R"</span>: <span class="funkcio">Send</span>(<span class="strings">"{XButton2}"</span>)  <span class="komento">; 進む</span>
-            <span class="rezervita">case</span> <span class="strings">"U"</span>: <span class="funkcio">Send</span>(<span class="strings">"{Home}</span>")      <span class="komento">; ページ先頭</span>
-            <span class="rezervita">case</span> <span class="strings">"D"</span>: <span class="funkcio">Send</span>(<span class="strings">"^w</span>")          <span class="komento">; タブを閉じる</span>
+    <span class="c">; 2. ボタンを離した後のアクション分岐</span>
+    <span class="k">if</span> (zoomUsed) {
+        <span class="c">; ズーム使用後は何もしない</span>
+    } <span class="k">else</span> <span class="k">if</span> (gesture == <span class="s">""</span>) {
+        <span class="c">; 移動がなければ通常の右クリックを送信</span>
+        <span class="fm">Send</span>(<span class="s">"{Blind}{RButton}"</span>)
+    } <span class="k">else</span> {
+        <span class="c">; ジェスチャー履歴に基づいて実行</span>
+        <span class="k">switch</span> gesture {
+            <span class="c">; --- 1アクション ---</span>
+            <span class="k">case</span> <span class="s">"L"</span>: <span class="fm">Send</span>(<span class="s">"{XButton1}"</span>)  <span class="c">; 戻る</span>
+            <span class="k">case</span> <span class="s">"R"</span>: <span class="fm">Send</span>(<span class="s">"{XButton2}"</span>)  <span class="c">; 進む</span>
+            <span class="k">case</span> <span class="s">"U"</span>: <span class="fm">Send</span>(<span class="s">"{Home}</span>")      <span class="c">; ページ先頭</span>
+            <span class="k">case</span> <span class="s">"D"</span>: <span class="fm">Send</span>(<span class="s">"^w</span>")          <span class="c">; タブを閉じる</span>
 
-            <span class="komento">; --- 2アクション ---</span>
-            <span class="rezervita">case</span> <span class="strings">"LR"</span>: <span class="funkcio">Send</span>(<span class="strings">"^+t</span>")        <span class="komento">; 左→右：閉じたタブを開く</span>
-            <span class="rezervita">case</span> <span class="strings">"RL"</span>: <span class="funkcio">Send</span>(<span class="strings">"^^t</span>")        <span class="komento">; 右→左：新しいタブを開く</span>
-            <span class="rezervita">case</span> <span class="strings">"LU"</span>: <span class="funkcio">Send</span>(<span class="strings">"{HOME}</span>")     <span class="komento">; 左→上：ページ先頭</span>
-            <span class="rezervita">case</span> <span class="strings">"RD"</span>: <span class="funkcio">Send</span>(<span class="strings">"{END}</span>")      <span class="komento">; 右→下：ページ末尾</span>
-            <span class="rezervita">case</span> <span class="strings">"UD"</span>: <span class="funkcio">Send</span>(<span class="strings">"{F5}</span>")       <span class="komento">; 上→下：更新</span>
+            <span class="c">; --- 2アクション ---</span>
+            <span class="k">case</span> <span class="s">"LR"</span>: <span class="fm">Send</span>(<span class="s">"^+t</span>")        <span class="c">; 左→右：閉じたタブを開く</span>
+            <span class="k">case</span> <span class="s">"RL"</span>: <span class="fm">Send</span>(<span class="s">"^^t</span>")        <span class="c">; 右→左：新しいタブを開く</span>
+            <span class="k">case</span> <span class="s">"LU"</span>: <span class="fm">Send</span>(<span class="s">"{HOME}</span>")     <span class="c">; 左→上：ページ先頭</span>
+            <span class="k">case</span> <span class="s">"RD"</span>: <span class="fm">Send</span>(<span class="s">"{END}</span>")      <span class="c">; 右→下：ページ末尾</span>
+            <span class="k">case</span> <span class="s">"UD"</span>: <span class="fm">Send</span>(<span class="s">"{F5}</span>")       <span class="c">; 上→下：更新</span>
 
-            <span class="komento">; 定義されていない動きはツールチップで表示（デバッグ用）</span>
-            <span class="rezervita">default</span>:
-                <span class="funkcio">ToolTip</span>(<span class="strings">"Gesture: "</span> . gesture)
-                <span class="funkcio">SetTimer</span>(() => ToolTip(), -1000)
+            <span class="c">; 定義されていない動きはツールチップで表示（デバッグ用）</span>
+            <span class="k">default</span>:
+                <span class="fm">ToolTip</span>(<span class="s">"Gesture: "</span> . gesture)
+                <span class="fm">SetTimer</span>(() => ToolTip(), -1000)
         }
     }
 }
-<span class="direktivo">#HotIf</span> 
-</code></pre>
+<span class="nd">#HotIf</span> 
+</code></pre></figure>
 	<ul>
 	<li>設定の変更</li>
 		<ul>
@@ -149,8 +127,3 @@
 		</ul>
 	</ul>
 </section>
-</main>
-
-{% include footer-nav.html %}
-
-</body></html>

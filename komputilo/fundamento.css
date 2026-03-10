@@ -34,14 +34,19 @@ nav {
 padding: 1rem 0;
 font-size: 1rem;
 }
+nav .rootindex {
+letter-spacing: 2px;
+}
 nav a:link, nav a:visited {
 color: var(--koloro-nav-hyperlink);
 border-bottom: thin dashed var(--koloro-nav-hyperlink);
 text-decoration: none;
-letter-spacing: 2px;
 }
 nav a:hover {
 border-bottom: 2px solid var(--koloro-nav-hyperlink);
+}
+nav .mem {
+font-weight: 700;
 }
 
 section {
@@ -66,6 +71,35 @@ padding: .5em 1em;
 font-size: 1rem;
 }
 
+/*hr.partigilo {
+max-width: 70%;
+margin: 1rem auto;
+border: solid #ccc;
+border-width: thin 0 thin 0;
+}
+hr.partigilo::before {
+content: '//////////';
+}*/
+hr.partigilo {
+  border: none;
+  border-top: 1px solid #ccc;
+  text-align: center;
+  position: relative;
+  overflow: visible;
+  height: 1px;
+  margin: 20px 0;
+}
+hr.partigilo::after {
+  content: "###"; /* 表示したい文字 */
+  position: absolute;
+  top: -12px; /* 線の高さに合わせて調整 */
+  left: 50%;
+  transform: translateX(-50%);
+  background: white; /* 線を隠す背景色 */
+  padding: 0 10px;
+  color: #888;
+  font-size: 14px;
+}
 hr.normala {
 max-width: var(--maksimuma-largxo);
 margin: auto;
@@ -145,6 +179,10 @@ pre.inverse {
 color: #244774;
 background-color: #e3ecf6;
 }
+pre.senornama {
+color: var(--koloro-fg);
+background-color: #efefef;
+}
 
 code {
 margin: 0; padding: 0;
@@ -182,4 +220,49 @@ color: #777;
 @media screen and (min-width: 1025px) {
 /*	main,footer {padding: 1rem var(--komuna-farcxo-horizontala);}*/
 /*	footer {padding: 2rem var(--komuna-farcxo-horizontala);}*/
+}
+
+
+/* -------------------- */
+/* ベースのボックス設定 */
+.highlight {
+    background-color: #244774; /* 現在の背景色を継承 */
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 1rem 0;
+    overflow-x: auto;
+}
+
+.highlight pre {
+    background-color: transparent; /* 二重背景を防ぐ */
+    margin: 0;
+    padding: 0;
+    border: none;
+    color: #e3ecf6; /* テキスト基本色 */
+    line-height: 1.4;
+}
+
+.highlight code {
+    font-family: Consolas, monospace;
+    font-size: .9rem;
+    color: inherit;
+}
+
+/* トークンごとの色分け */
+.highlight .c, .highlight .cm, .highlight .c1 { color: #aaa988; }	/* コメント (.komento) */
+.highlight .k, .highlight .kr, .highlight .kd { color: #eeaa55; }	/* 予約語 (.rezervita) */
+.highlight .nf, .highlight .fm { color: #eeaa55; }								/* 関数 (.funkcio) */
+.highlight .s, .highlight .s1, .highlight .s2 { color: #dddd00; }	/* 文字列 (.strings) */
+.highlight .kt, .highlight .nc { color: #aa99ee; }                /* 型・クラス (.type) */
+.highlight .kc { color: pink; }																		/* Boolean (.boolean) */
+.highlight .nd { color: #dddd00; }																/* (.direktivo) */
+.highlight .ow { color: #00cdcd; }																/* (.direktivofunkcio) */
+.highlight .mi, .highlight .mo { color: #aa99ee; }								/* 数値 */
+.highlight .o { color: #eeaa55;}																	/* 演算子 */
+.highlight .kn { color: gold;}
+
+/* 選択時の色(visual) */
+.highlight ::selection {
+    background-color: #6ca6cd;
+    color: black;
 }

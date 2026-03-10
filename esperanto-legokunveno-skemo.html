@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="ja" class="lang-ja">
 <head>
@@ -203,12 +205,12 @@ margin: 1rem 0;
 .lang-eo table.pasintaj-kunvenoj {
 margin: 2rem 0;
 }
+table.pasintaj-kunvenoj thead tr {
+border-bottom: thin solid #888;
+}
 table.pasintaj-kunvenoj tr {
 border-bottom: thin solid #ddd;
 vertical-align: text-top;
-}
-table.pasintaj-kunvenoj tr:nth-child(1) {
-border-bottom: thin solid #888;
 }
 table.pasintaj-kunvenoj th,
 table.pasintaj-kunvenoj td {
@@ -270,18 +272,6 @@ font-weight: bold;
 font-style: oblique;
 }
 
-/*.filmeto {
-background-image: url(./svg/filmeto.svg);
-background-repeat: no-repeat;
-background-position: left center;
-background-size: 1.5em;
-padding-left: 2em;
-}
-.lang-eo .filmeto {
-font-size: 0.9rem;
-}*/
-
-
 	</style>
 
 	<style>
@@ -334,30 +324,37 @@ function toggleLanguage() {
 
 <p lang="ja">エスペラントの小説を読み、日本語で語り合うオンライン読書会です。<br>
 	エスペラントの初心者も流暢な人も、一緒にエスペラント文学を楽しみましょう。</p>
-<!-- <p lang="eo">Legu Esperante, interparolu japane! Ĉiumonata kunveno por legi novelon Esperante kaj interparoli japane. -->
 <p lang="eo">Legu Esperante, interparolu japane!<br>
 Ĉiumonate kunvenas legi novelon ni, kaj komencantoj kaj progresintoj.</p>
+
+{% assign next_item = site.data.legokunvenoj.first %}
 
 <h2><span lang="ja">次回予定</span><span lang="eo">Anonco</span></h2>
 <h3>
 <span lang="ja">第</span>
 <span lang="eo">La</span>
-20<span lang="ja"> 回</span><span lang="eo">-a kunveno</span>
+{{ next_item.vol }}
+<span lang="ja"> 回</span><span lang="eo">-a kunveno</span>
 </h3>
 <dl class="anonco-dl">
 	<div>
 		<dt><span class="kapo"><span lang="ja">【日時】</span><span lang="eo">Dato:</span></span></dt>
 		<dd class="number-dd">
-			<span lang="ja"><span class="numero">2026</span>年
-			<span class="numero">3</span>月<span class="numero">14</span>日(土) <span class="numero">21</span>時</span>
-			<span lang="eo">sabate, 14 marto 2026 | 12:00 (UTC) / 21:00 (JST)</span>
+			<span lang="ja" style="letter-spacing:1px;">
+{{ next_item.date_long_ja }}
+<span class="numero">21</span>時</span>
+			<span lang="eo">
+{{ next_item.date_long_eo }}
+			| 12:00 (UTC) / 21:00 (JST)</span>
 		</dd>
 	</div>
 	<div>
 		<dt><span lang="ja">【作品】</span><span lang="eo">Verko:</span></span></dt>
 		<dd style="vertical-align:top;">
-<strong>Poemoj </strong>
-- Eli Urbanová
+      {% for work in next_item.works %}
+<strong>{{ work.title }}</strong> - {{ work.author }}
+        {% unless forloop.last %}<br>{% endunless %}
+      {% endfor %}
 		</dd>
 	</div>
 </dl>
@@ -379,7 +376,7 @@ function toggleLanguage() {
 		<td>進めかた</td>
 		<td>
 			<ol>
-				<li>画面共有されたテキストをひとりずつ順番に音読。</li>
+				<li>共有画面のテキストをひとりずつ順に音読。</li>
 				<li>単語や表現について話す。</li>
 				<li>作品の内容について感想を話す。</li>
 			</ol>
@@ -424,7 +421,7 @@ function toggleLanguage() {
 	</tr>
 	<tr>
 		<td>Privateco</td>
-		<td>Oni <strong>neniam</strong> registros nek elsendos la kunvenojn.</td>
+		<td>Oni <strong>neniam</strong> registros nek publikigos la kunvenojn.</td>
 	</tr>
 	<tr>
 		<td>Aliĝo</td>
@@ -435,213 +432,41 @@ function toggleLanguage() {
 <h2><span lang="ja">過去の読書会</span><span lang="eo">Pasintaj kunvenoj</span></h2>
 <div class="tablo-kovrilo">
 	<table class="pasintaj-kunvenoj">
-		<tr>
-			<th><span lang="ja">#</span><span lang="eo">#</span></th>
-			<th><span lang="ja">日付</span><span lang="eo">Dato</span></th>
-			<th><span lang="ja">作品</span><span lang="eo">Verko</span></th>
-			<th><span lang="ja">著者</span><span lang="eo">Aŭtoro</span></th>
-			<th><span lang="ja">参加</span><span lang="eo">Ĉeesto</span></th>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>2024.08.18</td>
-			<td>Dancanta kun ŝarkoj</td>
-			<td>Julian Modest</td>
-			<td>7</td>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td>2024.09.22</td>
-			<td>La lasta vojaĝo de Cezaro</td>
-			<td>Emanuela Pellicciaro</td>
-			<td>8</td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>2024.10.19</td>
-			<td>... kaj la fenestroj, okulojn</td>
-			<td>Jorge Rafael Nogueras</td>
-			<td>5</td>
-		</tr>
-		<tr>
-			<td>4</td>
-			<td>2024.11.16</td>
-			<td>Etfingropromeso</td>
-			<td>Akiko Ĵin</td>
-			<td>3</td>
-		</tr>
-		<tr>
-			<td>5</td>
-			<td>2024.12.15</td>
-			<td>Fabeloj</td>
-			<td>Tatjana Tereĥova</td>
-			<td>4</td>
-		</tr>
-		<tr>
-			<td>6</td>
-			<td>2025.01.19</td>
-			<td>La Plej Granda Tragedio</td>
-			<td>Ariel Bonkorpa</td>
-			<td>7</td>
-		</tr>
-		<tr>
-			<td>7</td>
-			<td>2025.02.23</td>
-			<td>
-				Mi ne estas Mona Lisa<br>
-				Eskapo
-			</td>
-			<td>
-				Julia Sigmond<br>
-				Ewa Grochowska
-			</td>
-			<td>7</td>
-		</tr>
-		<tr>
-			<td>8</td>
-			<td>2025.03.23</td>
-			<td>
-				La gajnita motorciklo
-			</td>
-			<td>
-				Mikaelo Bronŝtejn
-			</td>
-			<td>4</td>
-		</tr>
+		<thead>
 			<tr>
-			<td>9</td>
-			<td>2025.04.27</td>
-			<td>
-				Kredu min, sinjorino! <small>ĉapitro 4</small>
-			</td>
-			<td>
-				Cezaro Rossetti
-			</td>
-			<td>5</td>
-		</tr>
-		<tr>
-			<td>10</td>
-			<td>2025.05.17</td>
-			<td>
-				Reviviĝo
-			</td>
-			<td>
-				Leila Mohammad Alizadeh Niku
-			</td>
-			<td>5</td>
-		</tr>
-		<tr>
-			<td>11</td>
-			<td>2025.06.22</td>
-			<td>
-				Arkta simfonio
-			</td>
-			<td>
-				Jesper Jacobsen
-			</td>
-			<td>4</td>
-		</tr>
-		<tr>
-			<td>12</td>
-			<td>2025.07.27</td>
-			<td>
-				Ombro sur interna pejzaĝo #1
-			</td>
-			<td>
-				Spomenka Štimec
-			</td>
-			<td>4</td>
-		</tr>
-		<tr>
-			<td>13</td>
-			<td>2025.08.24</td>
-			<td>
-				Bonan matenon! / La ĉokolada biskvito
-			</td>
-			<td>
-				Sten Johansson
-			</td>
-			<td>7</td>
-		</tr>
-		<tr>
-			<td>14</td>
-			<td>2025.09.28</td>
-			<td>
-				Ombro sur interna pejzaĝo #2
-			</td>
-			<td>
-				Spomenka Štimec
-			</td>
-			<td>6</td>
-		</tr>
-		<tr>
-			<td>15</td>
-			<td>2025.10.26</td>
-			<td>
-				Ne mi sen vi (poemo)<br>
-				4 verkoj el <i>Centvorte</i>
-			</td>
-			<td>
-				Malekera Bonne Idée<br>
-				Jorge Rafael Nogueras
-			</td>
-			<td>6</td>
-		</tr>
-		<tr>
-			<td>16</td>
-			<td>2025.11.23</td>
-			<td>
-				Sputnik #1
-			</td>
-			<td>
-				Sten Johansson
-			</td>
-			<td>6</td>
-		</tr>
-		<tr>
-			<td>17</td>
-			<td>2025.12.20</td>
-			<td>
-				Sputnik #2
-			</td>
-			<td>
-				Sten Johansson
-			</td>
-			<td>6</td>
-		</tr>
-		<tr>
-			<td>18</td>
-			<td>2026.01.24</td>
-			<td>
-				Burĝonos la migdalfloroj
-			</td>
-			<td>
-				Nicola Ruggiero
-			</td>
-			<td>5</td>
-		</tr>
-		<tr>
-			<td>19</td>
-			<td>2026.02.21</td>
-			<td>
-				La dolĉa portreto
-			</td>
-			<td>
-				Ferenc Szilágyi	
-			</td>
-			<td>5</td>
-		</tr>
-		<tr>
-			<td>20</td>
-			<td>2026.03.14</td>
-			<td>
-				Poemoj
-			</td>
-			<td>
-				Eli Urbanová
-			</td>
-			<td>5</td>
-		</tr>
+				<th><span lang="ja">#</span><span lang="eo">#</span></th>
+				<th><span lang="ja">日付</span><span lang="eo">Dato</span></th>
+				<th><span lang="ja">作品</span><span lang="eo">Verko</span></th>
+				<th><span lang="ja">著者</span><span lang="eo">Aŭtoro</span></th>
+				<th><span lang="ja">参加</span><span lang="eo">Ĉeesto</span></th>
+			</tr>
+		</thead>
+		<tbody>
+			{% assign all_sorted = site.data.legokunvenoj | sort: "vol" %}
+			{% for item in all_sorted %}
+				{% if item.vol != next_item.vol %}
+			<tr>
+				<td>{{ item.vol }}</td>
+				<td>{{ item.date_short }}</td>
+
+				<td>
+					{% for work in item.works %}
+						{{ work.title }}
+						{% unless forloop.last %}<br>{% endunless %}
+					{% endfor %}
+				</td>
+				<td>
+					{% for work in item.works %}
+						{{ work.author }}
+						{% unless forloop.last %}<br>{% endunless %}
+					{% endfor %}
+				</td>
+
+				<td>{{ item.attendees }}</td>
+			</tr>
+				{% endif %}
+			{% endfor %}
+		</tbody>
 	</table>
 </div>
 
@@ -687,4 +512,3 @@ function toggleLanguage() {
 
 </main>
 </body></html>
-

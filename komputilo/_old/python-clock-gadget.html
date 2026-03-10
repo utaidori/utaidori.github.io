@@ -1,7 +1,29 @@
 ---
-layout: komputilo
-title: Python で常に画面上に現在日時（日にち・曜日・時刻）を表示する
+
 ---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="MAMIJA Midori">
+	<title>Python で常に画面上に現在日時（日にち・曜日・時刻）を表示する</title>
+	<link href="mailto:utaidori@gmail.com" title="Mamija Midori" rev="made">
+  <link rel="stylesheet" type="text/css" href="fundamento.css"> 
+</head>
+
+<body>
+
+<main>
+
+<nav>
+	<a href="../index.html">牢獄機械文書群</a> &gt;<a href="index.html"> コンピューターの記事</a>
+</nav>
+
+<section>
+	<h1>Python で常に画面上に現在日時（日にち・曜日・時刻）を表示する</h1>
+</section>
+
 <section>
 <ul>
 	<li>概要：Windows のディスプレイ右上に時計を常時表示（表示オン・オフをホットキーで切り替える）</li>
@@ -32,8 +54,7 @@ title: Python で常に画面上に現在日時（日にち・曜日・時刻）
 
 <section>
 <h2>Python (3.11.3)</h2>
-{% highlight python %}
-import datetime
+<pre class="inverse"><code>import datetime
 import time
 import psutil
 import tkinter as tk
@@ -45,13 +66,13 @@ def get_time():
     label_date['text'] = f'{now.month:02}/{now.day:02}'
     label_day['text'] = f' {day_of_the_week[now.weekday()]} '
 
-    # 次の更新までの残り秒数を計算
+    <span class="komento"># 次の更新までの残り秒数を計算</span>
     remaining_seconds = 60 - now.second
 
     if remaining_seconds == 0:
         remaining_seconds = 1
 
-    # 次の更新までの時間後にget_time()を再帰的に呼び出す
+    <span class="komento"># 次の更新までの時間後にget_time()を再帰的に呼び出す</span>
     root.after(remaining_seconds * 1000, get_time)
 
 def get_battery_info():
@@ -110,7 +131,7 @@ root.geometry("70x62-0+0")
 root.attributes("-topmost", True)
 
 root.mainloop()
-{% endhighlight %}
+</code></pre>
 	<ul>
 	<li>設定の変更</li>
 		<ul>
@@ -122,21 +143,21 @@ root.mainloop()
 
 <section>
 <h2>AutoHotKey v2</h2>
-<figure class="highlight"><pre><code class="language-autohotkey" data-lang="ahk"><span class="c">; 左Windows + T で 起動/終了 を切り替え</span>
-<span class="type">&lt;#t::</span>
+<pre><code><span class="komento">; 左Windows + T で 起動/終了 を切り替え</span>
+<#t::
 {
-    <span class="k">if</span> <span class="ow">WinExist</span>(<span class="s">"Time"</span>)
+    if WinExist("Time")
     {
-        <span class="c">; ウィンドウが存在すれば終了させる</span>
-        <span class="fm">Run</span> <span class="s">'taskkill /F /FI "WINDOWTITLE eq Time"'</span>, , <span class="s">"Hide"</span>
+        <span class="komento">; ウィンドウが存在すれば終了させる</span>
+        Run 'taskkill /F /FI "WINDOWTITLE eq Time"', , "Hide"
     }
-    <span class="k">else</span>
+    else
     {
-        <span class="c">; ウィンドウが存在しなければ起動する</span>
-        <span class="fm">Run</span> <span class="s">"C:\Users\"</span> . <span class="kn">A_UserName</span> . <span class="s">"\pyw\time.pyw"</span>
+        <span class="komento">; ウィンドウが存在しなければ起動する</span>
+        Run "C:\Users\" . A_UserName . "\pyw\time.pyw"
     }
 }
-</code></pre></figure>
+</code></pre>
 	<ul>
 	<li>設定の変更</li>
 		<ul>
@@ -145,3 +166,8 @@ root.mainloop()
 		</ul>
 	</ul>
 </section>
+</main>
+
+{% include footer-nav.html %}
+
+</body></html>

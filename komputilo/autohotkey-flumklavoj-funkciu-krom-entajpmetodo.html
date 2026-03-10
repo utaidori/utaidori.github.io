@@ -1,0 +1,33 @@
+---
+layout: komputilo
+title: AutoHotKey v2 日本語入力がオフのときだけキーの割り当てを変更する
+---
+<section>
+<ul>
+	<li>概要：日本語入力がオンのときはキーの割り当てを変更しない</li>
+	<li>なぜそうしたいか：</li>
+	<p><span class="key">Ctrl-k</span> に <span class="key">Shift-End, Delete</span>（カーソルから右を行末まで削除）を割り当てていたが、このキーは ATOK で「日本語入力中のカーソル移動」や「文節区切り収縮」が割り当てられているため ATOK では <span class="key">Ctrl-k</span> をそのまま使いたい。</p>
+	<li>挙動：「日本語入力がオンか」の条件分岐で割り当てを変更する</li>
+</ul>
+</section>
+
+<section>
+<h2>AutoHotKey v2</h2>
+<figure class="highlight"><pre><code class="language-autohotkey" data-lang="ahk"><span class="nd">#Requires</span> AutoHotkey v2.0
+<span class="c">; IMEの状態を取得する関数</span>
+IME_GET(winTitle := <span class="s">"A"</span>) {
+    hwnd := <span class="ow">WinExist</span>(winTitle)
+    <span class="k">if</span> !hwnd
+        <span class="k">return</span> 0
+    defaultIMEWnd := <span class="ow">DllCall</span>(<span class="s">"imm32\ImmGetDefaultIMEWnd"</span>, <span class="s">"Ptr"</span>, hwnd, <span class="s">"Ptr"</span>)
+    <span class="k">return</span> <span class="ow">DllCall</span>(<span class="s">"SendMessage"</span>, <span class="s">"Ptr"</span>, defaultIMEWnd, <span class="s">"UInt"</span>, <span class="s">0x0283</span>, <span class="s">"Ptr"</span>, <span class="s">0x0005</span>, <span class="s">"Ptr"</span>, 0)
+}
+
+<span class="type">^k::</span> {
+    <span class="k">if</span> (IME_GET() == 0)
+        <span class="fm">Send</span>(<span class="s">"+{End}{Delete}"</span>)
+    <span class="k">else</span>
+        <span class="fm">Send</span>(<span class="s">"^k"</span>)
+}
+</code></pre></figure>
+</section>

@@ -1,0 +1,55 @@
+---
+layout: komputilo
+title: Vim でブロックで区切ったリストを逆順に並べ替える
+---
+<section>
+<p>次の YAML ファイルは読書会のリストだが、これを降順にしたい。</p>
+<pre class="senornama">
+- vol: 1
+  date_short: "2024.08.18"
+  works:
+    - title: "Dancanta kun ŝarkoj"
+      author: "Julian Modest"
+  attendees: 7
+
+- vol: 2
+  date_short: "2024.09.22"
+  works:
+    - title: "La lasta vojaĝo de Cezaro"
+      author: "Emanuela Pellicciaro"
+  attendees: 8
+
+- vol: 3
+  date_short: "2024.10.19"
+  works:
+    - title: "... kaj la fenestroj, okulojn"
+      author: "Jorge Rafael Nogueras"
+  attendees: 5
+</pre>
+
+<p>解決方法</p>
+<ol>
+	<li>準備：ファイルの最初を1行目空行、2行目ダミーの文字列、3行目空行とする
+<pre>
+1|
+2| dummy
+3|
+4| - vol: 1
+5| date_short: "2024.08.18"...
+</pre>
+	</li>
+	<li>次のコマンドを for i in range(リストに含まれるブロック要素の数 - 1) で実行</li>
+	<ul>
+		<li>カーソルを最下行に移動、段落をカット、カーソルを1行目に移動、カーソルを i+1 回 次段落移動、P でペースト</li>
+	</ul>
+	<li>ファイル最初のダミー部分を削除</li>
+</ol>
+</section>
+
+<section>
+<h2>Vim script（一行Exコマンド）</h2>
+ブロック要素が20個のとき
+{% highlight vim %}
+for i in range(19) | execute 'normal Gdap1G' .eval(i+1) .'}P' | endfor
+{% endhighlight %}
+</section>

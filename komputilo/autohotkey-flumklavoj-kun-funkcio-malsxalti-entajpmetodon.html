@@ -1,0 +1,37 @@
+---
+layout: komputilo
+title: AutoHotKey v2 日本語入力をオフにしてから実行するショートカットキーの設定
+---
+<section>
+	<ul>
+		<li>概要：特定の文字列を常に半角英数で入力したい</li>
+		<li>なぜそうしたいか：</li>
+		<p>具体的には、Chrome のアドレスバーの行頭に文字列 view-source: を挿入して Enter する（ページのソースを開く）ショートカットキーを設定したいが、日本語で入力されたくないので、文字列を挿入する前にIMをオフにする。</p>
+	</ul>
+</section>
+
+<section>
+<h2>AutoHotKey v2</h2>
+<figure class="highlight"><pre><code class="language-autohotkey" data-lang="ahk">IME_SET(setSts, winTitle := <span class="s">"A"</span>) {
+    hwnd := <span class="ow">WinExist</span>(winTitle)
+    <span class="k">if</span> !hwnd
+        return
+    defaultIMEWnd := <span class="ow">DllCall</span>(<span class="s">"imm32\ImmGetDefaultIMEWnd"</span>, <span class="s">"Ptr"</span>, hwnd, <span class="s">"Ptr"</span>)
+    <span class="ow">DllCall</span>(<span class="s">"SendMessage"</span>, <span class="s">"Ptr"</span>, defaultIMEWnd, <span class="s">"UInt"</span>, <span class="s">0x0283</span>, <span class="s">"Ptr"</span>, <span class="s">0x0006</span>, <span class="s">"Ptr"</span>, setSts)
+}
+
+<span class="type">!u::</span> {
+    <span class="fm">KeyWait</span>(<span class="s">"Alt"</span>)
+    <span class="fm">Send</span>(<span class="s">"^l"</span>)
+    <span class="fm">Sleep</span>(<span class="s">50</span>)
+    IME_SET(0) <span class="c">; 日本語入力をオフにする</span>
+    <span class="fm">Sleep</span>(<span class="s">50</span>)
+    <span class="fm">Send</span>(<span class="s">"{Home}view-source:"</span>)
+    <span class="fm">Send</span>(<span class="s">"!{Enter}"</span>)
+}
+</code></pre></figure>
+
+<p>
+ちなみに Chrome はデフォルトでは Ctrl-u でソースを開くことができる。
+</p>
+</section>
