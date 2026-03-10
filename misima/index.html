@@ -310,6 +310,7 @@ blockquote {
         <div class="leftside"><img src="{{ event.image }}" alt=""></div>
         <div class="rightside">
           <div class="date">
+            <span class="date-year">{{ event.date | date: "%Y" }}年</span><br>
             {{ event.date | date: "%-m月%-d日" }}（{{ day_of_week }}曜）{{ event.time }}
           </div>
           <h2>{{ event.title }}</h2>

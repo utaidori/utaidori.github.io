@@ -2,6 +2,8 @@
 layout: misima-archive-default
 title: Misima Hyakka &rarr; 過去ログ
 ---
+<h2 class="year">2026年</h2>
+
 {% comment %} 基準となる「今日」の日付を取得 {% endcomment %}
 {% assign today_timestamp = "now" | date: "%s" | plus: 0 %}
 
@@ -26,6 +28,7 @@ title: Misima Hyakka &rarr; 過去ログ
       <div class="leftside"><img src="{{ event.image }}" alt=""></div>
       <div class="rightside">
         <div class="date">
+          <!-- <span class="date-year">{{ event.date | date: "%Y" }}年</span><br> -->
           {{ event.date | date: "%-m月%-d日" }}（{{ day_of_week }}曜）{{ event.time }}
         </div>
         
