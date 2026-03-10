@@ -1,0 +1,44 @@
+---
+# Misima Hyakka
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Misima Hyakka">
+  <meta property="og:site_name" content="Misima Hyakka">
+  <meta property="og:description" content="三島の気になるワークショップや展示、読書会を紹介します。">
+  <meta property="og:type" content="blog">
+  <meta property="og:url" content="https://utaidori.github.io/misima/">
+  <meta property="og:image" content="https://utaidori.github.io/misima/files/m-logo.jpg">
+  <meta name="author" content="MAMIJA Midori">
+  <title>{{ page.title }}</title>
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="./android-chrome-192x192.png">
+  <link rel="stylesheet" href="style201412.css" media="print, screen">
+  <link rel="stylesheet" href="stylearchive.css" media="print, screen">
+  <link href="mailto:utaidori@gmail.com" title="Mamija Midori" rev="made">
+  <noscript>
+    <style type="text/css">
+      div.fold { display: block; }
+      a.readmore { display: none; }
+    </style>
+  </noscript>
+  <script type="text/javascript">
+function foldOpen(geID){
+  document.getElementById(geID).style.display = "block";
+  document.getElementById(geID +"Rdmr").style.display = "none";
+}
+  </script>
+</head>
+<body>
+
+{% include misima-archive-header.html %}
+
+{{ content }}
+
+{% include footer-nav.html %}
+
+</body></html>

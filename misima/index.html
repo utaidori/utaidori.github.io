@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="ja">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# blog: http://ogp.me/ns/blog#">
@@ -18,8 +20,6 @@
 	<link rel="stylesheet" href="style201412.css" media="print, screen">
 	<link href="mailto:ararezake@gmail.com" title="Mamija Midori" rev="made">
 	<style>
-/* {{{ */
-
 	#none {
 		color: #442200;
 	}
@@ -91,12 +91,10 @@ function filter(elm){
 }
 	</script>
 
-<!-- }}} -->
 </head>
 <body id="index">
 
 <header>
-<!-- {{{ -->
 	<h1>
 		<a href="index.html" title="ホーム">
 		<img class="logo" src="files/sakana.svg" alt="">
@@ -118,7 +116,6 @@ function filter(elm){
 			<li><a href="notes.html"><img src="files/notes_off.png" width="32px">ノート</a></li>
 		</div>
 	</ul>
-<!-- }}} -->
 </header>
 <style>
 blockquote {
@@ -131,6 +128,11 @@ blockquote {
 		<div class="bar"><span class="interbar-text small">更新履歴</span></div>
 		<div class="aural"><a href="#main">更新履歴をスキップして本文に移る</a></div>
 		<ul class="detail">
+			<li>2026-03-11
+				<ul>
+					<li>詩を持ち寄る日(3月)</li>
+				</ul>
+			</li>
 			<li>2026-01-06
 				<ul>
 					<li>詩を持ち寄る日(1月)</li>
@@ -285,43 +287,67 @@ blockquote {
 		<div class="year">＊ すべて静岡県三島市のイベントです。(2026年)</div>
 
 		<!-- <div class="bar"><span class="interbar-text normal">10月</span></div> -->
+{% comment %} 基準となる「今日」の日付を取得 {% endcomment %}
+{% assign today_timestamp = "now" | date: "%s" | plus: 0 %}
 
-		<section class="bc">
-			<div class="leftside"><img src="images/cip_logo.png" alt=""></div>
-			<div class="rightside">
-				<div class="date">2026年1月26日（月曜）17:30〜19:30</div>
-				<h2>詩を持ち寄る日</h2>
-				<p>お気に入りの詩や、感銘を受けた詩、最近読んだ詩、自作の詩などなど、好きに持ち寄って鑑賞する会です。本そのものでもコピーでもOK。
-				</p>
-				<blockquote>
-<p>好きな詩・紹介したい詩を持って集まります。自作でも誰かの作品でもOKです。参加者みんなが手に取れる形（本・コピーしたもの・タイプして取り出したもの・手書き）または音声や動画でも、お好きな形で持ち寄ってください。</p>
--- <a href="https://www.instagram.com/cipbooks/">CRY IN PUBLIC</a>
-				</blockquote>
-				<ul class="quote">
-					<li>【日時】 1月26日（月曜）17:30〜19:30</li>
-					<li>【場所】 <a href="https://maps.app.goo.gl/XCvzwTobCvFJovWp7">CRY IN PUBLIC</a><span class="small">（JR三島駅より徒歩10分）</span></li>
-					<li>【申込】 要申し込み。詳細は <a href="https://www.instagram.com/cipbooks/">Instagram(@cipbooks)</a> を参照</li>
-				</ul>
-			</div>
-		</section>
+{% comment %} 曜日リストの作成 {% endcomment %}
+{% assign yobi_list = "日,月,火,水,木,金,土" | split: "," %}
+
+<div id="upcoming-events">
+  {% comment %} 日付順（昇順）にソート。 {% endcomment %}
+  {% assign sorted_events = site.data.misima-events | sort: "date" %}
+  
+  {% for event in sorted_events %}
+    {% assign event_timestamp = event.date | date: "%s" | plus: 0 %}
+
+    {% comment %} 今日以降のイベントのみ表示 {% endcomment %}
+    {% if event_timestamp >= today_timestamp %}
+      
+      {% assign yobi_index = event.date | date: "%w" | plus: 0 %}
+      {% assign day_of_week = yobi_list[yobi_index] %}
+
+      <section class="{{ event.category }}">
+        <div class="leftside"><img src="{{ event.image }}" alt=""></div>
+        <div class="rightside">
+          <div class="date">
+            {{ event.date | date: "%-m月%-d日" }}（{{ day_of_week }}曜）{{ event.time }}
+          </div>
+          <h2>{{ event.title }}</h2>
+
+          {% if event.is_quote %}
+            <blockquote class="description"><p>{{ event.description }}</p></blockquote>
+          {% else %}
+            <p>{{ event.description }}</p>
+          {% endif %}
+
+          <div class="fold" id="{{ base_id }}">
+            <blockquote>
+              <p>{{ event.fold_content }}</p>
+              -- <a href="{{ event.place_url }}">{{ event.place }}</a>
+            </blockquote>
+            
+            <ul class="quote">
+              <li>【日時】 {{ event.date | date: "%-m月%-d日" }}（{{ day_of_week }}曜）{{ event.time }}</li>
+              <li>
+                【場所】 <a href="{{ event.place_map }}">{{ event.place }}</a>
+                {% if event.place_note %}<span class="small">（{{ event.place_note }}）</span>{% endif %}
+              </li>
+              {% if event.attention %}
+                <li>【備考】 {{ event.attention }}</li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      </section>
+    {% endif %}
+  {% endfor %}
 
 		<div id="messageArea"></div>
 
 	</main>
 </div>
 
-<hr class="main-end">
-
-<footer>
-<!-- {{{ -->
-	<ul>
-		<li><a href="index.html">ホーム</a></li>
-		<li><a href="aboutme.html">このサイトについて</a></li>
-		<li><a href="mailto:ararezake@gmail.com">メールを送る</a></li>
-	</ul>
-	<p class="copyright"><small>&copy; <span class="small">2014-2025</span> Misima Hyakka</small></p>
-<!-- }}} -->
-</footer>
+{% include misima-footer.html %}
 
 </body>
 </html>
