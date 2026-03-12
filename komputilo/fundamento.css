@@ -14,7 +14,8 @@ box-sizing: border-box;
 --koloro-main: #ffffff;
 --koloro-nav-hyperlink: green;
 --koloro-link-hyperlink: #006fd6;
---koloro-visited-hyperlink: #840084;
+/*--koloro-visited-hyperlink: #840084;*/
+--koloro-visited-hyperlink: #6b7280;
 }
 body {
 line-height: 1.75;
@@ -36,6 +37,14 @@ main {
 nav {
 padding: 1rem 0;
 font-size: 1rem;
+}
+nav ul {
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+nav li {
+display: inline-block;
 }
 nav .rootindex {
 letter-spacing: 2px;
@@ -182,7 +191,23 @@ font-size: .9rem;
 font-family: Consolas, monospace;
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (max-width: 767px) {
+	nav ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;	
+	}
+	nav li {
+	display: list-item;
+	}
+	section > ul {
+	padding-left: 0;
+	padding-right:0;
+	}
+	ul > ul {
+	padding-left: 1em;
+	padding-right: 0;
+	}
 /*	main,footer {padding: 1rem var(--komuna-farcxo-horizontala);}*/
 /*	footer {padding: 2rem var(--komuna-farcxo-horizontala);}*/
 }
