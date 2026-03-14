@@ -1,3 +1,12 @@
+- vol: 21
+  date_short: "2026.04.18"
+  date_long_ja: "2026年 4月18日(土)"
+  date_long_eo: "sabate, 18 aprilo 2026"
+  works:
+    - title: "*ankoraŭ ne fiksita*"
+      author: "-"
+  attendees: "-"
+
 - vol: 20
   date_short: "2026.03.14"
   date_long_ja: "2026年 3月14日(土)"
@@ -5,7 +14,7 @@
   works:
     - title: "Poemoj"
       author: "Eli Urbanová"
-  attendees: "-"
+  attendees: "6"
 
 - vol: 19
   date_short: "2026.02.21"
