@@ -10,7 +10,13 @@ title: Misima Hyakka &rarr; 過去ログ
 {% comment %} 曜日リストの作成 {% endcomment %}
 {% assign yobi_list = "日,月,火,水,木,金,土" | split: "," %}
 
+{% comment %} 日付順（昇順）にソート。 {% endcomment %}
+{% assign sorted_events = site.data.misima-events | sort: "date" | reversed %}
+
 {% for event in site.data.misima-events %}
+
+  {% unless event.date %}{% continue %}{% endunless %}
+
   {% assign event_timestamp = event.date | date: "%s" | plus: 0 %}
 
   {% if event_timestamp < today_timestamp %}
@@ -40,6 +46,10 @@ title: Misima Hyakka &rarr; 過去ログ
         {% else %}
           <p class="description_content">{{ event.description }}</p>
         {% endif %}
+        {% if event.description_add %}
+            <p class="description_content">{{ event.description_add }}</p>
+        {% endif %}
+
 
         {% comment %} JSボタン部分 {% endcomment %}
         <div id="{{ rdmr_id }}">

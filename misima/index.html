@@ -217,6 +217,7 @@ blockquote {
 
 <div id="upcoming-events">
   {% comment %} 日付順（昇順）にソート。 {% endcomment %}
+
   {% assign sorted_events = site.data.misima-events | sort: "date" %}
   
   {% for event in sorted_events %}
@@ -241,6 +242,9 @@ blockquote {
             <blockquote><p class="description_content">{{ event.description }}</p></blockquote>
           {% else %}
             <p class="description_content">{{ event.description }}</p>
+          {% endif %}
+          {% if event.description_add %}
+            <p class="description_content">{{ event.description_add }}</p>
           {% endif %}
 
           <div class="fold" id="{{ base_id }}">
