@@ -1,3 +1,41 @@
+- date: 2026-04-25
+  category: ws
+  subcategory: rekisi
+  title: "歴史発見講座"
+  time: "17:30〜19:30"
+  organization: "かるの造船所"
+  organization_url: "https://karunozosenjo.com/"
+  place: "カフェ トランジット"
+  place_map: "https://maps.app.goo.gl/c2ZsRU5CTZggo62BA"
+  place_note: "三島市大宮町1丁目4-7"
+  image: "images/transit-6.jpg"
+  is_quote: false
+  description: |-
+    世間士・かるのさんによる歴史講座。歴史や文化の移り変わり、今に残る史跡などを、わかりやすい解説で見ていきます。
+    今回のテーマは「巨船の軌跡　核の時代の二律背反」です。
+  fold_content: |-
+    広島・長崎の原爆投下に次ぐ第五福竜丸事件。日本は核兵器による災厄を受けながらも、平和的に技術を用いることで敗戦を克服しようと考えた。
+    科学技術が全ての人を幸せにすると考えられ、原子力が導入されていった経緯をお話します。
+  fee: "700円 + ワンオーダー"
+
+- date: 2026-04-27
+  category: bc
+  subcategory: motiyoru
+  title: "詩を持ち寄る日"
+  time: "17:30〜19:30"
+  place: "CRY IN PUBLIC"
+  place_url: "https://www.instagram.com/cipbooks/"
+  place_map: "https://maps.app.goo.gl/XCvzwTobCvFJovWp7"
+  place_note: "JR三島駅より徒歩10分"
+  image: "images/cip_logo.png"
+  is_quote: false
+  description: >
+    お気に入りの詩や、感銘を受けた詩、最近読んだ詩、自作の詩などなど、好きに持ち寄って鑑賞する会です。本そのものでもコピーでもOK。
+  fold_content: >
+    好きな詩・紹介したい詩を持って集まります。自作でも誰かの作品でもOKです。参加者みんなが手に取れる形（本・コピーしたもの・タイプして取り出したもの・手書き）または音声や動画でも、お好きな形で持ち寄ってください。
+  attention: >
+    要申し込み。詳細は <a href="https://www.instagram.com/cipbooks/">Instagram(@cipbooks)</a> を参照
+
 - date: 2026-03-23
   category: bc
   subcategory: motiyoru

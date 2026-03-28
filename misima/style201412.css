@@ -387,6 +387,10 @@ i {
 }
 /* }}} */
 
+p.description_content, p.fold_content {
+white-space: pre-wrap;
+}
+
 .small {
 font-size: 0.9rem;
 } .large {

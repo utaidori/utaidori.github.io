@@ -36,9 +36,9 @@ title: Misima Hyakka &rarr; 過去ログ
 
         {% comment %} 説明文の引用切り替え {% endcomment %}
         {% if event.is_quote %}
-          <blockquote class="description"><p>{{ event.description }}</p></blockquote>
+          <blockquote><p class="description_content">{{ event.description }}</p></blockquote>
         {% else %}
-          <p>{{ event.description }}</p>
+          <p class="description_content">{{ event.description }}</p>
         {% endif %}
 
         {% comment %} JSボタン部分 {% endcomment %}
@@ -48,8 +48,12 @@ title: Misima Hyakka &rarr; 過去ログ
 
         <div class="fold" id="{{ base_id }}">
           <blockquote>
-            <p>{{ event.fold_content }}</p>
+            <p class="fold_content">{{ event.fold_content }}</p>
+        {% if event.organization %}
+            -- <a href="{{ event.organization_url }}">{{ event.organization }}</a>
+        {% else %}
             -- <a href="{{ event.place_url }}">{{ event.place }}</a>
+        {% endif %}
           </blockquote>
           
           <ul class="quote">
@@ -58,6 +62,9 @@ title: Misima Hyakka &rarr; 過去ログ
               【場所】 <a href="{{ event.place_map }}">{{ event.place }}</a>
               {% if event.place_note %}<span class="small">（{{ event.place_note }}）</span>{% endif %}
             </li>
+              {% if event.fee %}
+            <li>【参加費】 {{ event.fee }}</li>
+              {% endif %}
               {% if event.attention %}
             <li>【備考】 {{ event.attention }}</li>
               {% endif %}

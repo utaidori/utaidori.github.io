@@ -128,6 +128,12 @@ blockquote {
 		<div class="bar"><span class="interbar-text small">更新履歴</span></div>
 		<div class="aural"><a href="#main">更新履歴をスキップして本文に移る</a></div>
 		<ul class="detail">
+			<li>2026-03-28
+				<ul>
+					<li>詩を持ち寄る日(4月)</li>
+					<li>歴史発見講座(4月)</li>
+				</ul>
+			</li>
 			<li>2026-03-11
 				<ul>
 					<li>詩を持ち寄る日(3月)</li>
@@ -190,90 +196,6 @@ blockquote {
 					<li>歴史発見講座(10月)</li>
 				</ul>
 			</li>
-			<li>2024-08-06
-				<ul>
-					<li>歴史発見講座(8月)</li>
-				</ul>
-			</li>
-			<li>2024-07-01
-				<ul>
-					<li>歴史発見講座(7月)</li>
-				</ul>
-			</li>
-			<li>2024-04-01
-				<ul>
-					<li>川合朋郎展「星を播く人」</li>
-				</ul>
-			</li>
-			<li>2023-11-25
-				<ul>
-					<li>歴史発見講座(12月)</li>
-				</ul>
-			</li>
-			<li>2023-11-20
-				<ul>
-					<li>三島満願芸術祭(11月)</li>
-				</ul>
-			</li>
-			<li>2023-10-31
-				<ul>
-					<li>歴史発見講座(11月)</li>
-				</ul>
-			</li>
-			<li>2023-10-08
-				<ul>
-					<li>佐野美術館展示 吉澤章(10月)</li>
-				</ul>
-			</li>
-			<li>2023-09-16
-				<ul>
-					<li>歴史発見講座(9月)</li>
-				</ul>
-			</li>
-			<li>2023-07-28
-				<ul>
-					<li>歴史発見講座(8月)</li>
-				</ul>
-			</li>
-			<li>2023-05-28
-				<ul>
-					<li>歴史発見講座(6月)</li>
-					<li>歴史発見講座(7月)</li>
-				</ul>
-			</li>
-			<li>2023-05-25
-				<ul>
-					<li>歴史発見講座(5月)</li>
-				</ul>
-			</li>
-			<li>2023-02-27
-				<ul>
-					<li>歴史発見講座(4月)</li>
-				</ul>
-			</li>
-			<li>2023-02-01
-				<ul>
-					<li>三島落語会(2月)</li>
-				</ul>
-			</li>
-			<li>2022-01-31
-				<ul>
-					<li>歴史発見講座(2月)</li>
-				</ul>
-			</li>
-			<li>2023-01-21
-				<ul><li>歴史発見講座、誤記修正</li></ul>
-			</li>
-			<li>2022-12-13
-				<ul>
-					<li>三島落語会(2023年1月)</li>
-				</ul>
-			</li>
-			<li>2022-12-08
-				<ul>
-					<li>歴史発見講座(2023年1月)</li>
-				</ul>
-			</li>
 		</ul>
 		<div class="bar">&nbsp;</div>
 		<div class="rightsideSubmenu"><a href="history.html">&rarr; 過去の更新履歴</a></div>
@@ -316,15 +238,19 @@ blockquote {
           <h2>{{ event.title }}</h2>
 
           {% if event.is_quote %}
-            <blockquote class="description"><p>{{ event.description }}</p></blockquote>
+            <blockquote><p class="description_content">{{ event.description }}</p></blockquote>
           {% else %}
-            <p>{{ event.description }}</p>
+            <p class="description_content">{{ event.description }}</p>
           {% endif %}
 
           <div class="fold" id="{{ base_id }}">
             <blockquote>
-              <p>{{ event.fold_content }}</p>
-              -- <a href="{{ event.place_url }}">{{ event.place }}</a>
+              <p class="fold_content">{{ event.fold_content }}</p>
+        {% if event.organization %}
+            -- <a href="{{ event.organization_url }}">{{ event.organization }}</a>
+        {% else %}
+            -- <a href="{{ event.place_url }}">{{ event.place }}</a>
+        {% endif %}
             </blockquote>
             
             <ul class="quote">
@@ -333,6 +259,9 @@ blockquote {
                 【場所】 <a href="{{ event.place_map }}">{{ event.place }}</a>
                 {% if event.place_note %}<span class="small">（{{ event.place_note }}）</span>{% endif %}
               </li>
+              {% if event.fee %}
+            <li>【参加費】 {{ event.fee }}</li>
+              {% endif %}
               {% if event.attention %}
                 <li>【備考】 {{ event.attention }}</li>
               {% endif %}
