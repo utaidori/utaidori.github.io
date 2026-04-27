@@ -3,3 +3,5 @@
 desktop.ini
 _site/
 .jekyll-cache/
+.env.local
+node_modules/
