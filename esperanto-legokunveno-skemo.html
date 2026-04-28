@@ -135,7 +135,7 @@ margin-top: 0;
 line-height: 1.8;
 }
 .lang-ja dl.anonco-dl {
-font-size: 120%;
+font-size: 110%;
 }
 .lang-ja dl.anonco-dl .number-dd .numero {
 margin: 0 .2em;
@@ -329,6 +329,21 @@ function toggleLanguage() {
 
 {% assign next_item = site.data.legokunvenoj.first %}
 
+{% comment %} === 日付変換ロジック ここから === {% endcomment %}
+{% assign ja_yobi_list = "日,月,火,水,木,金,土" | split: "," %}
+{% assign eo_yobi_list = "dimanĉe,lunde,marde,merkrede,ĵaŭde,vendrede,sabate" | split: "," %}
+{% assign eo_month_list = "januaro,februaro,marto,aprilo,majo,junio,julio,aŭgusto,septembro,oktobro,novembro,decembro" | split: "," %}
+
+{% assign y_idx = next_item.date | date: "%w" | plus: 0 %}
+{% assign m_idx = next_item.date | date: "%-m" | minus: 1 %}
+{% assign y_ja = ja_yobi_list[y_idx] %}
+{% assign y_eo = eo_yobi_list[y_idx] %}
+{% assign m_eo = eo_month_list[m_idx] %}
+
+{% capture next_date_ja %}{{ next_item.date | date: "%Y" }}年 {{ next_item.date | date: "%-m" }}月{{ next_item.date | date: "%-d" }}日({{ y_ja }}){% endcapture %}
+{% capture next_date_eo %}{{ y_eo }}, {{ next_item.date | date: "%-d" }} {{ m_eo }} {{ next_item.date | date: "%Y" }}{% endcapture %}
+{% comment %} === 日付変換ロジック ここまで === {% endcomment %}
+
 <h2><span lang="ja">次回予定</span><span lang="eo">Anonco</span></h2>
 <h3>
 <span lang="ja">第</span>
@@ -336,18 +351,21 @@ function toggleLanguage() {
 {{ next_item.vol }}
 <span lang="ja"> 回</span><span lang="eo">-a kunveno</span>
 </h3>
+
 <dl class="anonco-dl">
+
 	<div>
 		<dt><span class="kapo"><span lang="ja">【日時】</span><span lang="eo">Dato:</span></span></dt>
 		<dd class="number-dd">
 			<span lang="ja" style="letter-spacing:1px;">
-{{ next_item.date_long_ja }}
+{{ next_date_ja }}
 <span class="numero">21</span>時</span>
 			<span lang="eo">
-{{ next_item.date_long_eo }}
+{{ next_date_eo }}
 			| 12:00 (UTC) / 21:00 (JST)</span>
 		</dd>
 	</div>
+
 	<div>
 		<dt><span lang="ja">【作品】</span><span lang="eo">Verko:</span></span></dt>
 		<dd style="vertical-align:top;">
@@ -357,6 +375,16 @@ function toggleLanguage() {
       {% endfor %}
 		</dd>
 	</div>
+
+  {% if next_item.note %}
+	<div>
+		<dt><span lang="ja">【備考】</span><span lang="eo">Noto: </span></dt>
+		<dd>
+      {{ next_item.note }}
+		</dd>
+	</div>
+  {% endif %}
+
 </dl>
 
 <h2><span lang="ja">読書会の概要</span><span lang="eo">Principo</span></h2>
@@ -447,7 +475,7 @@ function toggleLanguage() {
 				{% if item.vol != next_item.vol %}
 			<tr>
 				<td>{{ item.vol }}</td>
-				<td>{{ item.date_short }}</td>
+				<td>{{ item.date | date: "%Y.%m.%d" }}</td>
 
 				<td>
 					{% for work in item.works %}
