@@ -11,14 +11,14 @@
   works:
     - title: "Bjalistokaj kajeroj 2025"
       author: "Literatura Konkurso “Esperanto ligas homojn”"
-  attendees: "5"
+  attendees: 5
 
 - vol: 20
   date: "2026-03-14"
   works:
     - title: "Poemoj"
       author: "Eli Urbanová"
-  attendees: "6"
+  attendees: 6
 
 - vol: 19
   date: "2026-02-21"
