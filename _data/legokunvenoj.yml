@@ -1,10 +1,17 @@
+- vol: 23
+  date: "2026-06-20"
+  works:
+    - title: 'Kiu mi estas?'
+      author: "Tatjana Tereĥova"
+  attendees: ""
+
 - vol: 22
   date: "2026-05-24"
   works:
     - title: 'Bjalistokaj kajeroj 2025'
       author: "Literatura Konkurso “Esperanto ligas homojn”"
   note: 'De "Fejsbuko kaj la maljunulo" (p.8)'
-  attendees: ""
+  attendees: 5
 
 - vol: 21
   date: "2026-04-18"
