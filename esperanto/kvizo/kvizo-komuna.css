@@ -1,0 +1,324 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #ffffff;
+  --surface: #f9f8f6;
+  --text: #0f0f0f;
+  --muted: #555;
+  --border: #1a1a1a;
+  --border-light: #d8d5ce;
+  --correct-bg: #eaf6ed;
+  --correct-border: #2e7d46;
+  --correct-text: #1a4d2b;
+  --seg: #555555;
+  --correct-seg: #a6e045;
+  --wrong-seg: #de2a2a;
+  --wrong-bg: #fdf0f0;
+  --wrong-border: #c0392b;
+  --wrong-text: #7a1a1a;
+  --reveal-bg: #edf4fb;
+  --reveal-border: #2c6fa8;
+  --reveal-text: #1a3f66;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Crimson Pro', serif;
+  line-height: 1.65;
+  min-height: 100vh;
+  padding: 3rem 1.25rem 4rem;
+}
+
+.container {
+  max-width: 680px;
+  margin: 0 auto;
+}
+/* Fonts */
+body, .choice-btn, .q-word { font-family: 'Crimson Pro', serif; }
+header h1, .level-badge, .q-num, .q-cat, .btn-primary, .btn-ghost, .score-info, .result-label, .breakdown-num, .breakdown-label { font-family: 'Inter', sans-serif; }
+/* ── Header ── */
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.header-top {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.level-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1.5px solid var(--border);
+  padding: 0.1rem 0.5rem;
+  background-color: var(--surface);
+  color: var(--text);
+}
+/* ── Progress ── */
+.progress-track {
+  font-size: 10px;
+  margin-bottom: 2.5em;
+}
+
+.prog-seg {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: .5em;
+  border-radius: 16px;
+  background: var(--border-light);
+  transition: background 0.35s;
+}
+.prog-seg.correct { background: var(--correct-seg); }
+.prog-seg.wrong   { background: var(--wrong-seg); }
+
+/* ── Question block ── */
+.question-block {
+  animation: fadeSlide 0.4s ease both;
+}
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.q-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.6rem;
+}
+
+.q-num {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.q-cat {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background-color: var(--surface);
+  color: var(--muted);
+  border: 1px solid var(--border-light);
+  padding: 0.05rem 0.4rem;
+}
+
+/* The word being defined — displayed prominently */
+.q-word {
+  font-size: 2.4rem;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0.4rem 0 0.3rem;
+  letter-spacing: 0.01em;
+}
+
+.q-instruction {
+  font-size: 1.2rem;
+  color: var(--muted);
+  margin-bottom: 1.2rem;
+}
+
+/* ── Choice grid ── */
+.choices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.choice-btn {
+  background: var(--bg);
+  color: var(--text);
+  border: 1.5px solid var(--border);
+  padding: 0.75rem 1rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.12s, transform 0.08s, border-color 0.12s;
+  border-radius: 0;
+}
+
+.choice-btn:hover:not(:disabled) {
+  background: var(--surface);
+  transform: translateY(-1px);
+}
+
+.choice-btn:active:not(:disabled) { transform: translateY(0); }
+
+.choice-btn.correct {
+  background: var(--correct-bg);
+  border-color: var(--correct-border);
+  color: var(--correct-text);
+  font-weight: 600;
+}
+
+.choice-btn.wrong {
+  background: var(--wrong-bg);
+  border-color: var(--wrong-border);
+  color: var(--wrong-text);
+}
+
+.choice-btn.reveal {
+  background: var(--reveal-bg);
+  border-color: var(--reveal-border);
+  color: var(--reveal-text);
+}
+
+.choice-btn:disabled { cursor: default; }
+
+/* ── Feedback ── */
+.feedback {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  min-height: 1.5em;
+  line-height: 1.55;
+  padding-left: 1px;
+}
+
+.feedback.ok   { color: var(--correct-text); }
+.feedback.fail { color: var(--wrong-text); }
+
+/* ── Controls ── */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-light);
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.6rem 1.4rem;
+  border: 1.5px solid var(--border);
+  background: var(--text);
+  color: var(--bg);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.btn-primary:hover { background: #333; }
+
+.btn-ghost {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.6rem 1.2rem;
+  border: 1.5px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.btn-ghost:hover { background: var(--surface); }
+
+.score-info {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-left: auto;
+}
+
+.score-info strong {
+  color: var(--text);
+  font-size: 1rem;
+}
+
+/* ── Result screen ── */
+.result-screen {
+  text-align: center;
+  padding: 3rem 0 2rem;
+  animation: fadeSlide 0.4s ease both;
+}
+
+.result-score {
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0.5rem 0;
+}
+
+.result-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.result-msg {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--muted);
+  margin-top: 0.75rem;
+}
+
+.result-breakdown {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.breakdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.breakdown-num {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.breakdown-num.green { color: var(--correct-border); }
+.breakdown-num.red   { color: var(--wrong-border); }
+
+.breakdown-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.loading-msg {
+  text-align: center;
+  padding: 3rem 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 480px) {
+  .result-score { font-size: 2.5rem; }
+  body { font-size: 17px; }
+}

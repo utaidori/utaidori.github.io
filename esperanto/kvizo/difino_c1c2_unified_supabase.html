@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="eo">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiu estas la difino? — C1/C2</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="kvizo-komuna.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="supabase-client.js"></script>
+<style>
+/* ── Choice grid ── */
+.choices {
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.choice-btn {
+  text-align: left;
+  line-height: 1.5;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="header-top">
+      <h1>Kiu estas la difino?</h1>
+      <span class="level-badge">C1 / C2</span>
+    </div>
+  </header>
+
+  <div class="progress-track" id="progressTrack"></div>
+  <div id="quizArea">
+    <div class="loading-msg">Momenton...</div>     
+  </div>
+
+  <div class="controls" id="controls">
+    <button class="btn-primary" id="btnNext" style="display:none" onclick="goNext()">Sekva →</button>
+    <button class="btn-ghost" onclick="restartQuiz()">Rekomenci</button>
+    <div class="score-info" id="scoreInfo"></div>
+  </div>
+</div>
+
+<script>
+// ─────────────────────────────────────────────────────────────────
+// 100 DEMANDOJ  (C1/C2)
+// Strukturo: { word, cat, choices[4] }
+//   choices[0] = ĈIAM la ĝusta difino  ← neniu "answer"-kampo en datumbazo
+//   La erara indekso kalkuliĝas nur dum sesi-konstruo (post miksado)
+// ─────────────────────────────────────────────────────────────────
+let BANK = []
+
+// ─── Konstanto ───
+const TOTAL = 10;
+
+// ─── Statasoj ───
+let session = [];
+let cur = 0;
+let answers = [];
+let score = 0;
+
+// ─── Helpa funkcio ───
+function shuffle(a) {
+  const b = [...a];
+  for (let i = b.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [b[i], b[j]] = [b[j], b[i]];
+  }
+  return b;
+}
+
+// ─── Sesi-konstruo ───
+// choices[0] estas ĉiam la ĝusta respondo en BANK.
+function buildSession() {
+  const pool = shuffle([...Array(BANK.length).keys()]).slice(0, TOTAL);
+  session = pool.map(idx => {
+    const q = BANK[idx];
+    const correct = q.choices[0];          // Ĉiam [0] en datumbazo
+    const shuffled = shuffle(q.choices);   // Miksi por prezentado
+    return {
+      ...q,
+      choices: shuffled,
+      answer:  shuffled.indexOf(correct),
+    };
+  });
+  cur = 0;
+  score = 0;
+  answers = Array(TOTAL).fill(null);
+}
+
+// ─── Progreso ───
+function initProgress() {
+  const track = document.getElementById('progressTrack');
+  track.innerHTML = '';
+  for (let i = 0; i < TOTAL; i++) {
+    const seg = document.createElement('div');
+    seg.className = 'prog-seg';
+    seg.id = 'pseg-' + i;
+    track.appendChild(seg);
+  }
+}
+
+function updateProgress(idx, result) {
+  const seg = document.getElementById('pseg-' + idx);
+  seg.classList.add(result === 'correct' ? 'correct' : 'wrong');
+}
+
+// ─── Renderado ───
+function renderQuestion(idx) {
+  const q = session[idx];
+  const area = document.getElementById('quizArea');
+  area.innerHTML = '';
+
+  const block = document.createElement('div');
+  block.className = 'question-block';
+  block.innerHTML = `
+    <div class="q-meta">
+      <span class="q-num">Demando ${idx + 1} / ${TOTAL}</span>
+      <span class="q-cat">${q.cat}</span>
+    </div>
+    <div class="q-word">${q.word}</div>
+    <div class="q-instruction">Elektu la ĝustan difinon:</div>
+    <div class="choices" id="choicesGrid"></div>
+    <div class="feedback" id="fb"></div>
+  `;
+  area.appendChild(block);
+
+  const grid = document.getElementById('choicesGrid');
+  q.choices.forEach((choice, ci) => {
+    const btn = document.createElement('button');
+    btn.className = 'choice-btn';
+    btn.id = 'cb-' + ci;
+    btn.textContent = choice;
+    btn.onclick = () => handlePick(ci, idx);
+    grid.appendChild(btn);
+  });
+
+  if (answers[idx] !== null) restoreState(idx);
+}
+
+function handlePick(chosen, idx) {
+  if (answers[idx] !== null) return;
+  const q = session[idx];
+  answers[idx] = chosen;
+  const correct = q.answer;
+  const isRight = chosen === correct;
+  if (isRight) score++;
+
+  for (let i = 0; i < 4; i++) {
+    const btn = document.getElementById('cb-' + i);
+    btn.disabled = true;
+    if (i === correct) btn.classList.add(isRight ? 'correct' : 'reveal');
+    else if (i === chosen) btn.classList.add('wrong');
+  }
+
+  const fb = document.getElementById('fb');
+  fb.className = 'feedback ' + (isRight ? 'ok' : 'fail');
+  fb.textContent = isRight ? '✓ Ĝuste!' : '✗ Malĝuste.';
+
+  updateProgress(idx, isRight ? 'correct' : 'wrong');
+  updateScoreInfo();
+  showNextBtn(idx);
+}
+
+function restoreState(idx) {
+  const q = session[idx];
+  const chosen = answers[idx];
+  const correct = q.answer;
+  const isRight = chosen === correct;
+  for (let i = 0; i < 4; i++) {
+    const btn = document.getElementById('cb-' + i);
+    btn.disabled = true;
+    if (i === correct) btn.classList.add(isRight ? 'correct' : 'reveal');
+    else if (i === chosen) btn.classList.add('wrong');
+  }
+  const fb = document.getElementById('fb');
+  fb.className = 'feedback ' + (isRight ? 'ok' : 'fail');
+  fb.textContent = isRight ? '✓ Ĝuste!' : '✗ Malĝuste.';
+  showNextBtn(idx);
+}
+
+function showNextBtn(idx) {
+  const btn = document.getElementById('btnNext');
+  btn.style.display = 'inline-block';
+  btn.textContent = idx < TOTAL - 1 ? 'Sekva →' : 'Vidi rezulton';
+}
+
+function goNext() {
+  if (cur < TOTAL - 1) {
+    cur++;
+    renderQuestion(cur);
+    document.getElementById('btnNext').style.display = 'none';
+  } else {
+    showResult();
+  }
+}
+
+function showResult() {
+  const wrong = TOTAL - score;
+  const pct = Math.round(score / TOTAL * 100);
+  const msg = pct === 100 ? 'Perfekta rezulto!' :
+              pct >= 80   ? 'Tre bone!'         :
+              pct >= 60   ? 'Bone — daŭrigu!'   : 'Ankoraŭ studi necesas.';
+
+  document.getElementById('quizArea').innerHTML = `
+    <div class="result-screen">
+      <div class="result-label">Via rezulto</div>
+      <div class="result-score">${score} / ${TOTAL}</div>
+      <div class="result-msg">${msg}</div>
+      <div class="result-breakdown">
+        <div class="breakdown-item">
+          <span class="breakdown-num green">${score}</span>
+          <span class="breakdown-label">Ĝustaj</span>
+        </div>
+        <div class="breakdown-item">
+          <span class="breakdown-num red">${wrong}</span>
+          <span class="breakdown-label">Malĝustaj</span>
+        </div>
+        <div class="breakdown-item">
+          <span class="breakdown-num">${pct}%</span>
+          <span class="breakdown-label">Proporcio</span>
+        </div>
+      </div>
+    </div>
+  `;
+  document.getElementById('btnNext').style.display = 'none';
+  document.getElementById('scoreInfo').innerHTML = '';
+}
+
+function updateScoreInfo() {
+  const done = answers.filter(a => a !== null).length;
+  if (!done) { document.getElementById('scoreInfo').innerHTML = ''; return; }
+  document.getElementById('scoreInfo').innerHTML =
+    `<span style="margin-right:1em;">Ĝustaj respondoj</span><span style="letter-spacing:4px;"><strong>${score}</strong> / ${done}</span>`;
+}
+
+function restartQuiz() {
+  buildSession();
+  initProgress();
+  renderQuestion(0);
+  document.getElementById('btnNext').style.display = 'none';
+  document.getElementById('scoreInfo').innerHTML = '';
+}
+
+// Boot
+async function initQuiz() {
+  // 1. Supabaseからデータをダウンロードして BANK に格納する
+  BANK = await fetchQuestions('difino', 'c1');
+
+  // 2. 万が一、通信エラー等でデータが取れなかった場合の安全装置
+  if (BANK.length === 0) {
+    alert("Eraro: Malsukcesis ŝargi la demandojn.");
+    return;
+  }
+
+  restartQuiz();
+}
+
+initQuiz();
+</script>
+</body>
+</html>
