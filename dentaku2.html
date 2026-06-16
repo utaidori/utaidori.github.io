@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>マイ電卓 Pro</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f3;
+            font-family: sans-serif;
+            margin: 0;
+        }
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 6px;
+        }
+        #history {
+            font-size: 0.95rem;
+            color: #888;
+            text-align: right;
+            word-break: break-all;
+            min-height: 1.4em;
+            padding: 0 4px;
+        }
+        .calculator {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        #display {
+            width: 100%;
+            height: 60px;
+            background-color: #eef2f3;
+            border: none;
+            border-radius: 10px;
+            font-size: 2rem;
+            text-align: right;
+            padding: 0 12px;
+            box-sizing: border-box;
+            margin-bottom: 16px;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(5, 60px);
+            grid-template-rows: repeat(4, 60px);
+            gap: 8px;
+        }
+        button {
+            width: 60px;
+            height: 60px;
+            font-size: 1.3rem;
+            border: none;
+            border-radius: 50%;
+            background-color: #e6e6e6;
+            cursor: pointer;
+        }
+        button:active { background-color: #b0b0b0; }
+        button.operator { background-color: #ff9f0a; color: white; }
+        button.operator:active { background-color: #d07800; }
+        button.clear { background-color: #a5a5a5; color: white; }
+        button.clear:active { background-color: #787878; }
+
+        #btn-plus {
+            grid-column: 4;
+            grid-row: 3 / span 2;
+            height: 128px; /* 60px + 8px gap + 60px */
+            border-radius: 30px;
+        }
+        #btn-minus  { grid-column: 5; grid-row: 3; }
+        #btn-equals { grid-column: 5; grid-row: 4; }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <div id="history">&nbsp;</div>
+    <div class="calculator">
+        <input type="text" id="display" value="0" readonly>
+        <div class="buttons">
+            <!-- Row 1: 7 8 9 C CA -->
+            <button onclick="pressNum('7')">7</button>
+            <button onclick="pressNum('8')">8</button>
+            <button onclick="pressNum('9')">9</button>
+            <button class="clear" onclick="pressClear()">C</button>
+            <button class="clear" onclick="pressAllClear()">CA</button>
+
+            <!-- Row 2: 4 5 6 × ÷ -->
+            <button onclick="pressNum('4')">4</button>
+            <button onclick="pressNum('5')">5</button>
+            <button onclick="pressNum('6')">6</button>
+            <button class="operator" onclick="pressOperator('*')">×</button>
+            <button class="operator" onclick="pressOperator('/')">÷</button>
+
+            <!-- Row 3: 1 2 3 +(縦2マス) - -->
+            <button onclick="pressNum('1')">1</button>
+            <button onclick="pressNum('2')">2</button>
+            <button onclick="pressNum('3')">3</button>
+            <button id="btn-plus"   class="operator" onclick="pressOperator('+')">+</button>
+            <button id="btn-minus"  class="operator" onclick="pressOperator('-')">-</button>
+
+            <!-- Row 4: 0 00 . [+が占有] = -->
+            <button onclick="pressNum('0')">0</button>
+            <button onclick="pressNum('00')">00</button>
+            <button onclick="pressNum('.')">.</button>
+            <!-- col 4 は+ボタンが占有しているため不要 -->
+            <button id="btn-equals" class="operator" onclick="pressEquals()">=</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    let displayValue    = '0';
+    let previousValue   = null;
+    let currentOperation = null;
+    let modeClearDisplay = false;
+
+    // 枠外履歴
+    let prevHistory = ''; // 現在入力中の数値より前の履歴文字列
+
+    const display   = document.getElementById('display');
+    const historyEl = document.getElementById('history');
+
+    // 演算子記号の対応表
+    const SYM = { '+': '+', '-': '-', '*': '×', '/': '÷' };
+    const SYM_CHARS = ['+', '-', '×', '÷'];
+
+    function updateDisplay() {
+        display.value = displayValue;
+    }
+
+    // 履歴表示
+    function updateHistory() {
+        const txt = modeClearDisplay
+            ? prevHistory
+            : (prevHistory + displayValue);
+        historyEl.textContent = txt || '\u00a0';
+    }
+
+    function pressNum(num) {
+        // 小数点の重複チェック：入力中の数値に対してのみ（演算子直後は除外）
+        if (num === '.' && !modeClearDisplay && displayValue.includes('.')) return;
+
+        if (displayValue === '0' || modeClearDisplay) {
+            if (num === '.') {
+                displayValue = '0.';
+            } else if (num === '00') {
+                displayValue = '0';
+            } else {
+                displayValue = num;
+            }
+            modeClearDisplay = false;
+        } else {
+            displayValue += num;
+        }
+        updateDisplay();
+        updateHistory(); // 【追加】
+    }
+
+    function pressClear() {
+        displayValue = '0';
+        updateDisplay();
+        updateHistory(); // 【追加】
+    }
+
+    function pressAllClear() {
+        displayValue    = '0';
+        previousValue   = null;
+        currentOperation = null;
+        modeClearDisplay = false;
+        prevHistory     = ''; // 【追加】
+        updateDisplay();
+        updateHistory(); // 【追加】
+    }
+
+    function pressOperator(op) {
+        const sym = SYM[op];
+        const endsWithOp = SYM_CHARS.some(s => displayValue.endsWith(s));
+
+        if (modeClearDisplay && endsWithOp) {
+            prevHistory  = prevHistory.slice(0, -1) + sym;
+            displayValue = displayValue.slice(0, -1) + sym;
+            currentOperation = op;
+            updateDisplay();
+            updateHistory();
+            return;
+        }
+
+        let current = parseFloat(displayValue);
+
+        if (currentOperation !== null && previousValue !== null && !modeClearDisplay) {
+            let result = calculate(previousValue, current, currentOperation);
+            displayValue = Number(result.toFixed(10)).toString();
+            previousValue = result;
+            prevHistory = prevHistory + String(current) + sym; // 【追加】
+        } else {
+            previousValue = current;
+            prevHistory = prevHistory + displayValue + sym;    // 【追加】
+        }
+
+        currentOperation = op;
+        modeClearDisplay = true;
+
+        // ディスプレイに演算子記号を表示
+        displayValue = displayValue + sym;
+        updateDisplay();
+        updateHistory();
+    }
+
+    function pressEquals() {
+        if (currentOperation === null || previousValue === null) return;
+
+        let current = parseFloat(displayValue); // "120+" でも parseFloat は 120 を返す
+        let result  = calculate(previousValue, current, currentOperation);
+        let resultStr = Number(result.toFixed(10)).toString();
+
+        // 履歴に「現在の数値＝結果」を追記して表示
+        const currentNumStr = modeClearDisplay ? String(current) : displayValue;
+        historyEl.textContent = prevHistory + currentNumStr + '=' + resultStr;
+
+        displayValue     = resultStr;
+        prevHistory      = ''; // 次の計算のためリセット
+        previousValue    = null;
+        currentOperation = null;
+        modeClearDisplay = true;
+        updateDisplay();
+    }
+
+    // 計算コア
+    function calculate(first, second, operation) {
+        if (operation === '+') return first + second;
+        if (operation === '-') return first - second;
+        if (operation === '*') return first * second;
+        if (operation === '/') return second !== 0 ? first / second : 0;
+        return 0;
+    }
+</script>
+
+</body>
+</html>
