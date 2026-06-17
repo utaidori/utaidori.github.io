@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>マイ電卓 Pro</title>
+    <title>電卓</title>
     <style>
         body {
             display: flex;
@@ -29,6 +29,7 @@
             padding: 0 4px;
         }
         .calculator {
+            width: min-content; 
             background-color: #ffffff;
             padding: 20px;
             border-radius: 20px;
@@ -48,8 +49,8 @@
         }
         .buttons {
             display: grid;
-            grid-template-columns: repeat(5, 60px);
-            grid-template-rows: repeat(4, 60px);
+            grid-template-columns: repeat(5, min-content);
+            grid-template-rows: repeat(4, min-content);
             gap: 8px;
         }
         button {
@@ -198,10 +199,10 @@
             let result = calculate(previousValue, current, currentOperation);
             displayValue = Number(result.toFixed(10)).toString();
             previousValue = result;
-            prevHistory = prevHistory + String(current) + sym; // 【追加】
+            prevHistory = prevHistory + String(current) + sym;
         } else {
             previousValue = current;
-            prevHistory = prevHistory + displayValue + sym;    // 【追加】
+            prevHistory = prevHistory + displayValue + sym;
         }
 
         currentOperation = op;
