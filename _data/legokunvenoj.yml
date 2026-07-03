@@ -1,9 +1,16 @@
+- vol: 24
+  date: "2026-07-26"
+  works:
+    - title: ''
+      author: ""
+  attendees: ""
+
 - vol: 23
   date: "2026-06-20"
   works:
     - title: 'Kiu mi estas?'
       author: "Tatjana Tereĥova"
-  attendees: ""
+  attendees: 5
 
 - vol: 22
   date: "2026-05-24"
