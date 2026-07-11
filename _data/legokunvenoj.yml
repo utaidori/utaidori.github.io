@@ -3,7 +3,8 @@
   works:
     - title: 'Ŝamana sorto'
       author: "Tibor Sekelj"
-  attendees: 'el "Kolektanto de ĉielarkoj"'
+  note: 'el "Kolektanto de ĉielarkoj"'
+  attendees: 0
 
 - vol: 23
   date: "2026-06-20"
