@@ -1,10 +1,18 @@
 - vol: 24
+  date: "2026-08-23"
+  works:
+    - title: 'Kolektanto de ĉielarkoj'
+      author: "Tibor Sekelj"
+  note: 'el "Kolektanto de ĉielarkoj"'
+  attendees: 0
+
+- vol: 24
   date: "2026-07-26"
   works:
     - title: 'Ŝamana sorto'
       author: "Tibor Sekelj"
   note: 'el "Kolektanto de ĉielarkoj"'
-  attendees: 0
+  attendees: 5
 
 - vol: 23
   date: "2026-06-20"
