@@ -187,9 +187,7 @@ blockquote {
             <p class="description_content">{{ event.description }}</p>
           {% endif %}
           {% if event.description_add %}
-            <p class="description_content">
-            {% if event.description_add_before %}{{ event.description_add_before }}{% endif %}{{ event.description_add }}{% if event.description_add_after %}{{ event.description_add_after }}{% endif %}
-            </p>
+            <p class="description_content">{% if event.description_add_before %}{{ event.description_add_before }}{% endif %}{{ event.description_add }}{% if event.description_add_after %}{{ event.description_add_after }}{% endif %}</p>
           {% endif %}
 
           <div class="fold" id="{{ base_id }}">
