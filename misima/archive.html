@@ -11,9 +11,9 @@ title: Misima Hyakka &rarr; 過去ログ
 {% assign yobi_list = "日,月,火,水,木,金,土" | split: "," %}
 
 {% comment %} 日付順（昇順）にソート。 {% endcomment %}
-{% assign sorted_events = site.data.misima-events | sort: "date" | reversed %}
+{% assign sorted_events = site.data.misima-events | sort: "date" | reverse %}
 
-{% for event in site.data.misima-events %}
+{% for event in sorted_events %}
 
   {% unless event.date %}{% continue %}{% endunless %}
 
