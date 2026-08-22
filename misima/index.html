@@ -124,105 +124,26 @@ blockquote {
 </style>
 
 <div class="index-main">
-	<div class="update">
-		<div class="bar"><span class="interbar-text small">更新履歴</span></div>
-		<div class="aural"><a href="#main">更新履歴をスキップして本文に移る</a></div>
-		<ul class="detail">
-			<li>2026-08-22</li>
-				<ul>
-					<li>歴史発見講座(9月)</li>
-				</ul>
-			</li>			<li>2026-08-12</li>
-				<ul>
-					<li>詩を持ち寄る日(8月)</li>
-				</ul>
-			</li>
-			<li>2026-07-25</li>
-				<ul>
-					<li>詩を持ち寄る日(7月)</li>
-					<li>歴史発見講座(8月)</li>
-				</ul>
-			</li>
-			<li>2026-04-28</li>
-				<ul>
-					<li>詩を持ち寄る日(5月)</li>
-					<li>歴史発見講座(5月)</li>
-				</ul>
-			</li>
-			<li>2026-03-28
-				<ul>
-					<li>詩を持ち寄る日(4月)</li>
-					<li>歴史発見講座(4月)</li>
-				</ul>
-			</li>
-			<li>2026-03-11
-				<ul>
-					<li>詩を持ち寄る日(3月)</li>
-				</ul>
-			</li>
-			<li>2026-01-06
-				<ul>
-					<li>詩を持ち寄る日(1月)</li>
-				</ul>
-			</li>
-			<li>2025-10-05
-				<ul>
-					<li>歴史発見講座(10月)</li>
-					<li>詩を持ち寄る日(10月)</li>
-				</ul>
-			</li>
-			<li>2025-09-28
-				<ul>
-					<li>スモールアート展(10月)</li>
-				</ul>
-			</li>
-			<li>2025-09-01
-				<ul>
-					<li>詩を持ち寄る日(9月)</li>
-					<li>歴史発見講座(9月)</li>
-				</ul>
-			</li>
-			<li>2025-07-12
-				<ul>
-					<li>池田あきこ原画展
-				</ul>
-			</li>
-			<li>2025-06-27
-				<ul>
-					<li>詩を持ち寄る日(7月)</li>
-				</ul>
-			</li>
-			<li>2025-05-13
-				<ul>
-					<li>歴史発見講座(5月)</li>
-					<li>詩を持ち寄る日(6月)</li>
-					<li>歴史発見講座(6月)</li>
-				</ul>
-			</li>
-			<li>2025-04-08
-				<ul>
-					<li>詩を持ち寄る日(4月)</li>
-				</ul>
-			</li>
-			<li>2025-03-22
-				<ul>
-					<li>詩を持ち寄る日(3月)</li>
-					<li>第16回東部高写連優秀作品展</li>
-					<li>カピバラのお風呂</li>
-					<li>野口三四郎の芸術世界</li>
-				</ul>
-			</li>
-			<li>2024-10-24
-				<ul>
-					<li>歴史発見講座(10月)</li>
-				</ul>
-			</li>
-		</ul>
-		<div class="bar">&nbsp;</div>
-		<div class="rightsideSubmenu"><a href="history.html">&rarr; 過去の更新履歴</a></div>
-		<div class="rightsideSubmenu"><a href="aboutme.html">&rarr; このサイトについて</a></div>
-		<div class="bar" style="margin-top:1em">&nbsp;</div>
-	</div>
+  <div class="update">
+  <div class="bar"><span class="interbar-text small">更新履歴</span></div>
+  <div class="aural"><a href="#main">更新履歴をスキップして本文に移る</a></div>
+  <ul class="detail">
+    {% for update in site.data.misima-updates %}
+      <li>{{ update.date | date: "%Y-%m-%d" }}
+        <ul>
+        {% for item in update.items %}
+          <li>{{ item }}</li>
+        {% endfor %}
+        </ul>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <div class="bar">&nbsp;</div>
+  <div class="rightsideSubmenu"><a href="history.html">&rarr; 過去の更新履歴</a></div>
+  <div class="rightsideSubmenu"><a href="aboutme.html">&rarr; このサイトについて</a></div>
+  <div class="bar" style="margin-top:1em">&nbsp;</div>
+</div>
 	<!-- <div><small>＃Misima Hyakka からの外部サイトへのリンクはすべて、新規タブやウインドウを開きません。</small></div> -->
 
 	<main>
