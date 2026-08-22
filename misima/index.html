@@ -123,28 +123,26 @@ blockquote {
 }
 </style>
 
-
 <div class="index-main">
-  <div class="update">
-  <div class="bar"><span class="interbar-text small">更新履歴</span></div>
-  <div class="aural"><a href="#main">更新履歴をスキップして本文に移る</a></div>
-  <ul class="detail">
-    {% for update in site.data.misima-updates %}
-      <li>{{ update.date | date: "%Y-%m-%d" }}
-        <ul>
-        {% for item in update.items %}
-          <li>{{ item }}</li>
-        {% endfor %}
-        </ul>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <div class="bar">&nbsp;</div>
-  <div class="rightsideSubmenu"><a href="history.html">&rarr; 過去の更新履歴</a></div>
-  <div class="rightsideSubmenu"><a href="aboutme.html">&rarr; このサイトについて</a></div>
-  <div class="bar" style="margin-top:1em">&nbsp;</div>
-</div>
+	<div class="update">
+		<div class="bar"><span class="interbar-text small">更新履歴</span></div>
+		<div class="aural"><a href="#main">更新履歴をスキップして本文に移る</a></div>
+		<ul class="detail">
+		{% for update in site.data.misima-updates limit: 15 %}
+			<li>{{ update.date | date: "%Y-%m-%d" }}
+				<ul>
+				{% for item in update.items %}
+					<li>{{ item }}</li>
+				{% endfor %}
+				</ul>
+			</li>
+		{% endfor %}
+		</ul>
+		<div class="bar">&nbsp;</div>
+		<div class="rightsideSubmenu"><a href="history.html">&rarr; 過去の更新履歴</a></div>
+		<div class="rightsideSubmenu"><a href="aboutme.html">&rarr; このサイトについて</a></div>
+		<div class="bar" style="margin-top:1em">&nbsp;</div>
+	</div>
 	<!-- <div><small>＃Misima Hyakka からの外部サイトへのリンクはすべて、新規タブやウインドウを開きません。</small></div> -->
 
 	<main>
