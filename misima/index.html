@@ -128,7 +128,11 @@ blockquote {
 		<div class="bar"><span class="interbar-text small">更新履歴</span></div>
 		<div class="aural"><a href="#main">更新履歴をスキップして本文に移る</a></div>
 		<ul class="detail">
-			<li>2026-08-12</li>
+			<li>2026-08-22</li>
+				<ul>
+					<li>歴史発見講座(9月)</li>
+				</ul>
+			</li>			<li>2026-08-12</li>
 				<ul>
 					<li>詩を持ち寄る日(8月)</li>
 				</ul>
@@ -261,7 +265,17 @@ blockquote {
             <p class="description_content">{{ event.description }}</p>
           {% endif %}
           {% if event.description_add %}
-            <p class="description_content">{{ event.description_add }}</p>
+            <p class="description_content">
+            {% if event.description_add_before %}
+              {{ event.description_add_before }}
+            {% endif %}
+
+            {{ event.description_add }}
+
+            {% if event.description_add_after %}
+              {{ event.description_add_after }}
+            {% endif %}
+            </p>
           {% endif %}
 
           <div class="fold" id="{{ base_id }}">
